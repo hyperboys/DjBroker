@@ -30,7 +30,8 @@ namespace DJBroker.WindowApp
                 InitializeComponent();
                 DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
                 {
-                    this.dateText.Content = DateTime.Now.ToString("HH:mm:ss");
+                    this.dateText.Content = "เวลา " + DateTime.Now.ToString("HH:mm:ss");
+                    this.dateText2.Content = "วันที่ " + DateTime.Now.ToShortDateString();
                 }, this.Dispatcher);
                 if (DataCommon.Exists("DATA.MEMBER"))
                 {

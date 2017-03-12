@@ -6,12 +6,13 @@
         >
     <Grid Margin="0,0,0,-3" Height="693" VerticalAlignment="Top">
         <Image HorizontalAlignment="Left" Height="51" Margin="51,26,0,0" VerticalAlignment="Top" Width="90" Source="Image/Icon.jpg"/>
-        <Label Name="dateText" Content="เวลา" HorizontalAlignment="Left" Margin="972,14,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Name="dateText" Content="เวลา" HorizontalAlignment="Left" Margin="898,55,0,0" VerticalAlignment="Top" FontSize="20" Width="136"/>
+        <Label Name="dateText2" Content="วันที่" HorizontalAlignment="Left" Margin="697,55,0,0" VerticalAlignment="Top" FontSize="20" Width="190" FlowDirection="RightToLeft"/>
         <Label Content="ชื่อ - นามสกุล :" HorizontalAlignment="Left" Margin="159,23,0,0" VerticalAlignment="Top"/>
         <Label Name="lblName" Content="xxxx xxxxx" HorizontalAlignment="Left" Margin="244,25,0,0" VerticalAlignment="Top"/>
         <Label Content="Username     :" HorizontalAlignment="Left" Margin="159,55,0,0" VerticalAlignment="Top"/>
         <Label Name="lblUsername" Content="xxxxxxxx" HorizontalAlignment="Left" Margin="244,55,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="30" Margin="903,14,0,0" VerticalAlignment="Top" Width="32" Source="Image/Key.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="1002,19,0,0" VerticalAlignment="Top" Width="32" Source="Image/Key.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
         <Button x:Name="btnCheck" Width="Auto" Margin="34,102,924,515" Click="btnCheck_Click">
             <StackPanel Orientation="Vertical">
                 <Image Source="Image/Search.png" Width="70" Height="36"/>
