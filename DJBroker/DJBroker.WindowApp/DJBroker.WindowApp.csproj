@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE920346-9AF9-480A-B44E-382783FE2A90}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DJBroker.WindowApp</RootNamespace>
+    <AssemblyName>DJBroker.WindowApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommonControl.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\CheckInsurePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Panel\InsureCarPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Panel\CarPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Panel\InsurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\MemberPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\PopupImportExcel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\PopupCheckAgent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\PopupCheckCustomer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\PopupInsureCar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\PopupCompanyInsure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\PopupCar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\PopupChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popup\PopupMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\CheckInsurePage.xaml.cs">
+      <DependentUpon>CheckInsurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\InsureCarPage.xaml.cs">
+      <DependentUpon>InsureCarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\CarPage.xaml.cs">
+      <DependentUpon>CarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\InsurePage.xaml.cs">
+      <DependentUpon>InsurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\MemberPage.xaml.cs">
+      <DependentUpon>MemberPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupImportExcel.xaml.cs">
+      <DependentUpon>PopupImportExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupCheckAgent.xaml.cs">
+      <DependentUpon>PopupCheckAgent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupCheckCustomer.xaml.cs">
+      <DependentUpon>PopupCheckCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupInsureCar.xaml.cs">
+      <DependentUpon>PopupInsureCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupCompanyInsure.xaml.cs">
+      <DependentUpon>PopupCompanyInsure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupCar.xaml.cs">
+      <DependentUpon>PopupCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupChangePassword.xaml.cs">
+      <DependentUpon>PopupChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupMember.xaml.cs">
+      <DependentUpon>PopupMember.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\admin.png" />
+    <Resource Include="Image\Car.ico" />
+    <Resource Include="Image\Icon.jpg" />
+    <Resource Include="Image\Insurance.png" />
+    <Resource Include="Image\InsuranceCompany.png" />
+    <Resource Include="Image\Key.png" />
+    <Resource Include="Image\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\addMember.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\addCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\addCarInsure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\AddCompany.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ExcelImport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DJBroker.Common\DJBroker.Common.csproj">
+      <Project>{bb167141-e9b8-4d63-9e18-c6ec4bd9e7ae}</Project>
+      <Name>DJBroker.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DJBroker.DAL\DJBroker.DAL.csproj">
+      <Project>{1aae857c-fe70-426d-968a-04411a7802e8}</Project>
+      <Name>DJBroker.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DJBroker.Model\DJBroker.Model.csproj">
+      <Project>{9365fd6f-b932-4e4f-8166-b2bda800e630}</Project>
+      <Name>DJBroker.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Message.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

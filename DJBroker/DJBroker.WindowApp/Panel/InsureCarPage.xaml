@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="DJBroker.WindowApp.Panel.InsureCarPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="534" d:DesignWidth="833">
+    <Grid>
+        <DataGrid x:Name="grdInsure" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Height="372" Width="813"
+    		IsReadOnly="True" CanUserResizeRows="False" CanUserReorderColumns="False"
+    		AutoGenerateColumns="False" Loaded="grdInsure_Loaded">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Button_Click" Content="Show"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding CAR_YEAR}" Header="ปี"/>
+                <DataGridTextColumn Binding="{Binding CAR_NAME}" Header="ยี่ห้อรถยนต์"/>
+                <DataGridTextColumn Binding="{Binding CAR_MODEL}" Header="รุ่นรถยนต์"/>
+                <DataGridTextColumn Binding="{Binding CAR_ENGINE}" Header="เครื่องยนต์"/>
+                <DataGridTextColumn Binding="{Binding COMPANY_FULLNAME}" Header="บริษัท"/>
+                <DataGridTextColumn Binding="{Binding PACKAGE_NAME}" Header="แพคเกจ"/>
+                <DataGridTextColumn Binding="{Binding INSURE_TYPE_REPAIR}"  Header="ซ่อม"/>
+                <DataGridTextColumn Binding="{Binding CAPITAL_INSURANCE}" Header="ทุนประกันภัย"/>
+                <DataGridTextColumn Binding="{Binding PRICE_ROUND}" Header="ราคา"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtCompanyCode" HorizontalAlignment="Left" Height="23" Margin="114,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
+        <TextBox x:Name="txtCompanyName" HorizontalAlignment="Left" Height="23" Margin="395,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <ComboBox x:Name="cbbStatus" HorizontalAlignment="Left" Margin="660,93,0,0" VerticalAlignment="Top" Width="56">
+            <ComboBox.ItemBindingGroup>
+                <BindingGroup/>
+            </ComboBox.ItemBindingGroup>
+            <ComboBoxItem Content="ใช้งาน" IsSelected="True"/>
+            <ComboBoxItem Content="ไม่ใช้งาน"/>
+        </ComboBox>
+
+        <Label Content="รหัสบริษัทประกันภัย" HorizontalAlignment="Left" Margin="11,19,0,0" VerticalAlignment="Top"/>
+        <Label Content="ชื่อบริษัทประกันภัย" HorizontalAlignment="Left" Margin="297,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="สถานะ" HorizontalAlignment="Left" Margin="615,90,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="42" Margin="615,19,0,0" VerticalAlignment="Top" Width="41" Source="/DJBroker.WindowApp;component/Image/Search.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image x:Name="btnAdd" HorizontalAlignment="Left" Height="83" Margin="721,-3,0,0" VerticalAlignment="Top" Width="90"  Source="/DJBroker.WindowApp;component/Image/addCarInsure.png" MouseLeftButtonDown="Add_MouseLeftButtonDown"/>
+        <Label Content="ปี" HorizontalAlignment="Left" Margin="92,54,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbbCarYear" HorizontalAlignment="Left" Margin="114,54,0,0" VerticalAlignment="Top" Width="83">
+            <ComboBoxItem Content="กรุณาเลือก" IsSelected="True"/>
+            <ComboBoxItem Content="2017"/>
+            <ComboBoxItem Content="2016"/>
+            <ComboBoxItem Content="2015"/>
+            <ComboBoxItem Content="2014"/>
+            <ComboBoxItem Content="2013"/>
+            <ComboBoxItem Content="2012"/>
+            <ComboBoxItem Content="2011"/>
+            <ComboBoxItem Content="2010"/>
+            <ComboBoxItem Content="2009"/>
+            <ComboBoxItem Content="2008"/>
+            <ComboBoxItem Content="2007"/>
+            <ComboBoxItem Content="2006"/>
+            <ComboBoxItem Content="2005"/>
+            <ComboBoxItem Content="2004"/>
+        </ComboBox>
+        <Label Content="รุ่นรถยนต์" HorizontalAlignment="Left" Margin="54,90,0,0" VerticalAlignment="Top"/>
+        <Label Content="เครื่องยนต์" HorizontalAlignment="Left" Margin="334,90,0,0" VerticalAlignment="Top"/>
+        <Label Content="ยี่ห้อรถยนต์" HorizontalAlignment="Left" Margin="328,54,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbbCarName" DisplayMemberPath = "CAR_NAME" SelectedValuePath ="CAR_NAME" HorizontalAlignment="Left" Margin="395,54,0,0" VerticalAlignment="Top" Width="215" IsEditable="True" SelectionChanged="cbbCarName_SelectionChanged"/>
+        <ComboBox x:Name="cbbCarModel" DisplayMemberPath = "CAR_MODEL" SelectedValuePath ="CAR_MODEL" HorizontalAlignment="Left" Margin="114,94,0,0" VerticalAlignment="Top" Width="196" IsEditable="True" SelectionChanged="cbbCarModel_SelectionChanged"/>
+        <ComboBox x:Name="cbbCarEngine" DisplayMemberPath = "CAR_ENGINE" SelectedValuePath ="CAR_ENGINE" HorizontalAlignment="Left" Margin="395,94,0,0" VerticalAlignment="Top" Width="215" IsEditable="True"/>
+        <Image x:Name="btnImport" HorizontalAlignment="Left" Height="42" Margin="743,80,0,0" VerticalAlignment="Top" Width="41" Source="/DJBroker.WindowApp;component/Image/ExcelImport.png" MouseLeftButtonDown="Excel_MouseLeftButtonDown"/>
+        <Image HorizontalAlignment="Left" Height="42" Margin="675,19,0,0" VerticalAlignment="Top" Width="41" Source="/DJBroker.WindowApp;component/Image/refresh.png" MouseLeftButtonDown="Reset_MouseLeftButtonDown"/>
+    </Grid>
+</UserControl>
