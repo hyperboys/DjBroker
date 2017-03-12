@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace DJBroker.DAL
 {
     public class DBbase
     {
-        protected static MySqlConnection con;
+        protected static SqlConnection con;
         private static string server;
         private static string database;
         private static string uid;
@@ -19,16 +19,16 @@ namespace DJBroker.DAL
         {
             try
             {
-                server = "mysql-5.5.chaiyohosting.com";
-                database = "ibscbroker";
-                uid = "ibscbroker";
-                password = "93Nuu1@z";
+                server = @".\SQLEXPRESS2008R2";
+                database = "DJBrokerCar";
+                uid = "sa";
+                password = "admin2000";
 
                 string connectionString;
                 connectionString = "SERVER=" + server + ";" + "DATABASE=" +
                 database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-                con = new MySqlConnection(connectionString);
+                con = new SqlConnection(connectionString);
                 con.Open();
             }
             catch (Exception ex) 

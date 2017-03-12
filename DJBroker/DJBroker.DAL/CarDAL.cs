@@ -1,6 +1,5 @@
 ﻿using DJBroker.Common;
 using DJBroker.Model;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,18 +19,18 @@ namespace DJBroker.DAL
                 DBbase.Connect();
                 string sql = @"SELECT CAR_ID,CAR_CODE,CAR_NAME,CAR_MODEL,CAR_ENGINE,CAR_REMARK,CAR_STATUS FROM MA_CAR WHERE
                 CAR_CODE = '" + carCode + "' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "' AND CAR_ENGINE = '" + carEngine + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
                     CarData item = new CarData();
-                    item.CAR_ID = Convert.ToInt32(reader.GetString("CAR_ID"));
-                    item.CAR_CODE = reader.GetString("CAR_CODE");
-                    item.CAR_NAME = reader.GetString("CAR_NAME");
-                    item.CAR_MODEL = reader.GetString("CAR_MODEL");
-                    item.CAR_ENGINE = reader.GetString("CAR_ENGINE");
-                    item.CAR_REMARK = reader.GetString("CAR_REMARK");
-                    item.CAR_STATUS = reader.GetString("CAR_STATUS");
+                    item.CAR_ID = Convert.ToInt32(reader["CAR_ID"].ToString());
+                    item.CAR_CODE = reader["CAR_CODE"].ToString();
+                    item.CAR_NAME = reader["CAR_NAME"].ToString();
+                    item.CAR_MODEL = reader["CAR_MODEL"].ToString();
+                    item.CAR_ENGINE = reader["CAR_ENGINE"].ToString();
+                    item.CAR_REMARK = reader["CAR_REMARK"].ToString();
+                    item.CAR_STATUS = reader["CAR_STATUS"].ToString();
                     reader.Close();
                     return item;
                 }
@@ -53,18 +52,18 @@ namespace DJBroker.DAL
                 DBbase.Connect();
                 string sql = @"SELECT CAR_ID,CAR_CODE,CAR_NAME,CAR_MODEL,CAR_ENGINE,CAR_REMARK,CAR_STATUS FROM MA_CAR WHERE
                 CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "' AND CAR_ENGINE = '" + carEngine + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
                     CarData item = new CarData();
-                    item.CAR_ID = Convert.ToInt32(reader.GetString("CAR_ID"));
-                    item.CAR_CODE = reader.GetString("CAR_CODE");
-                    item.CAR_NAME = reader.GetString("CAR_NAME");
-                    item.CAR_MODEL = reader.GetString("CAR_MODEL");
-                    item.CAR_ENGINE = reader.GetString("CAR_ENGINE");
-                    item.CAR_REMARK = reader.GetString("CAR_REMARK");
-                    item.CAR_STATUS = reader.GetString("CAR_STATUS");
+                    item.CAR_ID = Convert.ToInt32(reader["CAR_ID"].ToString());
+                    item.CAR_CODE = reader["CAR_CODE"].ToString();
+                    item.CAR_NAME = reader["CAR_NAME"].ToString();
+                    item.CAR_MODEL = reader["CAR_MODEL"].ToString();
+                    item.CAR_ENGINE = reader["CAR_ENGINE"].ToString();
+                    item.CAR_REMARK = reader["CAR_REMARK"].ToString();
+                    item.CAR_STATUS = reader["CAR_STATUS"].ToString();
                     reader.Close();
                     return item;
                 }
@@ -99,7 +98,7 @@ namespace DJBroker.DAL
                 sql.Append(" '" + DateTime.Now + "',");
                 sql.Append(" '" + member.MEMBER_USER + "')");
                
-                MySqlCommand cmd = new MySqlCommand(sql.ToString(), DBbase.con);
+                SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
             }
             catch (SqlException exception)
@@ -137,7 +136,7 @@ namespace DJBroker.DAL
                 sql.Append(" AND CAR_ENGINE = '" + oldItem.CAR_ENGINE + "'");
                 sql.Append(" AND CAR_MODEL = '" + oldItem.CAR_MODEL + "'");
                 sql.Append(" AND CAR_NAME = '" + oldItem.CAR_NAME + "'");
-                MySqlCommand cmd = new MySqlCommand(sql.ToString(), DBbase.con);
+                SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -152,8 +151,8 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT CAR_CODE,CAR_NAME,CAR_MODEL,CAR_ENGINE,CAR_STATUS FROM MA_CAR ORDER BY CAR_CODE";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 DataSet ds = new DataSet();
                 DataTable dataTable = new DataTable();
                 ds.Tables.Add(dataTable);
@@ -174,8 +173,8 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT DISTINCT CAR_NAME FROM MA_CAR WHERE CAR_STATUS = 'A'";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 DataSet ds = new DataSet();
                 DataTable dataTable = new DataTable();
                 ds.Tables.Add(dataTable);
@@ -196,8 +195,8 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT DISTINCT CAR_MODEL FROM MA_CAR WHERE CAR_STATUS = 'A' AND CAR_NAME = '" + carName + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 DataSet ds = new DataSet();
                 DataTable dataTable = new DataTable();
                 ds.Tables.Add(dataTable);
@@ -218,8 +217,8 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT DISTINCT CAR_ENGINE FROM MA_CAR WHERE CAR_STATUS = 'A' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 DataSet ds = new DataSet();
                 DataTable dataTable = new DataTable();
                 ds.Tables.Add(dataTable);

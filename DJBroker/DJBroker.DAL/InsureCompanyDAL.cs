@@ -1,9 +1,9 @@
 ﻿using DJBroker.Common;
 using DJBroker.Model;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,17 +18,17 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT COMPANY_CODE,COMPANY_FULLNAME,COMPANY_PATH_PIC,COMPANY_REMARK,COMPANY_SHORTNAME,COMPANY_STATUS FROM MA_INSURE_COMPANY WHERE COMPANY_CODE = '" + code + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
                     InsureCompanyData item = new InsureCompanyData();
-                    item.COMPANY_CODE = reader.GetString("COMPANY_CODE");
-                    item.COMPANY_FULLNAME = reader.GetString("COMPANY_FULLNAME");
-                    item.COMPANY_PATH_PIC = reader.GetString("COMPANY_PATH_PIC");
-                    item.COMPANY_REMARK = reader.GetString("COMPANY_REMARK");
-                    item.COMPANY_SHORTNAME = reader.GetString("COMPANY_SHORTNAME");
-                    item.COMPANY_STATUS = reader.GetString("COMPANY_STATUS");
+                    item.COMPANY_CODE = reader["COMPANY_CODE"].ToString();
+                    item.COMPANY_FULLNAME = reader["COMPANY_FULLNAME"].ToString();
+                    item.COMPANY_PATH_PIC = reader["COMPANY_PATH_PIC"].ToString();
+                    item.COMPANY_REMARK = reader["COMPANY_REMARK"].ToString();
+                    item.COMPANY_SHORTNAME = reader["COMPANY_SHORTNAME"].ToString();
+                    item.COMPANY_STATUS = reader["COMPANY_STATUS"].ToString();
                     reader.Close();
                     return item;
                 }
@@ -49,8 +49,8 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT COMPANY_CODE FROM MA_INSURE_COMPANY WHERE COMPANY_CODE = '" + code + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
                     return true;
@@ -72,11 +72,11 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT COMPANY_CODE FROM MA_INSURE_COMPANY WHERE COMPANY_FULLNAME = '" + name + "'";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    string stringReturn = reader.GetString("COMPANY_CODE");
+                    string stringReturn = reader["COMPANY_CODE"].ToString();
                     reader.Close();
                     return stringReturn;
                 }
@@ -111,7 +111,7 @@ namespace DJBroker.DAL
                 sql.Append(" '" + DateTime.Now + "',");
                 sql.Append(" '" + member.MEMBER_USER + "')");
                
-                MySqlCommand cmd = new MySqlCommand(sql.ToString(), DBbase.con);
+                SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -136,7 +136,7 @@ namespace DJBroker.DAL
                 sql.Append(" UPDATE_DATE = '" + DateTime.Now + "',");
                 sql.Append(" UPDATE_USER = '" + member.MEMBER_USER + "'");
                 sql.Append(" WHERE COMPANY_CODE = '" + item.COMPANY_CODE.ToUpper() + "'");
-                MySqlCommand cmd = new MySqlCommand(sql.ToString(), DBbase.con);
+                SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -151,8 +151,8 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT COMPANY_CODE,COMPANY_FULLNAME,COMPANY_STATUS FROM MA_INSURE_COMPANY ORDER BY COMPANY_CODE";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 DataSet ds = new DataSet();
                 DataTable dataTable = new DataTable();
                 ds.Tables.Add(dataTable);
@@ -173,8 +173,8 @@ namespace DJBroker.DAL
             {
                 DBbase.Connect();
                 string sql = "SELECT COMPANY_FULLNAME FROM MA_INSURE_COMPANY ORDER BY COMPANY_CODE";
-                MySqlCommand cmd = new MySqlCommand(sql, DBbase.con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 DataSet ds = new DataSet();
                 DataTable dataTable = new DataTable();
                 ds.Tables.Add(dataTable);
