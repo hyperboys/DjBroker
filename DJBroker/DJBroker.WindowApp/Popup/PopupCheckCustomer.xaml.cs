@@ -37,10 +37,11 @@ namespace DJBroker.WindowApp.Popup
                 txtTel.Text = item.CUSTOMER_TEL;
 
                 member = (MemberData)DataCommon.Get("DATA.MEMBER");
-                if (member.ROLE_CODE.Equals("admin"))
+                if (member.ROLE_CODE.Equals("ADMIN"))
                 {
                     btnCancel.Visibility = System.Windows.Visibility.Hidden;
                     btnSave.Visibility = System.Windows.Visibility.Hidden;
+                    btnPing.Visibility = System.Windows.Visibility.Visible;
                 }
             }
             catch (Exception ex)
@@ -84,6 +85,27 @@ namespace DJBroker.WindowApp.Popup
                 {
                     item.REMARK = txtRemark.Text;
                     item.SELECT_INSURANCE_STATUS = "04";
+                    new CheckInsureCarDAL().UpdateComplete(item);
+                    MessageBox.Show("บันทึกข้อมูลสำเร็จ");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnPing_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("ยืนยันการบันทึกข้อมูล", "การตีกลับข้อมูล", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    item.REMARK = txtRemark.Text;
+                    item.SELECT_INSURANCE_STATUS = "01";
+                    item.UPDATE_USER = "";
+                    item.CREATE_USER = "";
                     new CheckInsureCarDAL().UpdateComplete(item);
                     MessageBox.Show("บันทึกข้อมูลสำเร็จ");
                     this.Close();

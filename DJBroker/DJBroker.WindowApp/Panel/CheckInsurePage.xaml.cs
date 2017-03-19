@@ -69,7 +69,7 @@ namespace DJBroker.WindowApp.Panel
                 cbbCarName.ItemsSource = listCar.DefaultView;
 
                 member = (MemberData)DataCommon.Get("DATA.MEMBER");
-                if (!member.ROLE_CODE.Equals("admin"))
+                if (!member.ROLE_CODE.Equals("ADMIN"))
                 {
                     cbbStatus.Visibility = System.Windows.Visibility.Hidden;
                     lblStatus.Visibility = System.Windows.Visibility.Hidden;
@@ -94,7 +94,7 @@ namespace DJBroker.WindowApp.Panel
             try
             {
                 DataTable listItem;
-                if (member.ROLE_CODE.Equals("admin"))
+                if (member.ROLE_CODE.Equals("ADMIN"))
                 {
                     listItem = new CheckInsureCarDAL().GetAll();
                 }

@@ -34,7 +34,7 @@ namespace DJBroker.WindowApp.Panel
                 cbbCarName.ItemsSource = listCar.DefaultView;
 
                 MemberData member = (MemberData)DataCommon.Get("DATA.MEMBER");
-                if (!member.ROLE_CODE.Equals("admin"))
+                if (!member.ROLE_CODE.ToUpper().Equals("ADMIN"))
                 {
                     btnImport.Visibility = System.Windows.Visibility.Hidden;
                     btnAdd.Visibility = System.Windows.Visibility.Hidden;
@@ -110,7 +110,7 @@ namespace DJBroker.WindowApp.Panel
                 DataCommon.Set("INSURE_CAR_EDIT", item);
                 PopupInsureCar pop;
                 MemberData member = (MemberData)DataCommon.Get("DATA.MEMBER");
-                if (!member.ROLE_CODE.Equals("admin"))
+                if (!member.ROLE_CODE.Equals("ADMIN"))
                 {
                     pop = new PopupInsureCar("VIEW");
                 }

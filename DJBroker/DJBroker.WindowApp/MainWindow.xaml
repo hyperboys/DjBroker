@@ -21,7 +21,7 @@
         </Button>
         <Button x:Name="btnMember" Width="Auto" Margin="36,575,922,42" Click="btnMember_Click">
             <StackPanel Orientation="Vertical">
-                <Image Source="Image/admin.png" Width="70" Height="36"/>
+                <Image Source="Image/ADMIN.png" Width="70" Height="36"/>
                 <Label Content="ระบบสมาชิก" Height="26" />
             </StackPanel>
         </Button>

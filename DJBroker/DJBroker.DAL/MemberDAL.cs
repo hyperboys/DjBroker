@@ -113,9 +113,9 @@ namespace DJBroker.DAL
                 sql.Append(" '" + item.MEMBER_STATUS + "',");
                 sql.Append(" '" + item.ROLE_CODE + "',");
 
-                sql.Append(" '" + DateTime.Now + "',");
+                sql.Append(" '" + DateTime.Now.ToString("yyyy-MM-dd") + "',");
                 sql.Append(" '" + member.MEMBER_USER + "',");
-                sql.Append(" '" + DateTime.Now + "',");
+                sql.Append(" '" + DateTime.Now.ToString("yyyy-MM-dd") + "',");
                 sql.Append(" '" + member.MEMBER_USER + "')");
                
 
@@ -141,7 +141,7 @@ namespace DJBroker.DAL
                 sql.Append(" MEMBER_PASSWORD = '" + item.MEMBER_PASSWORD + "',");
                 sql.Append(" ROLE_CODE = '" + item.ROLE_CODE + "',");
                 sql.Append(" MEMBER_STATUS = '" + item.MEMBER_STATUS + "',");
-                sql.Append(" UPDATE_DATE = '" + DateTime.Now + "',");
+                sql.Append(" UPDATE_DATE = '" + DateTime.Now.ToString("yyyy-MM-dd") + "',");
                 sql.Append(" UPDATE_USER = '" + member.MEMBER_USER + "'");
                 sql.Append(" WHERE MEMBER_USER = '" + item.MEMBER_USER + "'");
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);

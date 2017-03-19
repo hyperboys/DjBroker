@@ -197,7 +197,6 @@ namespace DJBroker.DAL
                 sql.Append(" LIVE_COVERAGE_PEOPLE = '" + newItem.LIVE_COVERAGE_PEOPLE + "',");
                 sql.Append(" LIVE_COVERAGE_TIME = '" + newItem.LIVE_COVERAGE_TIME + "',");
                 sql.Append(" ASSET_TIME = '" + newItem.ASSET_TIME + "',");
-                sql.Append(" INSURE_TYPE_REPAIR = '" + newItem.INSURE_TYPE_REPAIR + "',");
                 sql.Append(" DAMAGE_TO_VEHICLE = '" + newItem.DAMAGE_TO_VEHICLE + "',");
                 sql.Append(" MISSING_FIRE_CAR = '" + newItem.MISSING_FIRE_CAR + "',");
                 sql.Append(" FIRST_DAMAGE_PRICE = '" + newItem.FIRST_DAMAGE_PRICE + "',");
@@ -244,7 +243,6 @@ namespace DJBroker.DAL
                 sql.Append(" LIVE_COVERAGE_PEOPLE = '" + newItem.LIVE_COVERAGE_PEOPLE + "',");
                 sql.Append(" LIVE_COVERAGE_TIME = '" + newItem.LIVE_COVERAGE_TIME + "',");
                 sql.Append(" ASSET_TIME = '" + newItem.ASSET_TIME + "',");
-                sql.Append(" INSURE_TYPE_REPAIR = '" + newItem.INSURE_TYPE_REPAIR + "',");
                 sql.Append(" DAMAGE_TO_VEHICLE = '" + newItem.DAMAGE_TO_VEHICLE + "',");
                 sql.Append(" MISSING_FIRE_CAR = '" + newItem.MISSING_FIRE_CAR + "',");
                 sql.Append(" FIRST_DAMAGE_PRICE = '" + newItem.FIRST_DAMAGE_PRICE + "',");
