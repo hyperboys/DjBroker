@@ -117,11 +117,12 @@ namespace DJBroker.WindowApp.Popup
             {
                 int index = 1;
                 List<InsureCarData> listItem = (List<InsureCarData>)DataCommon.Get("ListInsureCarData");
+                MemberData member = (MemberData)DataCommon.Get("DATA.MEMBER");
                 foreach (InsureCarData item in listItem)
                 {
 
                     (sender as BackgroundWorker).ReportProgress(index);
-                    MemberData member = (MemberData)DataCommon.Get("DATA.MEMBER");
+                   
                     InsureCarData tmp = new InsureCarData();
                     tmp.ASSET_TIME = item.ASSET_TIME;
                     tmp.CAPITAL_INSURANCE = item.CAPITAL_INSURANCE;
@@ -196,6 +197,97 @@ namespace DJBroker.WindowApp.Popup
                     }
                     index++;
                     Thread.Sleep(100);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        void ProcessDatabase()
+        {
+            try
+            {
+                int index = 3;
+                List<InsureCarData> listItem = (List<InsureCarData>)DataCommon.Get("ListInsureCarData");
+                MemberData member = (MemberData)DataCommon.Get("DATA.MEMBER");
+                foreach (InsureCarData item in listItem)
+                {
+                    InsureCarData tmp = new InsureCarData();
+                    tmp.ASSET_TIME = item.ASSET_TIME;
+                    tmp.CAPITAL_INSURANCE = item.CAPITAL_INSURANCE;
+
+                    if (comDal.CheckItem(item.COMPANY_CODE))
+                    {
+                        tmp.COMPANY_CODE = item.COMPANY_CODE;
+                    }
+                    else
+                    {
+                        tmp.EXCEPTION = "รหัสบริษัทไม่มีในระบบ" + "ในบรรทัดที่ :" + index;
+                    }
+
+                    tmp.CAR_CODE = item.CAR_CODE;
+                    tmp.CAR_ENGINE = item.CAR_ENGINE;
+                    tmp.CAR_MODEL = item.CAR_MODEL;
+                    tmp.CAR_NAME = item.CAR_NAME;
+                    tmp.CAR_YEAR = item.CAR_YEAR;
+                    CarData tmpCar = carDal.GetItem(tmp.CAR_CODE, tmp.CAR_NAME, tmp.CAR_MODEL);
+                    if (tmpCar != null)
+                    {
+                        tmp.CAR_ID = tmpCar.CAR_ID;
+                    }
+                    else
+                    {
+                        tmp.EXCEPTION = "ไม่มีข้อมูลรหัสรถยนต์ : " + tmp.CAR_CODE + ", รถยนต์ยี่ห้อ : " + tmp.CAR_NAME + ", รุ่นรถยนต์ : " + tmp.CAR_MODEL + ", เครื่องยนต์ : " + tmp.CAR_ENGINE + "   ในบรรทัดที่ :" + index;
+                    }
+
+                    tmp.COMPANY_FULLNAME = item.COMPANY_FULLNAME;
+                    tmp.CONFIDENTIAL_STATUS = item.CONFIDENTIAL_STATUS;
+                    tmp.CREATE_DATE = item.CREATE_DATE;
+                    tmp.CREATE_USER = item.CREATE_USER;
+                    tmp.DAMAGE_TO_VEHICLE = item.DAMAGE_TO_VEHICLE;
+                    tmp.DRIVER_INSURANCE_AMT = item.DRIVER_INSURANCE_AMT;
+                    tmp.EFFECTIVE_DATE = item.EFFECTIVE_DATE;
+                    tmp.EXPIRE_DATE = item.EXPIRE_DATE;
+                    tmp.FIRST_DAMAGE_PRICE = item.FIRST_DAMAGE_PRICE;
+                    tmp.INSURE_CAR_CODE = item.INSURE_CAR_CODE;
+                    tmp.INSURE_CAR_STATUS = item.INSURE_CAR_STATUS;
+                    tmp.INSURE_CATEGORY = item.INSURE_CATEGORY;
+                    tmp.INSURE_PRIORITY = item.INSURE_PRIORITY;
+                    tmp.INSURE_TYPE_REPAIR = item.INSURE_TYPE_REPAIR;
+                    tmp.LIVE_COVERAGE_PEOPLE = item.LIVE_COVERAGE_PEOPLE;
+                    tmp.LIVE_COVERAGE_TIME = item.LIVE_COVERAGE_TIME;
+                    tmp.MEDICAL_FEE_AMT = item.MEDICAL_FEE_AMT;
+                    tmp.MEDICAL_FEE_PEOPLE = item.MEDICAL_FEE_PEOPLE;
+                    tmp.MISSING_FIRE_CAR = item.MISSING_FIRE_CAR;
+                    tmp.NET_PRICE = item.NET_PRICE;
+                    tmp.PACKAGE_NAME = item.PACKAGE_NAME;
+                    tmp.PERSONAL_ACCIDENT_AMT = item.PERSONAL_ACCIDENT_AMT;
+                    tmp.PERSONAL_ACCIDENT_PEOPLE = item.PERSONAL_ACCIDENT_PEOPLE;
+                    tmp.PRICE_ROUND = item.PRICE_ROUND;
+                    tmp.TOTAL_PRICE = item.TOTAL_PRICE;
+                    tmp.UPDATE_DATE = item.UPDATE_DATE;
+                    tmp.UPDATE_USER = item.UPDATE_USER;
+                    tmp.INSURE_CAR_STATUS = "A";
+
+                    if (tmp.EXCEPTION != "")
+                    {
+                        items.Add(new TextError() { Error = tmp.EXCEPTION });
+                    }
+                    else
+                    {
+                        if (insureDal.CheckItem(tmp))
+                        {
+                            insureDal.UpdateOnExcel(tmp);
+                        }
+                        else
+                        {
+                            insureDal.Insert(tmp);
+                        }
+                    }
+                    index++;
                 }
             }
             catch (Exception ex)
