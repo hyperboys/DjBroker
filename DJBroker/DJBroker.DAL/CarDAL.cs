@@ -21,6 +21,7 @@ namespace DJBroker.DAL
                 CAR_CODE = '" + carCode + "' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "' AND CAR_ENGINE = '" + carEngine + "'";
                 SqlCommand cmd = new SqlCommand(sql, DBbase.con);
                 SqlDataReader reader = cmd.ExecuteReader();
+                DBbase.DisConnect();
                 if (reader.Read())
                 {
                     CarData item = new CarData();
@@ -32,10 +33,12 @@ namespace DJBroker.DAL
                     item.CAR_REMARK = reader["CAR_REMARK"].ToString();
                     item.CAR_STATUS = reader["CAR_STATUS"].ToString();
                     reader.Close();
+                    DBbase.DisConnect();
                     return item;
                 }
                 else
                 {
+                    DBbase.DisConnect();
                     return null;
                 }
             }
@@ -65,6 +68,7 @@ namespace DJBroker.DAL
                     item.CAR_REMARK = reader["CAR_REMARK"].ToString();
                     item.CAR_STATUS = reader["CAR_STATUS"].ToString();
                     reader.Close();
+                    DBbase.DisConnect();
                     return item;
                 }
                 else
@@ -100,6 +104,7 @@ namespace DJBroker.DAL
                
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (SqlException exception)
             {
@@ -138,6 +143,7 @@ namespace DJBroker.DAL
                 sql.Append(" AND CAR_NAME = '" + oldItem.CAR_NAME + "'");
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (Exception ex)
             {
@@ -159,6 +165,7 @@ namespace DJBroker.DAL
                 ds.EnforceConstraints = false;
                 dataTable.Load(reader);
                 reader.Close();
+                DBbase.DisConnect();
                 return dataTable;
             }
             catch (Exception ex)
@@ -181,6 +188,7 @@ namespace DJBroker.DAL
                 ds.EnforceConstraints = false;
                 dataTable.Load(reader);
                 reader.Close();
+                DBbase.DisConnect();
                 return dataTable;
             }
             catch (Exception ex)
@@ -203,6 +211,7 @@ namespace DJBroker.DAL
                 ds.EnforceConstraints = false;
                 dataTable.Load(reader);
                 reader.Close();
+                DBbase.DisConnect();
                 return dataTable;
             }
             catch (Exception ex)
@@ -225,6 +234,7 @@ namespace DJBroker.DAL
                 ds.EnforceConstraints = false;
                 dataTable.Load(reader);
                 reader.Close();
+                DBbase.DisConnect();
                 return dataTable;
             }
             catch (Exception ex)

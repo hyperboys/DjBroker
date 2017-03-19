@@ -35,6 +35,7 @@ namespace DJBroker.DAL
                 ds.EnforceConstraints = false;
                 dataTable.Load(reader);
                 reader.Close();
+                DBbase.DisConnect();
                 return dataTable;
             }
             catch (Exception ex)
@@ -99,6 +100,7 @@ namespace DJBroker.DAL
                     item.COMPANY_CODE = reader["COMPANY_CODE"].ToString();
                     item.INSURE_PRIORITY = Convert.ToInt32(reader["INSURE_PRIORITY"].ToString());
                     reader.Close();
+                    DBbase.DisConnect();
                     return item;
                 }
                 else
@@ -168,6 +170,7 @@ namespace DJBroker.DAL
 
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (Exception ex)
             {
@@ -218,6 +221,7 @@ namespace DJBroker.DAL
                 sql.Append(" WHERE INSURE_CAR_CODE = '" + oldItem.INSURE_CAR_CODE + "'");
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (Exception ex)
             {
@@ -269,6 +273,7 @@ namespace DJBroker.DAL
                 sql.Append(" AND 	CAR_YEAR = '" + newItem.CAR_YEAR + "'");
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (Exception ex)
             {
@@ -298,10 +303,12 @@ namespace DJBroker.DAL
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
+                    DBbase.DisConnect();
                     return true;
                 }
                 else
                 {
+                    DBbase.DisConnect();
                     return false;
                 }
             }

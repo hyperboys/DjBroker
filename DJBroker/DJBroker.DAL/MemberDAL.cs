@@ -22,10 +22,12 @@ namespace DJBroker.DAL
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
+                    DBbase.DisConnect();
                     return true;
                 }
                 else
                 {
+                    DBbase.DisConnect();
                     return false;
                 }
             }
@@ -53,6 +55,7 @@ namespace DJBroker.DAL
                     member.MEMBER_STATUS =reader["MEMBER_STATUS"].ToString();
                     member.ROLE_CODE =reader["ROLE_CODE"].ToString();
                     reader.Close();
+                    DBbase.DisConnect();
                     return member;
                 }
                 else
@@ -84,6 +87,7 @@ namespace DJBroker.DAL
                     member.MEMBER_STATUS = reader["MEMBER_STATUS"].ToString();
                     member.ROLE_CODE = reader["ROLE_CODE"].ToString();
                     reader.Close();
+                    DBbase.DisConnect();
                     return member;
                 }
                 else
@@ -121,6 +125,7 @@ namespace DJBroker.DAL
 
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (Exception ex)
             {
@@ -146,6 +151,7 @@ namespace DJBroker.DAL
                 sql.Append(" WHERE MEMBER_USER = '" + item.MEMBER_USER + "'");
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (Exception ex)
             {
@@ -167,6 +173,7 @@ namespace DJBroker.DAL
                 ds.EnforceConstraints = false;
                 dataTable.Load(reader);
                 reader.Close();
+                DBbase.DisConnect();
                 return dataTable;
             }
             catch (Exception ex)

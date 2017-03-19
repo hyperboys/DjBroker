@@ -39,6 +39,7 @@ namespace DJBroker.DAL
                 ds.EnforceConstraints = false;
                 dataTable.Load(reader);
                 reader.Close();
+                DBbase.DisConnect();
                 return dataTable;
             }
             catch (Exception ex)
@@ -75,6 +76,7 @@ namespace DJBroker.DAL
                 ds.EnforceConstraints = false;
                 dataTable.Load(reader);
                 reader.Close();
+                DBbase.DisConnect();
                 return dataTable;
             }
             catch (Exception ex)
@@ -96,11 +98,13 @@ namespace DJBroker.DAL
                 {
                     stringReturn = reader["SELECT_INSURANCE_STATUS"].ToString();
                     reader.Close();
+                    DBbase.DisConnect();
                     return stringReturn;
                 }
                 else
                 {
                     reader.Close();
+                    DBbase.DisConnect();
                     return stringReturn;
                 }
             }
@@ -123,11 +127,13 @@ namespace DJBroker.DAL
                 {
                     stringReturn = reader["SELECT_INSURANCE_STATUS"].ToString();
                     reader.Close();
+                    DBbase.DisConnect();
                     return stringReturn;
                 }
                 else
                 {
                     reader.Close();
+                    DBbase.DisConnect();
                     return stringReturn;
                 }
             }
@@ -163,6 +169,7 @@ namespace DJBroker.DAL
                     item.REMARK = reader["REMARK"].ToString();
                     item.CREATE_DATE = Convert.ToDateTime(reader["CREATE_DATE"].ToString());
                     reader.Close();
+                    DBbase.DisConnect();
                     return item;
                 }
                 else
@@ -203,6 +210,7 @@ namespace DJBroker.DAL
                     item.REMARK = reader["REMARK"].ToString();
                     item.CREATE_DATE = Convert.ToDateTime(reader["CREATE_DATE"].ToString());
                     reader.Close();
+                    DBbase.DisConnect();
                     return item;
                 }
                 else
@@ -231,6 +239,7 @@ namespace DJBroker.DAL
                 sql.Append(" WHERE SELECT_INSURANCE_CODE = '" + code + "'");
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (Exception ex)
             {
@@ -254,6 +263,7 @@ namespace DJBroker.DAL
                 sql.Append(" WHERE SELECT_INSURANCE_CODE = '" + item.SELECT_INSURANCE_CODE + "'");
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
+                DBbase.DisConnect();
             }
             catch (Exception ex)
             {

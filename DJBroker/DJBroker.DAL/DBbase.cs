@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace DJBroker.DAL
 {
@@ -19,10 +20,10 @@ namespace DJBroker.DAL
         {
             try
             {
-                server = @".\SQLEXPRESS2008R2";
+                server = @".\SQLSERVER2008R2";
                 database = "DJBrokerCar";
                 uid = "sa";
-                password = "admin2000";
+                password = "1234";
 
                 string connectionString;
                 connectionString = "SERVER=" + server + ";" + "DATABASE=" +
@@ -30,8 +31,24 @@ namespace DJBroker.DAL
 
                 con = new SqlConnection(connectionString);
                 con.Open();
+
             }
-            catch (Exception ex) 
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected static void DisConnect()
+        {
+            try
+            {
+                if (con != null && con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }

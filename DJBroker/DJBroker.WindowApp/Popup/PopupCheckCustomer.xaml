@@ -16,7 +16,7 @@
         <Label Content="ชื่อ - นามสกุล" HorizontalAlignment="Left" Margin="35,74,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="txtName" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="133,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" FontSize="14"/>
         <Button x:Name="btnCancel" Content="ข้อมูลเท็จ" HorizontalAlignment="Left" Margin="298,330,0,0" VerticalAlignment="Top" Width="81" Height="35" Click="btnCancel_Click" FontSize="14"/>
-        <Button x:Name="btnPing" Content="ตีเรื่องกลับ" HorizontalAlignment="Left" Margin="133,330,0,0" VerticalAlignment="Top" Width="81" Height="35" Click="btnPing_Click" FontSize="14"/>
+        <Button x:Name="btnPing" Content="ตีเรื่องกลับ" HorizontalAlignment="Left" Margin="133,330,0,0" VerticalAlignment="Top" Width="81" Height="35" Click="btnPing_Click" FontSize="14" Visibility="Hidden"/>
 
     </Grid>
 </Window>

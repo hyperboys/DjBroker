@@ -12,7 +12,7 @@
         <Label Content="Role" HorizontalAlignment="Left" Margin="281,77,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" FontSize="14"/>
         <ComboBox x:Name="cbbRole" HorizontalAlignment="Left" Margin="326,77,0,0" VerticalAlignment="Top" Width="171" FontSize="14">
             <ComboBoxItem Content="กรุณาเลือก" IsSelected="True"/>
-            <ComboBoxItem Content="ADMIN"/>
+            <ComboBoxItem Content="Admin"/>
             <ComboBoxItem Content="Member"/>
         </ComboBox>
         <Button Name="btnSave" Content="บันทึก" HorizontalAlignment="Left" Margin="416,126,0,0" VerticalAlignment="Top" Width="81" Height="35" Click="btnSave_Click" FontSize="14"/>
