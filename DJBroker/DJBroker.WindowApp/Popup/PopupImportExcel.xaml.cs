@@ -1,14 +1,13 @@
 ﻿using DJBroker.Common;
 using DJBroker.DAL;
 using DJBroker.Model;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -17,7 +16,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DJBroker.WindowApp.Popup
@@ -28,10 +26,8 @@ namespace DJBroker.WindowApp.Popup
     public partial class PopupImportExcel : Window
     {
         private static List<TextError> items;
-        //private static int ROWS = 100;
         private static CarDAL carDal;
         private static InsureCompanyDAL comDal;
-        private static BackgroundWorker worker;
         private static InsureCarDAL insureDal;
         public PopupImportExcel()
         {
@@ -39,7 +35,6 @@ namespace DJBroker.WindowApp.Popup
             {
                 InitializeComponent();
                 items = new List<TextError>();
-                SetTimer();
             }
             catch (Exception ex)
             {
@@ -52,17 +47,9 @@ namespace DJBroker.WindowApp.Popup
             try
             {
                 Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-                // Set filter for file extension and default file extension 
-                //dlg.DefaultExt = ".png";
-                //dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
-
-                // Display OpenFileDialog by calling ShowDialog method 
                 Nullable<bool> result = dlg.ShowDialog();
-                // Get the selected file name and display in a TextBox 
                 if (result == true)
                 {
-                    // Open document 
                     string filename = dlg.FileName;
                     txtPath.Text = filename;
                     btnStart.IsEnabled = true;
@@ -78,14 +65,17 @@ namespace DJBroker.WindowApp.Popup
         {
             try
             {
+                WaitProcess wp = new WaitProcess();
+                wp.ShowDialog();
                 carDal = new CarDAL();
                 comDal = new InsureCompanyDAL();
                 insureDal = new InsureCarDAL();
                 List<InsureCarData> listItem = ReadExcel(txtPath.Text);
                 DataCommon.Set("ListInsureCarData", listItem);
-                progressBar.Maximum = listItem.Count();
-                Process();
+                ProcessDatabase();
                 btnClose.IsEnabled = true;
+                btnSelect.IsEnabled = true;
+                wp.Close();
             }
             catch (Exception ex)
             {
@@ -93,36 +83,17 @@ namespace DJBroker.WindowApp.Popup
             }
         }
 
-        /// <summary>
-        /// Background Worker
-        /// </summary>
-        private void Process()
-        {
-            worker = new BackgroundWorker();
-            worker.WorkerReportsProgress = true;
-            worker.DoWork += worker_DoWork;
-            worker.ProgressChanged += worker_ProgressChanged;
-
-            worker.RunWorkerAsync();
-        }
-
-        /// <summary>
-        /// Insert & Update Database
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void worker_DoWork(object sender, DoWorkEventArgs e)
+        private void ProcessDatabase()
         {
             try
             {
-                int index = 1;
+                int index = 3;
                 List<InsureCarData> listItem = (List<InsureCarData>)DataCommon.Get("ListInsureCarData");
                 MemberData member = (MemberData)DataCommon.Get("DATA.MEMBER");
+                List<InsureCarData> listInsert = new List<InsureCarData>();
+
                 foreach (InsureCarData item in listItem)
                 {
-
-                    (sender as BackgroundWorker).ReportProgress(index);
-                   
                     InsureCarData tmp = new InsureCarData();
                     tmp.ASSET_TIME = item.ASSET_TIME;
                     tmp.CAPITAL_INSURANCE = item.CAPITAL_INSURANCE;
@@ -134,6 +105,7 @@ namespace DJBroker.WindowApp.Popup
                     else
                     {
                         tmp.EXCEPTION = "รหัสบริษัทไม่มีในระบบ" + "ในบรรทัดที่ :" + index;
+                        item.EXCEPTION_INDEX = index;
                     }
 
                     tmp.CAR_CODE = item.CAR_CODE;
@@ -141,14 +113,15 @@ namespace DJBroker.WindowApp.Popup
                     tmp.CAR_MODEL = item.CAR_MODEL;
                     tmp.CAR_NAME = item.CAR_NAME;
                     tmp.CAR_YEAR = item.CAR_YEAR;
-                    CarData tmpCar = carDal.GetItem(tmp.CAR_CODE, tmp.CAR_NAME, tmp.CAR_MODEL, tmp.CAR_ENGINE);
+                    CarData tmpCar = carDal.GetItemForExcel(tmp.CAR_CODE, tmp.CAR_NAME, tmp.CAR_MODEL);
                     if (tmpCar != null)
                     {
                         tmp.CAR_ID = tmpCar.CAR_ID;
                     }
                     else
                     {
-                        tmp.EXCEPTION = "ไม่มีข้อมูลรหัสรถยนต์ : " + tmp.CAR_CODE + ", รถยนต์ยี่ห้อ : " + tmp.CAR_NAME + ", รุ่นรถยนต์ : " + tmp.CAR_MODEL + ", เครื่องยนต์ : " + tmp.CAR_ENGINE + "   ในบรรทัดที่ :" + index;
+                        tmp.EXCEPTION = "ไม่มีข้อมูลรหัสรถยนต์ : " + tmp.CAR_CODE + ", รถยนต์ยี่ห้อ : " + tmp.CAR_NAME + ", รุ่นรถยนต์ : " + tmp.CAR_MODEL + "   ในบรรทัดที่ :" + index;
+                        item.EXCEPTION_INDEX = index;
                     }
 
                     tmp.COMPANY_FULLNAME = item.COMPANY_FULLNAME;
@@ -182,7 +155,7 @@ namespace DJBroker.WindowApp.Popup
 
                     if (tmp.EXCEPTION != "")
                     {
-                        items.Add(new TextError() { Error = tmp.EXCEPTION });
+                        items.Add(new TextError() { Error = tmp.EXCEPTION, Index = tmp.EXCEPTION_INDEX.ToString() });
                     }
                     else
                     {
@@ -190,20 +163,33 @@ namespace DJBroker.WindowApp.Popup
                         {
                             insureDal.UpdateOnExcel(tmp);
                         }
-                        else 
+                        else
                         {
-                            insureDal.Insert(tmp);
+                            listInsert.Add(tmp);
                         }
                     }
                     index++;
-                    Thread.Sleep(100);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
 
+<<<<<<< .mine
+                if (listInsert.Count > 0)
+||||||| .r2
+        }
+
+        #region getROWS
+        public int getROWS(string pathExcel)
+        {
+            try
+            {
+                Excel.Application xlApp;
+                Excel.Workbook xlWorkBook;
+                Excel.Range range;
+                int rows = 0;
+                bool start = false;
+                xlApp = new Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Open(pathExcel, 0, true, 5, "", "", true, Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+                foreach (Excel.Worksheet xlWorkSheet in xlWorkBook.Worksheets)
+=======
         }
 
         void ProcessDatabase()
@@ -310,41 +296,16 @@ namespace DJBroker.WindowApp.Popup
                 xlApp = new Excel.Application();
                 xlWorkBook = xlApp.Workbooks.Open(pathExcel, 0, true, 5, "", "", true, Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
                 foreach (Excel.Worksheet xlWorkSheet in xlWorkBook.Worksheets)
+>>>>>>> .r7
                 {
-                    range = xlWorkSheet.UsedRange;
-                    for (int row = 1; row <= range.Rows.Count; row++)
-                    {
-
-                        if (Convert.ToString(range.Cells[row, EXCEL_DATA.COMPANY_CODE].Value) == "#S")
-                        {
-                            start = true;
-                            continue;
-                        }
-                        else if (Convert.ToString((range.Cells[row, EXCEL_DATA.COMPANY_CODE] as Excel.Range).Text) == "#E")
-                        {
-                            start = false;
-                            break;
-                        }
-                        if (start)
-                        {
-                            rows++;
-                        }
-                    }
+                    insureDal.InsertList(listInsert);
                 }
-                xlWorkBook.Close(0);
-                xlApp.Quit();
-                return rows;
+                ReloadDataForReFresh();
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.ToString());
             }
-        }
-        #endregion
-
-        void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBar.Value = e.ProgressPercentage;
         }
 
         private void txtPath_TextChanged(object sender, TextChangedEventArgs e)
@@ -414,6 +375,7 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.COMPANY_CODE] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลรหัสบริษัทในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -424,6 +386,7 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.EFFECTIVE_DATE] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลวันที่มีผลในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -434,6 +397,7 @@ namespace DJBroker.WindowApp.Popup
                                 else
                                 {
                                     item.EXCEPTION = "ไม่มีข้อมูลวันที่มีผลผิดในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                    item.EXCEPTION_INDEX = row;
                                 }
                             }
 
@@ -441,6 +405,7 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.EXPIRE_DATE] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลวันที่สิ้นสุดในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -451,6 +416,7 @@ namespace DJBroker.WindowApp.Popup
                                 else
                                 {
                                     item.EXCEPTION = "ไม่มีข้อมูลวันที่มีผลผิดในบรรทัดที่ " + row + "ของ Sheet :" + xlWorkSheet.Name;
+                                    item.EXCEPTION_INDEX = row;
                                 }
                             }
 
@@ -470,6 +436,7 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.PACKAGE_NAME] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลชื่อ Package ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -480,6 +447,7 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.CAR_CODE] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลรหัสรถยนต์ ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -490,6 +458,7 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.CAR_NAME] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลยี่ห้อรถยนต์ ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -500,26 +469,18 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.CAR_MODEL] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลรุ่นรถยนต์ ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
                                 item.CAR_MODEL = Convert.ToString((range.Cells[row, EXCEL_DATA.CAR_MODEL] as Excel.Range).Text).ToUpper();
                             }
 
-                            //CAR_ENGINE     
-                            if (Convert.ToString((range.Cells[row, EXCEL_DATA.CAR_ENGINE] as Excel.Range).Text) == "")
-                            {
-                                item.EXCEPTION = "ไม่มีข้อมูลเครื่องยนต์ ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
-                            }
-                            else
-                            {
-                                item.CAR_ENGINE = Convert.ToString((range.Cells[row, EXCEL_DATA.CAR_ENGINE] as Excel.Range).Text).ToUpper();
-                            }
-
                             //CAR_YEAR     
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.CAR_YEAR] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลปีรถยนต์ ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -530,6 +491,7 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.INSURE_CATEGORY] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลประเภทประกันรถยนต์ ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -540,6 +502,7 @@ namespace DJBroker.WindowApp.Popup
                             if (Convert.ToString((range.Cells[row, EXCEL_DATA.INSURE_TYPE_REPAIR] as Excel.Range).Text) == "")
                             {
                                 item.EXCEPTION = "ไม่มีข้อมูลประเภทการซ่อม ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
                             else
                             {
@@ -556,6 +519,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล เบี้ยสุทธิ ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //TOTAL_PRICE   
@@ -568,6 +532,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล เบี้ยรวม ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //PRICE_ROUND    
@@ -580,6 +545,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล เบี้ยกลม ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //CAPITAL_INSURANCE    
@@ -592,6 +558,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล ทุนประกันภัย ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //CONFIDENTIAL_STATUS      
@@ -614,6 +581,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล ชีวิต ร่างกาย หรืออนามัย /คน ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //LIVE_COVERAGE_TIME    
@@ -626,6 +594,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล ชีวิต ร่างกาย หรืออนามัย /ครั้ง ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //ASSET_TIME    
@@ -638,6 +607,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล ทรัพย์สิน/ครั้ง ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //DAMAGE_TO_VEHICLE    
@@ -650,6 +620,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล ความเสียหายต่อรถยนต์ ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //MISSING_FIRE_CAR    
@@ -662,6 +633,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล รถยนต์สูญหาย/ไฟไหม้ ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //FIRST_DAMAGE_PRICE    
@@ -674,6 +646,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล ค่าความเสียหายส่วนแรก ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //PERSONAL_ACCIDENT_AMT    
@@ -686,6 +659,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล อุบัติเหตุส่วนบุคคล ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //PERSONAL_ACCIDENT_PEOPLE    
@@ -698,6 +672,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล จำนวนคน/อุบัติเหตุส่วนบุคคล ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //MEDICAL_FEE_AMT    
@@ -710,6 +685,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล ค่ารักษาพยาบาล ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //MEDICAL_FEE_PEOPLE    
@@ -722,6 +698,7 @@ namespace DJBroker.WindowApp.Popup
                             else
                             {
                                 item.EXCEPTION = "ข้อมูล จำนวนคน/ค่ารักษาพยาบาล ไม่ได้เป็นตัวเลข ในบรรทัดที่ " + row + " ของ Sheet :" + xlWorkSheet.Name;
+                                item.EXCEPTION_INDEX = row;
                             }
 
                             //DRIVER_INSURANCE_AMT    
@@ -738,10 +715,7 @@ namespace DJBroker.WindowApp.Popup
 
                             if (item.EXCEPTION != "")
                             {
-                                items.Add(new TextError() { Error = item.EXCEPTION });
-
-                                viewError.ItemsSource = items;
-                                viewError.Items.Refresh();
+                                items.Add(new TextError() { Error = item.EXCEPTION, Index = item.EXCEPTION_INDEX.ToString() });
                             }
                             else
                             {
@@ -774,23 +748,36 @@ namespace DJBroker.WindowApp.Popup
             }
         }
 
-        protected void dispatcherTimer_Tick(object sender, EventArgs e)
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
         {
-            ReloadDataForReFresh();
-        }
+            try
+            {
+                StringBuilder textDate = new StringBuilder();
+                string path = string.Empty;
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                do
+                {
+                    saveFileDialog.ShowDialog();
+                    path = saveFileDialog.FileName;
 
-        private void SetTimer()
-        {
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
-            dispatcherTimer.Start();
-        }
+                } while (path == string.Empty);
 
+                foreach (TextError item in items)
+                {
+                    textDate.AppendLine(item.Error);
+                }
+                System.IO.File.WriteAllText(path + ".txt", textDate.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 
     public class TextError
     {
         public string Error { get; set; }
+        public string Index { get; set; }
     }
 }

@@ -174,6 +174,7 @@ namespace DJBroker.DAL
                 }
                 else
                 {
+                    DBbase.DisConnect();
                     return null;
                 }
             }
@@ -215,6 +216,7 @@ namespace DJBroker.DAL
                 }
                 else
                 {
+                    DBbase.DisConnect();
                     return null;
                 }
             }

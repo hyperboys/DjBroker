@@ -73,6 +73,42 @@ namespace DJBroker.DAL
                 }
                 else
                 {
+                    DBbase.DisConnect();
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public CarData GetItemForExcel(string carCode, string carName, string carModel)
+        {
+            try
+            {
+                DBbase.Connect();
+                string sql = @"SELECT CAR_ID,CAR_CODE,CAR_NAME,CAR_MODEL,CAR_ENGINE,CAR_REMARK,CAR_STATUS FROM MA_CAR WHERE
+                CAR_CODE = '" + carCode + "' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "' ";
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    CarData item = new CarData();
+                    item.CAR_ID = Convert.ToInt32(reader["CAR_ID"].ToString());
+                    item.CAR_CODE = reader["CAR_CODE"].ToString();
+                    item.CAR_NAME = reader["CAR_NAME"].ToString();
+                    item.CAR_MODEL = reader["CAR_MODEL"].ToString();
+                    item.CAR_ENGINE = reader["CAR_ENGINE"].ToString();
+                    item.CAR_REMARK = reader["CAR_REMARK"].ToString();
+                    item.CAR_STATUS = reader["CAR_STATUS"].ToString();
+                    reader.Close();
+                    DBbase.DisConnect();
+                    return item;
+                }
+                else
+                {
+                    DBbase.DisConnect();
                     return null;
                 }
             }

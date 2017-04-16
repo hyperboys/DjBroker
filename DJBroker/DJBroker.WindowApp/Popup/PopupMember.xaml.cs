@@ -29,6 +29,11 @@ namespace DJBroker.WindowApp.Popup
             try
             {
                 InitializeComponent();
+                MemberData member = (MemberData)DataCommon.Get("DATA.MEMBER");
+                if (member.ROLE_CODE.ToUpper() == "ADMIN") 
+                {
+                    btnReset.Visibility = Visibility.Visible;
+                }
                 if (DataCommon.Exists("MEMBER_EDIT"))
                 {
                     member = (MemberData)DataCommon.Get("MEMBER_EDIT");
@@ -41,6 +46,7 @@ namespace DJBroker.WindowApp.Popup
                 else
                 {
                     txtUser.IsEnabled = true;
+                    btnReset.Visibility = Visibility.Hidden;
                 }
             }
             catch (Exception ex)
@@ -53,7 +59,7 @@ namespace DJBroker.WindowApp.Popup
         {
             try
             {
-                if (txtName.Text == "") 
+                if (txtName.Text == "")
                 {
                     MessageBox.Show("กรุณากรอก ชื่อ");
                     return;
@@ -118,6 +124,24 @@ namespace DJBroker.WindowApp.Popup
                         this.Close();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MemberDAL dal = new MemberDAL();
+                member = (MemberData)DataCommon.Get("MEMBER_EDIT");
+                member.MEMBER_PASSWORD = member.MEMBER_USER;
+                dal.UpdateMember(member);
+                DataCommon.Remove("MEMBER_EDIT");
+                MessageBox.Show("บันทึกข้อมูลสำเร็จ");
+                this.Close();
             }
             catch (Exception ex)
             {

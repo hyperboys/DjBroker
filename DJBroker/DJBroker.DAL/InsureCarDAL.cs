@@ -29,6 +29,40 @@ namespace DJBroker.DAL
                 FROM MA_INSURE_CAR A INNER JOIN MA_CAR C ON A.CAR_ID = C.CAR_ID INNER JOIN MA_INSURE_COMPANY I ON A.COMPANY_CODE = I.COMPANY_CODE";
                 SqlCommand cmd = new SqlCommand(sql, DBbase.con);
                 SqlDataReader reader = cmd.ExecuteReader();
+
+                DataSet ds = new DataSet();
+                DataTable dataTable = new DataTable();
+                ds.Tables.Add(dataTable);
+                ds.EnforceConstraints = false;
+                dataTable.Load(reader);
+                reader.Close();
+                DBbase.DisConnect();
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable GetAllCondition(string carYear, string carName, string carModel, string carEngine)
+        {
+            try
+            {
+                DBbase.Connect();
+                string sql = @"SELECT A.INSURE_CAR_CODE, A.COMPANY_CODE, A.PACKAGE_NAME, A.CAR_ID,
+                 A.INSURE_CATEGORY, A.INSURE_TYPE_REPAIR, A.CAR_YEAR, A.LIVE_COVERAGE_PEOPLE,
+                 A.LIVE_COVERAGE_TIME, A.ASSET_TIME, A.DAMAGE_TO_VEHICLE,
+                 A.MISSING_FIRE_CAR, A.FIRST_DAMAGE_PRICE, A.PERSONAL_ACCIDENT_AMT,
+                 A.PERSONAL_ACCIDENT_PEOPLE, A.MEDICAL_FEE_AMT, A.MEDICAL_FEE_PEOPLE, 
+                 A.DRIVER_INSURANCE_AMT, A.NET_PRICE, A.TOTAL_PRICE, A.PRICE_ROUND,
+                 A.CAPITAL_INSURANCE, A.INSURE_PRIORITY, A.EFFECTIVE_DATE, A.EXPIRE_DATE,
+                 A.CONFIDENTIAL_STATUS, A.CREATE_DATE, A.CREATE_USER, A.UPDATE_DATE,
+                 A.UPDATE_USER, A.INSURE_CAR_STATUS, C.CAR_CODE,C.CAR_NAME,C.CAR_MODEL,C.CAR_ENGINE,C.CAR_IMAGE ,I.COMPANY_FULLNAME, I.COMPANY_CODE, I.COMPANY_PATH_PIC 
+                FROM MA_INSURE_CAR A INNER JOIN MA_CAR C ON A.CAR_ID = C.CAR_ID INNER JOIN MA_INSURE_COMPANY I ON A.COMPANY_CODE = I.COMPANY_CODE
+               WHERE A.INSURE_CAR_STATUS = 'A' AND A.CAR_YEAR ='" + carYear + "' AND C.CAR_NAME = '" + carName + "' AND C.CAR_MODEL = '" + carModel + "' AND C.CAR_ENGINE = '" + carEngine + "' AND A.INSURE_PRIORITY = 999"
+                                                                  + " ORDER BY I.COMPANY_CODE ";
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
                 DataSet ds = new DataSet();
                 DataTable dataTable = new DataTable();
                 ds.Tables.Add(dataTable);
@@ -105,6 +139,7 @@ namespace DJBroker.DAL
                 }
                 else
                 {
+                    DBbase.DisConnect();
                     return null;
                 }
             }
@@ -178,6 +213,92 @@ namespace DJBroker.DAL
             }
         }
 
+        public void InsertList(List<InsureCarData> listItem)
+        {
+            try
+            {
+                MemberData member = (MemberData)DataCommon.Get("DATA.MEMBER");
+                int row = 1;
+
+                SqlCommand cmd;
+                string query = "";
+
+                StringBuilder sql;
+                foreach (InsureCarData item in listItem)
+                {
+                    DBbase.Connect();
+                    sql = new StringBuilder();
+                    sql.Append(@"INSERT INTO MA_INSURE_CAR (INSURE_CAR_CODE, COMPANY_CODE, PACKAGE_NAME, CAR_ID, INSURE_CATEGORY,INSURE_TYPE_REPAIR,CAR_YEAR,LIVE_COVERAGE_PEOPLE,
+                LIVE_COVERAGE_TIME,ASSET_TIME,DAMAGE_TO_VEHICLE,MISSING_FIRE_CAR,FIRST_DAMAGE_PRICE,PERSONAL_ACCIDENT_AMT,PERSONAL_ACCIDENT_PEOPLE,MEDICAL_FEE_AMT,
+                MEDICAL_FEE_PEOPLE,DRIVER_INSURANCE_AMT,NET_PRICE,TOTAL_PRICE,PRICE_ROUND,CAPITAL_INSURANCE,INSURE_PRIORITY,EFFECTIVE_DATE,EXPIRE_DATE,CONFIDENTIAL_STATUS,
+                INSURE_CAR_STATUS,CREATE_DATE,CREATE_USER,UPDATE_DATE,UPDATE_USER)  VALUES ");
+                    string INSURE_CAR_CODE = DateTime.Now.ToString("yyyyMMdd") + "-" + item.COMPANY_CODE.ToUpper() + "-" + item.PACKAGE_NAME;
+                    INSURE_CAR_CODE += "-" + item.CAR_ID + "-" + item.INSURE_CATEGORY;
+                    INSURE_CAR_CODE += (item.INSURE_TYPE_REPAIR == "ศูนย์") ? "C" : "G" + "-" + item.CAR_YEAR;
+
+                    sql.Append("( '" + INSURE_CAR_CODE + "',");
+                    sql.Append(" '" + item.COMPANY_CODE.ToUpper() + "',");
+                    sql.Append(" '" + item.PACKAGE_NAME + "',");
+                    sql.Append(" '" + item.CAR_ID + "',");
+                    sql.Append(" '" + item.INSURE_CATEGORY + "',");
+                    sql.Append(" '" + item.INSURE_TYPE_REPAIR + "',");
+
+                    sql.Append(" '" + item.CAR_YEAR + "',");
+                    sql.Append(" '" + item.LIVE_COVERAGE_PEOPLE + "',");
+                    sql.Append(" '" + item.LIVE_COVERAGE_TIME + "',");
+                    sql.Append(" '" + item.ASSET_TIME + "',");
+                    sql.Append(" '" + item.DAMAGE_TO_VEHICLE + "',");
+
+                    sql.Append(" '" + item.MISSING_FIRE_CAR + "',");
+                    sql.Append(" '" + item.FIRST_DAMAGE_PRICE + "',");
+                    sql.Append(" '" + item.PERSONAL_ACCIDENT_AMT + "',");
+                    sql.Append(" '" + item.PERSONAL_ACCIDENT_PEOPLE + "',");
+                    sql.Append(" '" + item.MEDICAL_FEE_AMT + "',");
+
+                    sql.Append(" '" + item.MEDICAL_FEE_PEOPLE + "',");
+                    sql.Append(" '" + item.DRIVER_INSURANCE_AMT + "',");
+                    sql.Append(" '" + item.NET_PRICE + "',");
+                    sql.Append(" '" + item.TOTAL_PRICE + "',");
+                    sql.Append(" '" + item.PRICE_ROUND + "',");
+
+                    sql.Append(" '" + item.CAPITAL_INSURANCE + "',");
+                    sql.Append(" '" + item.INSURE_PRIORITY + "',");
+                    sql.Append(" '" + ConvertCommon.ConvertDateTime(item.EFFECTIVE_DATE) + "',");
+                    sql.Append(" '" + ConvertCommon.ConvertDateTime(item.EXPIRE_DATE) + "',");
+                    sql.Append(" '" + item.CONFIDENTIAL_STATUS + "',");
+
+                    sql.Append(" '" + item.INSURE_CAR_STATUS + "',");
+                    sql.Append(" '" + ConvertCommon.ConvertDateTime(DateTime.Now) + "',");
+                    sql.Append(" '" + member.MEMBER_USER + "',");
+                    sql.Append(" '" + ConvertCommon.ConvertDateTime(DateTime.Now) + "',");
+                    sql.Append(" '" + member.MEMBER_USER + "') ");
+
+                    row++;
+
+                    try
+                    {
+                        query = sql.ToString();
+                        cmd = new SqlCommand(query.Remove(query.Length - 1), DBbase.con);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException exception)
+                    {
+                        if (exception.Number == 1062) // Cannot insert duplicate key row in object error
+                        {
+
+                        }
+                        else
+                            throw exception; // throw exception if this exception is unexpected
+                    }
+                    DBbase.DisConnect();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void Update(InsureCarData oldItem, InsureCarData newItem)
         {
             try
@@ -200,6 +321,7 @@ namespace DJBroker.DAL
                 sql.Append(" LIVE_COVERAGE_PEOPLE = '" + newItem.LIVE_COVERAGE_PEOPLE + "',");
                 sql.Append(" LIVE_COVERAGE_TIME = '" + newItem.LIVE_COVERAGE_TIME + "',");
                 sql.Append(" ASSET_TIME = '" + newItem.ASSET_TIME + "',");
+                sql.Append(" INSURE_TYPE_REPAIR = '" + newItem.INSURE_TYPE_REPAIR + "',");
                 sql.Append(" DAMAGE_TO_VEHICLE = '" + newItem.DAMAGE_TO_VEHICLE + "',");
                 sql.Append(" MISSING_FIRE_CAR = '" + newItem.MISSING_FIRE_CAR + "',");
                 sql.Append(" FIRST_DAMAGE_PRICE = '" + newItem.FIRST_DAMAGE_PRICE + "',");
@@ -247,6 +369,7 @@ namespace DJBroker.DAL
                 sql.Append(" LIVE_COVERAGE_PEOPLE = '" + newItem.LIVE_COVERAGE_PEOPLE + "',");
                 sql.Append(" LIVE_COVERAGE_TIME = '" + newItem.LIVE_COVERAGE_TIME + "',");
                 sql.Append(" ASSET_TIME = '" + newItem.ASSET_TIME + "',");
+                sql.Append(" INSURE_TYPE_REPAIR = '" + newItem.INSURE_TYPE_REPAIR + "',");
                 sql.Append(" DAMAGE_TO_VEHICLE = '" + newItem.DAMAGE_TO_VEHICLE + "',");
                 sql.Append(" MISSING_FIRE_CAR = '" + newItem.MISSING_FIRE_CAR + "',");
                 sql.Append(" FIRST_DAMAGE_PRICE = '" + newItem.FIRST_DAMAGE_PRICE + "',");
@@ -315,6 +438,98 @@ namespace DJBroker.DAL
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public DataTable GetComboBoxCarYear()
+        {
+            try
+            {
+                DBbase.Connect();
+                string sql = "SELECT DISTINCT CAR_YEAR FROM MA_INSURE_CAR WHERE INSURE_CAR_STATUS = 'A'";
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataSet ds = new DataSet();
+                DataTable dataTable = new DataTable();
+                ds.Tables.Add(dataTable);
+                ds.EnforceConstraints = false;
+                dataTable.Load(reader);
+                reader.Close();
+                DBbase.DisConnect();
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable GetComboBoxCarName(string carYear)
+        {
+            try
+            {
+                DBbase.Connect();
+                string sql = "SELECT DISTINCT C.CAR_NAME FROM MA_INSURE_CAR I INNER JOIN MA_CAR C ON I.CAR_ID = C.CAR_ID WHERE INSURE_CAR_STATUS = 'A' AND CAR_YEAR ='" + carYear + "'";
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataSet ds = new DataSet();
+                DataTable dataTable = new DataTable();
+                ds.Tables.Add(dataTable);
+                ds.EnforceConstraints = false;
+                dataTable.Load(reader);
+                reader.Close();
+                DBbase.DisConnect();
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public DataTable GetComboBoxCarModel(string carYear, string carName)
+        {
+            try
+            {
+                DBbase.Connect();
+                string sql = "SELECT DISTINCT C.CAR_MODEL FROM MA_INSURE_CAR I INNER JOIN MA_CAR C ON I.CAR_ID = C.CAR_ID WHERE INSURE_CAR_STATUS = 'A' AND CAR_YEAR ='" + carYear + "' AND CAR_NAME = '" + carName + "'";
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataSet ds = new DataSet();
+                DataTable dataTable = new DataTable();
+                ds.Tables.Add(dataTable);
+                ds.EnforceConstraints = false;
+                dataTable.Load(reader);
+                reader.Close();
+                DBbase.DisConnect();
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public DataTable GetComboBoxCarEngine(string carYear, string carName, string carModel)
+        {
+            try
+            {
+                DBbase.Connect();
+                string sql = "SELECT DISTINCT C.CAR_ENGINE FROM MA_INSURE_CAR I INNER JOIN MA_CAR C ON I.CAR_ID = C.CAR_ID WHERE INSURE_CAR_STATUS = 'A' AND CAR_YEAR ='" + carYear + "' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "'";
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataSet ds = new DataSet();
+                DataTable dataTable = new DataTable();
+                ds.Tables.Add(dataTable);
+                ds.EnforceConstraints = false;
+                dataTable.Load(reader);
+                reader.Close();
+                DBbase.DisConnect();
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
     }

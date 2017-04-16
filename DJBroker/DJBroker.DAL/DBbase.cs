@@ -20,11 +20,18 @@ namespace DJBroker.DAL
         {
             try
             {
-                server = @".\SQLSERVER2008R2";
+
+#if DEBUG
+                server = @".\SQLEXPRESS2008R2";
                 database = "DJBrokerCar";
                 uid = "sa";
                 password = "1234";
-
+#else
+                server = @"dandj-server";
+                database = "testdata";
+                uid = "testdata";
+                password = "test12345";
+#endif
                 string connectionString;
                 connectionString = "SERVER=" + server + ";" + "DATABASE=" +
                 database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -43,7 +50,7 @@ namespace DJBroker.DAL
         {
             try
             {
-                if (con != null && con.State == ConnectionState.Open)
+                if (con.State == ConnectionState.Open)
                 {
                     con.Close();
                 }

@@ -92,6 +92,7 @@ namespace DJBroker.DAL
                 }
                 else
                 {
+                    DBbase.DisConnect();
                     return null;
                 }
             }
@@ -110,7 +111,7 @@ namespace DJBroker.DAL
                 DBbase.Connect();
                 StringBuilder sql = new StringBuilder();
                 sql.Append("INSERT INTO MA_MEMBER (MEMBER_USER,MEMBER_PASSWORD,MEMBER_NAME,MEMBER_SURENAME,MEMBER_STATUS,ROLE_CODE,CREATE_DATE,CREATE_USER,UPDATE_DATE,UPDATE_USER) VALUES (");
-                sql.Append(" '" + item.MEMBER_USER.ToUpper() + "',");
+                sql.Append(" '" + item.MEMBER_USER + "',");
                 sql.Append(" '" + item.MEMBER_PASSWORD + "',");
                 sql.Append(" '" + item.MEMBER_NAME + "',");
                 sql.Append(" '" + item.MEMBER_SURENAME + "',");
