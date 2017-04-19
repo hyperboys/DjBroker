@@ -37,7 +37,7 @@ namespace DJBroker.WindowApp.Popup
                 txtTel.Text = item.AGENT_TEL + "," + item.AGENT_PHONE;
                 txtAgentCode.Text = item.AGENT_CODE;
                 member = (MemberData)DataCommon.Get("DATA.MEMBER");
-                if (member.ROLE_CODE.Equals("ADMIN"))
+                if (member.ROLE_CODE.ToUpper().Equals("ADMIN"))
                 {
                     btnCancel.Visibility = System.Windows.Visibility.Hidden;
                     btnSave.Visibility = System.Windows.Visibility.Hidden;

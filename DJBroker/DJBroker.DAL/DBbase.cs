@@ -25,7 +25,7 @@ namespace DJBroker.DAL
                 server = @".\SQLEXPRESS2008R2";
                 database = "DJBrokerCar";
                 uid = "sa";
-                password = "1234";
+                password = "admin2000";
 #else
                 server = @"dandj-server";
                 database = "testdata";

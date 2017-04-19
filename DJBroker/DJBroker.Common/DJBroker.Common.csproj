@@ -7,8 +7,8 @@
     <ProjectGuid>{BB167141-E9B8-4D63-9E18-C6EC4BD9E7AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IBSC.Common</RootNamespace>
-    <AssemblyName>IBSC.Common</AssemblyName>
+    <RootNamespace>DJBroker.Common</RootNamespace>
+    <AssemblyName>DJBroker.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

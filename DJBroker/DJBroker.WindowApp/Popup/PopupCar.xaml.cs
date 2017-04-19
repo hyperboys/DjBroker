@@ -35,7 +35,6 @@ namespace DJBroker.WindowApp.Popup
                     txtCarCode.Text = item.CAR_CODE;
                     txtCarName.Text = item.CAR_NAME;
                     txtCarModel.Text = item.CAR_MODEL;
-                    txtCarEngine.Text = item.CAR_ENGINE;
                     txtCarRemark.Text = item.CAR_REMARK;
                     cbbStatus.SelectedIndex = item.CAR_STATUS == "A" ? 0 : 1;
                 }
@@ -69,11 +68,7 @@ namespace DJBroker.WindowApp.Popup
                     MessageBox.Show("กรุณากรอก รุ่นรถยนต์");
                     return;
                 }
-                if (txtCarEngine.Text == "")
-                {
-                    MessageBox.Show("กรุณากรอก เครื่องรถยนต์");
-                    return;
-                }
+               
                 if (MessageBox.Show("ยืนยันการบันทึกข้อมูล", "การบันทึกข้อมูล", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
                     bool complete = false;
@@ -84,7 +79,7 @@ namespace DJBroker.WindowApp.Popup
 
                         CarData newItem = new CarData();
                         newItem.CAR_CODE = txtCarCode.Text.ToUpper();
-                        newItem.CAR_ENGINE = txtCarEngine.Text.ToUpper();
+                        
                         newItem.CAR_MODEL = txtCarModel.Text.ToUpper();
                         newItem.CAR_NAME = txtCarName.Text.ToUpper();
                         newItem.CAR_REMARK = txtCarRemark.Text;
@@ -96,11 +91,11 @@ namespace DJBroker.WindowApp.Popup
                     }
                     else
                     {
-                        if (dal.GetItem(txtCarCode.Text, txtCarName.Text, txtCarModel.Text, txtCarEngine.Text) == null)
+                        if (dal.GetItemCode(txtCarCode.Text, txtCarName.Text, txtCarModel.Text) == null)
                         {
                             item = new CarData();
                             item.CAR_CODE = txtCarCode.Text.ToUpper();
-                            item.CAR_ENGINE = txtCarEngine.Text.ToUpper();
+                           
                             item.CAR_MODEL = txtCarModel.Text.ToUpper();
                             item.CAR_NAME = txtCarName.Text.ToUpper();
                             item.CAR_REMARK = txtCarRemark.Text;

@@ -14,9 +14,7 @@
             <ComboBoxItem Content="ไม่ใช้งาน"/>
         </ComboBox>
         <Label Content="รุ่นรถยนต์" HorizontalAlignment="Left" Margin="34,66,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="เครื่องยนต์" HorizontalAlignment="Left" Margin="252,69,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <TextBox x:Name="txtCarModel" HorizontalAlignment="Left" Height="23" Margin="100,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontSize="14"/>
-        <TextBox x:Name="txtCarEngine" HorizontalAlignment="Left" Height="23" Margin="319,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="14"/>
+        <TextBox x:Name="txtCarModel" HorizontalAlignment="Left" Height="23" Margin="100,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" FontSize="14"/>
         <Label Content="หมายเหตุ" HorizontalAlignment="Left" Margin="34,102,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox x:Name="txtCarRemark" HorizontalAlignment="Left" Height="79" Margin="100,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" HorizontalScrollBarVisibility="Visible" Grid.RowSpan="10" FontSize="14"/>
 

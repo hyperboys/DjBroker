@@ -92,7 +92,7 @@ namespace DJBroker.WindowApp.Popup
                     {
                         member = (MemberData)DataCommon.Get("MEMBER_EDIT");
                         member.MEMBER_NAME = txtName.Text;
-                        member.ROLE_CODE = cbbRole.Text.ToLower();
+                        member.ROLE_CODE = cbbRole.Text;
                         member.MEMBER_STATUS = cbbStatus.Text == "ใช้งาน" ? "A" : "I";
                         member.MEMBER_SURENAME = txtSureName.Text;
                         dal.UpdateMember(member);
@@ -105,7 +105,7 @@ namespace DJBroker.WindowApp.Popup
                         {
                             member = new MemberData();
                             member.MEMBER_NAME = txtName.Text;
-                            member.ROLE_CODE = cbbRole.Text.ToLower();
+                            member.ROLE_CODE = cbbRole.Text;
                             member.MEMBER_STATUS = cbbStatus.Text == "ใช้งาน" ? "A" : "I";
                             member.MEMBER_SURENAME = txtSureName.Text;
                             member.MEMBER_PASSWORD = txtUser.Text;

@@ -12,16 +12,15 @@ namespace DJBroker.DAL
 {
     public class CarDAL : DBbase
     {
-        public CarData GetItem(string carCode, string carName, string carModel, string carEngine)
+        public CarData GetItemCode(string carCode, string carName, string carModel)
         {
             try
             {
                 DBbase.Connect();
                 string sql = @"SELECT CAR_ID,CAR_CODE,CAR_NAME,CAR_MODEL,CAR_ENGINE,CAR_REMARK,CAR_STATUS FROM MA_CAR WHERE
-                CAR_CODE = '" + carCode + "' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "' AND CAR_ENGINE = '" + carEngine + "'";
+                CAR_CODE = '" + carCode + "' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "' ";
                 SqlCommand cmd = new SqlCommand(sql, DBbase.con);
                 SqlDataReader reader = cmd.ExecuteReader();
-                DBbase.DisConnect();
                 if (reader.Read())
                 {
                     CarData item = new CarData();
@@ -126,9 +125,8 @@ namespace DJBroker.DAL
 
                 DBbase.Connect();
                 StringBuilder sql = new StringBuilder();
-                sql.Append("INSERT INTO MA_CAR (CAR_CODE,CAR_ENGINE,CAR_MODEL,CAR_NAME,CAR_REMARK,CAR_STATUS,CREATE_DATE,CREATE_USER,UPDATE_DATE,UPDATE_USER) VALUES (");
-                sql.Append(" '" + item.CAR_CODE.ToUpper() + "',");
-                sql.Append(" '" + item.CAR_ENGINE.ToUpper() + "',");
+                sql.Append("INSERT INTO MA_CAR (CAR_CODE,CAR_MODEL,CAR_NAME,CAR_REMARK,CAR_STATUS,CREATE_DATE,CREATE_USER,UPDATE_DATE,UPDATE_USER) VALUES (");
+                sql.Append(" '" + item.CAR_CODE.ToUpper() + "',");   
                 sql.Append(" '" + item.CAR_MODEL.ToUpper() + "',");
                 sql.Append(" '" + item.CAR_NAME.ToUpper() + "',");
                 sql.Append(" '" + item.CAR_REMARK + "',");
@@ -166,7 +164,6 @@ namespace DJBroker.DAL
                 DBbase.Connect();
                 StringBuilder sql = new StringBuilder();
                 sql.Append("UPDATE MA_CAR SET CAR_CODE = '" + newItem.CAR_CODE + "',");
-                sql.Append(" CAR_ENGINE = '" + newItem.CAR_ENGINE + "',");
                 sql.Append(" CAR_MODEL = '" + newItem.CAR_MODEL + "',");
                 sql.Append(" CAR_NAME = '" + newItem.CAR_NAME + "',");
                 sql.Append(" CAR_REMARK = '" + newItem.CAR_REMARK + "',");

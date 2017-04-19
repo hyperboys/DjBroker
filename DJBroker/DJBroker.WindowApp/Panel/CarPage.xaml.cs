@@ -57,8 +57,7 @@ namespace DJBroker.WindowApp.Panel
                 string carCode = ((DataRowView)grdCar.SelectedItem).Row.ItemArray[0].ToString();
                 string carName = ((DataRowView)grdCar.SelectedItem).Row.ItemArray[1].ToString();
                 string carModel = ((DataRowView)grdCar.SelectedItem).Row.ItemArray[2].ToString();
-                string carEngine = ((DataRowView)grdCar.SelectedItem).Row.ItemArray[3].ToString();
-                CarData carItem = new CarDAL().GetItem(carCode, carName,carModel,carEngine);
+                CarData carItem = new CarDAL().GetItemCode(carCode, carName,carModel);
                 DataCommon.Set("CAR_EDIT", carItem);
                 PopupCar pop = new PopupCar();
                 pop.ShowDialog();
@@ -79,7 +78,7 @@ namespace DJBroker.WindowApp.Panel
                                where myRow.Field<string>("CAR_NAME").ToUpper().Contains(txtCarBand.Text.ToUpper())
                                && myRow.Field<string>("CAR_CODE").ToUpper().Contains(txtCarCode.Text.ToUpper())
                                && myRow.Field<string>("CAR_MODEL").ToUpper().Contains(txtCarModel.Text.ToUpper())
-                               && myRow.Field<string>("CAR_STATUS").ToUpper() == (cbbStatus.Text == "ใช้งาน" ? "A" : "I")
+                               && myRow.Field<string>("CAR_STATUS").ToUpper().Contains(cbbStatus.Text == "ใช้งาน" ? "A" : "I")
                                select myRow);
                 if (results.Count() > 0)
                 {

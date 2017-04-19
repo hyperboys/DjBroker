@@ -69,7 +69,7 @@ namespace DJBroker.WindowApp.Panel
                 cbbCarName.ItemsSource = listCar.DefaultView;
 
                 member = (MemberData)DataCommon.Get("DATA.MEMBER");
-                if (!member.ROLE_CODE.Equals("ADMIN"))
+                if (!member.ROLE_CODE.ToUpper().Equals("ADMIN"))
                 {
                     cbbStatus.Visibility = System.Windows.Visibility.Hidden;
                     lblStatus.Visibility = System.Windows.Visibility.Hidden;
@@ -94,7 +94,7 @@ namespace DJBroker.WindowApp.Panel
             try
             {
                 DataTable listItem;
-                if (member.ROLE_CODE.Equals("ADMIN"))
+                if (member.ROLE_CODE.ToUpper().Equals("ADMIN"))
                 {
                     listItem = new CheckInsureCarDAL().GetAll();
                 }
@@ -162,13 +162,13 @@ namespace DJBroker.WindowApp.Panel
                 string code = ((DataRowView)grdInsure.SelectedItem).Row.ItemArray[0].ToString();
 
 
-                if (objDal.CheckStatus(code) != "01" && objDal.CheckOwner(code, member.MEMBER_USER) != "02" && member.ROLE_CODE == "member")
+                if (objDal.CheckStatus(code) != "01" && objDal.CheckOwner(code, member.MEMBER_USER) != "02" && member.ROLE_CODE.ToUpper() == "MEMBER")
                 {
                     MessageBox.Show("มีพนักงานท่ายอื่นดำเนินการแล้ว");
                 }
                 else
                 {
-                    if (member.ROLE_CODE == "member")
+                    if (member.ROLE_CODE.ToUpper() == "MEMBER")
                     {
                         objDal.UpdateStatus(code);
                     }

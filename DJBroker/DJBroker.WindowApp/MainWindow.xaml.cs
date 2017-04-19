@@ -39,7 +39,7 @@ namespace DJBroker.WindowApp
                     lblName.Content = member.MEMBER_NAME + " " + member.MEMBER_SURENAME;
                     lblUsername.Content = member.MEMBER_USER;
 
-                    if (member.ROLE_CODE != "Admin")
+                    if (member.ROLE_CODE.ToUpper() != "ADMIN")
                     {
                         btnMember.Visibility = System.Windows.Visibility.Hidden;
                         btnInsureCompany.Visibility = System.Windows.Visibility.Hidden;

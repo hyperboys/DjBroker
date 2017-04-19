@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="534" d:DesignWidth="833">
     <Grid>
-        <DataGrid x:Name="grdCar" HorizontalAlignment="Left" Margin="56,108,0,0" VerticalAlignment="Top" Height="367" Width="720"
+        <DataGrid x:Name="grdCar" HorizontalAlignment="Left" Margin="29,108,0,0" VerticalAlignment="Top" Height="367" Width="777"
     		IsReadOnly="True" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False"
     		AutoGenerateColumns="False" Loaded="grdCar_Loaded">
             <DataGrid.Columns>
@@ -18,28 +18,27 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Binding="{Binding CAR_CODE}" MinWidth="100" Header="รหัสรถรถยนต์"/>
-                <DataGridTextColumn Binding="{Binding CAR_NAME}" MinWidth="150" Header="ยี่ห้อรถยนต์"/>
-                <DataGridTextColumn Binding="{Binding CAR_MODEL}" MinWidth="150" Header="รุ่นรถยนต์"/>
-                <DataGridTextColumn Binding="{Binding CAR_ENGINE}" MinWidth="100" Header="เครื่อง"/>
+                <DataGridTextColumn Binding="{Binding CAR_NAME}" MinWidth="200" Header="ยี่ห้อรถยนต์"/>
+                <DataGridTextColumn Binding="{Binding CAR_MODEL}" MinWidth="200" Header="รุ่นรถยนต์"/>
                 <DataGridTextColumn Binding="{Binding CAR_STATUS}" MinWidth="50" Header="สถานะ"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="txtCarCode" HorizontalAlignment="Left" Height="23" Margin="122,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
-        <TextBox x:Name="txtCarBand" HorizontalAlignment="Left" Height="23" Margin="277,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
-        <ComboBox x:Name="cbbStatus" HorizontalAlignment="Left" Margin="610,61,0,0" VerticalAlignment="Top" Width="56">
+        <TextBox x:Name="txtCarCode" HorizontalAlignment="Left" Height="23" Margin="93,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="txtCarBand" HorizontalAlignment="Left" Height="23" Margin="249,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+        <ComboBox x:Name="cbbStatus" HorizontalAlignment="Left" Margin="625,61,0,0" VerticalAlignment="Top" Width="80">
             <ComboBox.ItemBindingGroup>
                 <BindingGroup/>
             </ComboBox.ItemBindingGroup>
             <ComboBoxItem Content="ใช้งาน" IsSelected="True"/>
             <ComboBoxItem Content="ไม่ใช้งาน"/>
         </ComboBox>
-        <TextBox x:Name="txtCarModel" HorizontalAlignment="Left" Height="23" Margin="448,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <TextBox x:Name="txtCarModel" HorizontalAlignment="Left" Height="23" Margin="441,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
 
-        <Label Content="รหัสรถยนต์" HorizontalAlignment="Left" Margin="56,56,0,0" VerticalAlignment="Top"/>
-        <Label Content="ยี่ห้อรถยนต์" HorizontalAlignment="Left" Margin="210,56,0,0" VerticalAlignment="Top"/>
-        <Label Content="รุ่นรถยนต์" HorizontalAlignment="Left" Margin="388,57,0,0" VerticalAlignment="Top"/>
-        <Label Content="สถานะ" HorizontalAlignment="Left" Margin="565,56,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="42" Margin="680,56,0,0" VerticalAlignment="Top" Width="41" Source="/DJBroker.WindowApp;component/Image/Search.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
-        <Image HorizontalAlignment="Left" Height="42" Margin="735,56,0,0" VerticalAlignment="Top" Width="41"  Source="/DJBroker.WindowApp;component/Image/addCar.png" MouseLeftButtonDown="Add_MouseLeftButtonDown"/>
+        <Label Content="รหัสรถยนต์" HorizontalAlignment="Left" Margin="27,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="ยี่ห้อรถยนต์" HorizontalAlignment="Left" Margin="182,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="รุ่นรถยนต์" HorizontalAlignment="Left" Margin="381,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="สถานะ" HorizontalAlignment="Left" Margin="580,59,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.008,0.795"/>
+        <Image HorizontalAlignment="Left" Height="42" Margin="710,56,0,0" VerticalAlignment="Top" Width="41" Source="/DJBroker.WindowApp;component/Image/Search.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image HorizontalAlignment="Left" Height="42" Margin="765,56,0,0" VerticalAlignment="Top" Width="41"  Source="/DJBroker.WindowApp;component/Image/addCar.png" MouseLeftButtonDown="Add_MouseLeftButtonDown"/>
     </Grid>
 </UserControl>
