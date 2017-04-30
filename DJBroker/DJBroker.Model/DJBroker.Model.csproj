@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarData.cs" />
+    <Compile Include="ChatClient.cs" />
+    <Compile Include="ChatMessage.cs" />
     <Compile Include="CheckInsureCarData.cs" />
     <Compile Include="EXCEL_DATA.cs" />
     <Compile Include="InsureCompanyData.cs" />

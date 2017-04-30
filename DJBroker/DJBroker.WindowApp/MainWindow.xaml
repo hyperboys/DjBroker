@@ -43,6 +43,12 @@
                 <Label Content="ข้อมูลประกันภัย" Height="26" />
             </StackPanel>
         </Button>
+        <Button x:Name="btnChat" Width="Auto" Margin="34,286,924,331" Click="btnChat_Click" IsEnabled="False">
+            <StackPanel Orientation="Vertical">
+                <Image Source="Image/Message.png" Width="70" Height="36"/>
+                <Label Name="lblChatMenuText" Content="ChatBox" Height="26" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="534" Margin="201,100,0,-87" VerticalAlignment="Top" Width="833">
             <myControls:MemberPage x:Name="pageMember" Visibility="Hidden"></myControls:MemberPage>
         </Border>
@@ -58,11 +64,8 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="534" Margin="201,100,0,-87" VerticalAlignment="Top" Width="833">
             <myControls:InsurePage x:Name="pageInsure" Visibility="Hidden"></myControls:InsurePage>
         </Border>
-        <Button x:Name="btnChat" Width="Auto" Margin="34,286,924,331">
-            <StackPanel Orientation="Vertical">
-                <Image Source="Image/Message.png" Width="70" Height="36"/>
-                <Label Content="ChatBox" Height="26" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </Button>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="534" Margin="201,100,0,-87" VerticalAlignment="Top" Width="833">
+            <myControls:AllChatsPage x:Name="pageChat" Visibility="Hidden" />
+        </Border>
     </Grid>
 </Window>
