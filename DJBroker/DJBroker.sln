@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJBroker.Model", "DJBroker.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJBroker.Common", "DJBroker.Common\DJBroker.Common.csproj", "{BB167141-E9B8-4D63-9E18-C6EC4BD9E7AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DJBroker.Web", "DJBroker.Web\DJBroker.Web.csproj", "{AEAF24E7-7B62-44BA-9370-CF7F0F75F01A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{BB167141-E9B8-4D63-9E18-C6EC4BD9E7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB167141-E9B8-4D63-9E18-C6EC4BD9E7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB167141-E9B8-4D63-9E18-C6EC4BD9E7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEAF24E7-7B62-44BA-9370-CF7F0F75F01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEAF24E7-7B62-44BA-9370-CF7F0F75F01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEAF24E7-7B62-44BA-9370-CF7F0F75F01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEAF24E7-7B62-44BA-9370-CF7F0F75F01A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
