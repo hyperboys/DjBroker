@@ -69,6 +69,7 @@
     <Content Include="img\avatar2.png" />
     <Content Include="img\avatar3.png" />
     <Content Include="img\avatar4.png" />
+    <Content Include="img\logo\logoDJ.png" />
     <Content Include="img\parallax1.png" />
     <Content Include="img\project1.jpg" />
     <Content Include="img\project2.jpeg" />
@@ -115,7 +116,6 @@
     <Content Include="font\roboto\Roboto-Thin.ttf" />
     <Content Include="font\roboto\Roboto-Thin.woff" />
     <Content Include="font\roboto\Roboto-Thin.woff2" />
-    <Content Include="contact.php" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
