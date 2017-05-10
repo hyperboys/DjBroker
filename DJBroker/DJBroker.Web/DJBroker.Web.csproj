@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets3\script\main.min.js" />
+    <Content Include="assets3\style\main.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\materialize.css" />
     <Content Include="css\materialize.min.css" />
