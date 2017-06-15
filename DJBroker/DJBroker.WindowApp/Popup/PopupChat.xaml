@@ -1,7 +1,7 @@
 ﻿<Window x:Class="DJBroker.WindowApp.Popup.PopupChat"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Chat" Height="300" Width="400" WindowStartupLocation="CenterOwner">
+        Title="Chat" Height="300" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
         <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="224" Margin="10,10,0,0" VerticalAlignment="Top" Width="374" ScrollViewer.VerticalScrollBarVisibility="Visible" IsReadOnly="True">
             <FlowDocument>
