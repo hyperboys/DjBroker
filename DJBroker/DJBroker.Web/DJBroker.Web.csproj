@@ -72,6 +72,7 @@
     <Content Include="img\avatar3.png" />
     <Content Include="img\avatar4.png" />
     <Content Include="img\logo\logoDJ.png" />
+    <Content Include="img\logo\LogoPSD.png" />
     <Content Include="img\parallax1.png" />
     <Content Include="img\project1.jpg" />
     <Content Include="img\project2.jpeg" />

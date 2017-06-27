@@ -27,10 +27,10 @@ namespace DJBroker.DAL
                 uid = "sa";
                 password = "Admin2000";
 #else
-                server = @"dandj-server";
-                database = "testdata";
-                uid = "testdata";
-                password = "test12345";
+                server = @"203.146.129.248";
+                database = "DJBrokerCar";
+                uid = "sa";
+                password = "djB8888";
 #endif
                 string connectionString;
                 connectionString = "SERVER=" + server + ";" + "DATABASE=" +
