@@ -1,0 +1,304 @@
+.tab1.form-select-plan {
+    width: 90%;
+}
+
+.btn-select-plan {
+    margin: 0 auto;
+}
+
+    .btn-select-plan .btn-icon-bear {
+        margin: 0 auto;
+        width: 250px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .btn-select-plan .btn-home-search {
+        padding: 0;
+    }
+
+    .btn-select-plan .fix-center {
+        width: 200px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+        .btn-select-plan .fix-center a.btn-old-client {
+            background: #294558 url("../../assets/images/page_home/btn_client_old.png") 5px 100% no-repeat;
+            text-align: left;
+            padding: 5px 5px 5px 55px;
+            background-size: auto 100%;
+            width: auto;
+            color: #ffffff;
+        }
+
+            .btn-select-plan .fix-center a.btn-old-client span {
+                display: block;
+            }
+
+            .btn-select-plan .fix-center a.btn-old-client:hover {
+                background-color: #294558;
+            }
+
+.promotion a > img {
+    width: 100%;
+    height: 100%;
+}
+
+.divider-content {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    clear: both;
+    overflow: hidden;
+}
+
+.blog ul li {
+    padding: 0;
+    overflow: hidden;
+}
+
+.blog .blog-list img {
+    width: 100%;
+}
+
+@media screen and (min-width: 569px) {
+    .btn-select-plan .btn-home-plan {
+        width: 300px;
+    }
+
+    .btn-select-plan .btn-icon-bear {
+        right: initial;
+    }
+
+    .btn-select-plan .btn-home-search {
+        left: initial;
+        padding: 0 15%;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .btn-select-plan {
+        width: auto;
+        padding-top: 20px;
+    }
+
+        .btn-select-plan .btn-icon-bear {
+            right: 50%;
+            width: 50%;
+        }
+
+        .btn-select-plan .btn-home-search {
+            left: 50%;
+            padding: 10px 0 10px 10px;
+        }
+
+        .btn-select-plan .fix-center {
+            width: 45%;
+            float: left;
+            margin: 0;
+        }
+
+            .btn-select-plan .fix-center a.btn-old-client {
+                width: 90%;
+                padding-left: 85px;
+                text-align: left;
+                margin: 20px 20px 0 0;
+                background-size: auto 100%;
+            }
+
+    .detail-plan-head {
+        padding-bottom: 30px;
+    }
+
+    .blog ul li {
+        clear: none;
+    }
+
+        .blog ul li :nth-child(2n+1) {
+            clear: both;
+        }
+}
+
+.select-radio-image {
+    padding: 0 10px;
+    margin-bottom: 40px;
+}
+
+.radio label.cartype-1 {
+    background: url("/assets3/images/page_home/page_act/car1.png") center top no-repeat;
+    background-size: contain;
+    padding-top: 60px;
+}
+
+    .radio label.cartype-1:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.radio label.cartype-2 {
+    background: url("/assets3/images/page_home/page_act/truck1.png") center top no-repeat;
+    background-size: contain;
+    padding-top: 60px;
+}
+
+    .radio label.cartype-2:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.radio label.cartype-3 {
+    background: url("/assets3/images/page_home/page_act/van1.png") center top no-repeat;
+    background-size: contain;
+    padding-top: 60px;
+}
+
+    .radio label.cartype-3:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.radio.radio-active label.cartype-1 {
+    background: url("/assets3/images/page_home/page_act/car2.png") center top no-repeat;
+    background-size: contain;
+}
+
+.radio.radio-active label.cartype-2 {
+    background: url("/assets3/images/page_home/page_act/truck2.png") center top no-repeat;
+    background-size: contain;
+}
+
+.radio.radio-active label.cartype-3 {
+    background: url("/assets3/images/page_home/page_act/van2.png") center top no-repeat;
+    background-size: contain;
+}
+
+.tab-2 form .radio.type3 input[type="radio"] + label > span span {
+    left: 0;
+}
+
+@media screen and (min-width: 769px) {
+    .tab-2 {
+        padding: 0 80px;
+    }
+}
+
+form input#date {
+    border: 0px;
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+}
+
+.select-radio-image-mutiple {
+    padding: 0;
+}
+
+    .select-radio-image-mutiple input[type="checkbox"] {
+        display: none;
+    }
+
+    .select-radio-image-mutiple label {
+        padding: 0;
+        display: block;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .select-radio-image-mutiple label .text {
+            display: block;
+            padding-top: 90px;
+            -webkit-user-select: none;
+            /* webkit (safari, chrome) browsers */
+            -moz-user-select: none;
+            /* mozilla browsers */
+            -khtml-user-select: none;
+            /* webkit (konqueror) browsers */
+            -ms-user-select: none;
+            /* IE10+ */
+        }
+
+    .select-radio-image-mutiple .radio {
+        border: 2px solid #152e82;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .select-radio-image-mutiple .traveltype-1 {
+        background: url("../../../images/page_home/travel/icon-1.png") top center no-repeat;
+        background-size: auto;
+    }
+
+    .select-radio-image-mutiple .traveltype-2 {
+        background: url("../../../images/page_home/travel/icon-2.png") top center no-repeat;
+        background-size: auto;
+    }
+
+    .select-radio-image-mutiple .traveltype-3 {
+        background: url("../../../images/page_home/travel/icon-3.png") top center no-repeat;
+        background-size: auto;
+    }
+
+    .select-radio-image-mutiple.radio-active .traveltype-1 {
+        background: url("../../../images/page_home/travel/icon-1@at.png") top center no-repeat;
+        background-size: auto;
+    }
+
+    .select-radio-image-mutiple.radio-active .traveltype-2 {
+        background: url("../../../images/page_home/travel/icon-2@at.png") top center no-repeat;
+        background-size: auto;
+    }
+
+    .select-radio-image-mutiple.radio-active .traveltype-3 {
+        background: url("../../../images/page_home/travel/icon-3@at.png") top center no-repeat;
+        background-size: auto;
+    }
+
+    .select-radio-image-mutiple.radio-active .text {
+        color: #152e82;
+    }
+
+    .select-radio-image-mutiple.radio-active .radio {
+        background: #ffffff;
+        position: relative;
+    }
+
+        .select-radio-image-mutiple.radio-active .radio:before {
+            content: "\f00c";
+            position: absolute;
+            font-family: 'FontAwesome';
+            background: transparent;
+            color: #152e82;
+            top: -1px;
+            left: 0;
+            font-size: 16px;
+        }
+
+.tab-3 .select-radio-image-mutiple label .text {
+    min-height: 200px;
+}
+
+@media screen and (min-width: 569px) {
+    .tab-3 .select-radio-image-mutiple {
+        padding: 10px;
+    }
+
+        .tab-3 .select-radio-image-mutiple label .text {
+            min-height: 160px;
+        }
+
+        .tab-3 .select-radio-image-mutiple .traveltype-1, .tab-3 .select-radio-image-mutiple .traveltype-2, .tab-3 .select-radio-image-mutiple .traveltype-3 {
+            background-size: auto;
+        }
+
+        .tab-3 .select-radio-image-mutiple.radio-active .traveltype-1, .tab-3 .select-radio-image-mutiple.radio-active .traveltype-2, .tab-3 .select-radio-image-mutiple.radio-active .traveltype-3 {
+            background-size: auto;
+        }
+}

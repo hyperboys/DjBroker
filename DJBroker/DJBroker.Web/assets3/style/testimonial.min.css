@@ -1,0 +1,302 @@
+.nav > li, .nav > li > a {
+    position: relative;
+}
+
+.tab-content > .tab-pane {
+    display: none;
+}
+
+.nav > li, .nav > li > a, .tab-content > .active {
+    display: block;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+    .fade.in {
+        opacity: 1;
+    }
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+    .nav > li > a {
+        padding: 10px 15px;
+    }
+
+        .nav > li > a:focus, .nav > li > a:hover {
+            text-decoration: none;
+            background-color: #eee;
+        }
+
+    .nav > li.disabled > a {
+        color: #777;
+    }
+
+        .nav > li.disabled > a:focus, .nav > li.disabled > a:hover {
+            color: #777;
+            text-decoration: none;
+            cursor: not-allowed;
+            background-color: transparent;
+        }
+
+    .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+        background-color: #eee;
+        border-color: #337ab7;
+    }
+
+    .nav .nav-divider {
+        height: 1px;
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: #e5e5e5;
+    }
+
+    .nav > li > a > img {
+        max-width: none;
+    }
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+    .nav-tabs > li {
+        float: left;
+        margin-bottom: -1px;
+    }
+
+        .nav-tabs > li > a {
+            margin-right: 2px;
+            line-height: 1.42857143;
+            border: 1px solid transparent;
+            border-radius: 4px 4px 0 0;
+        }
+
+            .nav-tabs > li > a:hover {
+                border-color: #eee #eee #ddd;
+            }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            color: #555;
+            cursor: default;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-bottom-color: transparent;
+        }
+
+    .nav-tabs .dropdown-menu {
+        margin-top: -1px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+.medium-paragraph {
+    font-size: 18px;
+    line-height: 34px;
+}
+
+::-moz-selection {
+    background: #294558;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #294558;
+    color: #fff;
+    text-shadow: none;
+}
+
+.section-container {
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.section-container-image-bg, .section-container-image-bg h2, .section-container-image-bg h3 {
+    color: #fff;
+}
+
+    .section-container-image-bg .divider-1 .line {
+        border-color: #fff;
+        opacity: .8;
+    }
+
+.section-description {
+    margin-top: 60px;
+    padding-bottom: 10px;
+}
+
+    .section-description p {
+        margin-top: 20px;
+        padding: 0 120px;
+    }
+
+.section-container-image-bg .section-description p {
+    opacity: .8;
+}
+
+.divider-1 {
+    padding: 25px 0 15px;
+}
+
+    .divider-1 .line {
+        width: 200px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ddd;
+    }
+
+.testimonials-container {
+    padding-bottom: 70px;
+    background: #fff;
+}
+
+.testimonial-list {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 0;
+}
+
+    .testimonial-list .testimonial-image img {
+        max-width: 160px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        width: 40%;
+    }
+
+    .testimonial-list .testimonial-text {
+        margin-top: 10px;
+        float: left;
+        width: 60%;
+    }
+
+        .testimonial-list .testimonial-text a {
+            color: #294558;
+            border-bottom: 1px dotted #294558;
+        }
+
+            .testimonial-list .testimonial-text a:focus, .testimonial-list .testimonial-text a:hover {
+                color: #294558;
+                border: 0;
+            }
+
+    .testimonial-list .nav-tabs {
+        margin-top: 30px;
+        border: 0;
+    }
+
+        .testimonial-list .nav-tabs li {
+            float: none;
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+            .testimonial-list .nav-tabs li a {
+                width: 16px;
+                height: 16px;
+                margin: 0;
+                padding: 0;
+                background: #ddd;
+                border: 0;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+            }
+
+                .testimonial-list .nav-tabs li a:hover {
+                    background: #bbb;
+                    border: 0;
+                }
+
+            .testimonial-list .nav-tabs li.active a, .testimonial-list .nav-tabs li.active a:focus {
+                background: #294558;
+                border: 0;
+            }
+
+footer {
+    padding: 60px 0;
+    background: #333;
+    color: #ccc;
+    text-align: left;
+}
+
+    footer a {
+        color: #294558;
+        border: 0;
+    }
+
+        footer a:focus, footer a:hover {
+            border-bottom: 1px dotted #294558;
+            outline: 0;
+        }
+
+.footer-social {
+    text-align: right;
+}
+
+    .footer-social a {
+        margin-right: 20px;
+        color: #888;
+    }
+
+        .footer-social a:focus, .footer-social a:hover {
+            color: #294558;
+            border: 0;
+        }
+
+    .footer-social i {
+        font-size: 28px;
+        vertical-align: text-top;
+    }
+
+@media (max-width:600px) {
+    .testimonial-list .testimonial-image img, .testimonial-list .testimonial-text {
+        width: 100%;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .section-description p {
+        padding: 0;
+    }
+
+    .footer-social a {
+        margin-right: 15px;
+    }
+
+    .footer-social i {
+        font-size: 22px;
+    }
+}
+
+@media (max-width:767px) {
+    .footer-social, footer {
+        text-align: center;
+    }
+
+    .section-description p {
+        padding: 0;
+    }
+
+    .footer-social {
+        padding-top: 30px;
+    }
+
+        .footer-social a {
+            margin: 0 10px;
+        }
+}
+
+@media (max-width:415px) {
+    h1, h2 {
+        font-size: 32px;
+    }
+}
