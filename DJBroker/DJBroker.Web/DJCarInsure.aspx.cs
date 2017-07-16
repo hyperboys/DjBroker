@@ -13,11 +13,20 @@ namespace DJBroker.Web.Page
     public partial class DJCarInsure : System.Web.UI.Page
     {
         private static InsureCarDAL insureCarDAL;
+        private static string CAR_YEAR;
+        private static string CAR_NAME;
+        private static string CAR_MODEL;
+        private static string EVENT;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             try
             {
+                if (Request.Url.ToString().Contains("btnSearch") || EVENT == "Click")
+                {
+                    Session["DATA"] = insureCarDAL.GetAllCondition(CAR_YEAR, CAR_NAME, CAR_MODEL);
+                    HttpContext.Current.Response.Redirect("DJCarInsureDetail.aspx");
+                }
                 
                 if (!Page.IsPostBack)
                 {
@@ -28,11 +37,6 @@ namespace DJBroker.Web.Page
                         ddlCarYear.Items.Add(new ListItem(row[0].ToString(), row[0].ToString()));
                     }
                     ddlCarYear.DataBind();
-
-                    if (Request.Url.ToString().Contains("btnSearch")) 
-                    {
-                        HttpContext.Current.Response.Redirect("DJCarInsureDetail.aspx");
-                    }
                 }
             }
             catch (Exception ex)
@@ -46,7 +50,7 @@ namespace DJBroker.Web.Page
             try
             {
                 DataTable dt = insureCarDAL.GetComboBoxCarName(ddlCarYear.Text);
-
+                CAR_YEAR = ddlCarYear.Text;
 
                 ddlCarName.Items.Clear();
                 ddlCarModel.Items.Clear();
@@ -74,7 +78,7 @@ namespace DJBroker.Web.Page
             try
             {
                 DataTable dt = insureCarDAL.GetComboBoxCarModel(ddlCarYear.Text, ddlCarName.Text);
-
+                CAR_NAME = ddlCarName.Text;
                 ddlCarModel.Items.Clear();
                 ddlCarModel.Items.Add(new ListItem("กรุณาเลือก", "กรุณาเลือก"));
                 if (dt != null)
@@ -90,6 +94,18 @@ namespace DJBroker.Web.Page
             {
 
             }
+        }
+
+        protected void ddlCarModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CAR_MODEL = ddlCarModel.Text;
+        }
+
+        [WebMethod]
+        public static string Process()
+        {
+            EVENT = "Click";
+            return "";
         }
     }
 }

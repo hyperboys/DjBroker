@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta name="robots" content="index,follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>DJ Broker | บริษัท ดวงเจริญ โบรคเกอร์</title>
     <meta name="keywords" content="DJBroker, ดวงเจริญ, ประกันภัย, ประกันภัยรถยนต์, ประกันรถยนต์, ประกันชั้น1, พรบออนไลน์, ประกันภัยการเดินทาง, ประกันเดินทาง, โปรโมชั่น">
     <meta name="description" content="ผู้นำด้านที่ปรึกษาประกันภัย ประกันภัยรถยนต์ ประกันภัยเดินทาง ประกันชีวิต ประกันอุบัติเหตุ ที่ปรึกษาด้านประกันภัย โปรโมชั่นผ่อน0% บริการ24ขั่วโมง โทร 1737">
@@ -709,7 +709,8 @@
                     <div id="searh_13806" class="searh-sort">
                         <div class="item insure3  search-list ta-blue padding-20 margin-bottom-20 clearfix" id="addclasscookie13806" data-range="1767.00" style="display: none;">
                             <h2 class="h1 margin-top-10 ">เมืองไทยประกันภัย ชั้น 3 
-                <span class="price h1 ">1,899.25                    <small class="padding-left-10">บาท</small>
+                <span class="price h1 ">1,899.25                    
+                    <small class="padding-left-10">บาท</small>
                 </span>
                             </h2>
                             <div class="image col-sm-2 col-mb-2 col-lg-2">
@@ -7795,7 +7796,7 @@
                                 </ul>
                                 <ul class="special-search-lg col-sm-6 col-lg-8">
                                     <li class="col-lg-3">
-                                        <img src="/assets3/images/page_search/garage.png" alt="ประกันรถยนต์">
+                                        <img src="/assets3/images/page_search/garage.png" alt="ประกันรถยนต์"/>
                                         <div class="col-sm-9 col-lg-12 ta-text">
                                             จำนวน<span class="break-line">อู่</span>
                                         </div>
@@ -10870,7 +10871,8 @@
                         <div class="item insure1  search-list ta-blue padding-20 margin-bottom-20 clearfix" id="addclasscookie3388" data-range="19153.00" style="display: block;">
 
                             <h2 class="h1 margin-top-10 ">สามัคคีประกันภัย ชั้น 1 
-                <span class="price h1 ">20,576.10                    <small class="padding-left-10">บาท</small>
+                <span class="price h1 ">20,576.10                    
+                    <small class="padding-left-10">บาท</small>
                 </span>
                             </h2>
                             <div class="image col-sm-2 col-mb-2 col -lg-2">

@@ -581,42 +581,43 @@
                         <div id="main-search-form" class="margin-bottom-20">
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
                                 <ContentTemplate>
-                                    <form id="searchCar">
-                                        <div class="row clear">
-                                            <div class="col-dt-6 sm-no-padding">
-                                                <label class="col-sm-6 col-mb-6 col-dt-4">ปีรถยนต์</label>
-                                                <div class="col-sm-6 col-mb-6 col-dt-8">
-                                                    <label class="select type2">
-                                                        <asp:DropDownList ID="ddlCarYear" AutoPostBack="True" name="ddlCarYear" runat="server" class="select-default-dropdown" OnSelectedIndexChanged="ddlCarYear_SelectedIndexChanged">
-                                                            <asp:ListItem Value="0" Text="ปีรถยนต์"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-dt-6 sm-no-padding">
-                                                <label class="col-sm-6 col-mb-6 col-dt-4">รถยนต์</label>
-                                                <div class="col-sm-6 col-mb-6 col-dt-8">
-                                                    <label class="select type2">
-                                                        <asp:DropDownList ID="ddlCarName" name="ddlCarName" runat="server" class="select-default-dropdown" OnSelectedIndexChanged="ddlCarName_SelectedIndexChanged" AutoPostBack="True">
-                                                            <asp:ListItem Value="0" Text="รถยนต์"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </label>
-                                                </div>
+                                    <div class="row clear">
+                                        <div class="col-dt-6 sm-no-padding">
+                                            <label class="col-sm-6 col-mb-6 col-dt-4">
+                                            ปีรถยนต์</label>
+                                            <div class="col-sm-6 col-mb-6 col-dt-8">
+                                                <label class="select type2">
+                                                <asp:DropDownList ID="ddlCarYear" runat="server" AutoPostBack="True" class="select-default-dropdown" name="ddlCarYear" OnSelectedIndexChanged="ddlCarYear_SelectedIndexChanged">
+                                                    <asp:ListItem Text="ปีรถยนต์" Value="0"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                </label>
                                             </div>
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-dt-6 sm-no-padding">
-                                                <label class="col-sm-6 col-dt-4 col-mb-6">รุ่น</label>
-                                                <div class="col-sm-6 col-dt-8 col-mb-6">
-                                                    <label class="select type2">
-                                                        <asp:DropDownList ID="ddlCarModel" runat="server" class="select-default-dropdown">
-                                                            <asp:ListItem Value="0" Text="รุ่น"></asp:ListItem>
-                                                        </asp:DropDownList>
-                                                    </label>
-                                                </div>
+                                        <div class="col-dt-6 sm-no-padding">
+                                            <label class="col-sm-6 col-mb-6 col-dt-4">
+                                            รถยนต์</label>
+                                            <div class="col-sm-6 col-mb-6 col-dt-8">
+                                                <label class="select type2">
+                                                <asp:DropDownList ID="ddlCarName" runat="server" AutoPostBack="True" class="select-default-dropdown" name="ddlCarName" OnSelectedIndexChanged="ddlCarName_SelectedIndexChanged">
+                                                    <asp:ListItem Text="รถยนต์" Value="0"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                </label>
                                             </div>
-                                            <%-- <div class="col-dt-6 sm-no-padding">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-dt-6 sm-no-padding">
+                                            <label class="col-sm-6 col-dt-4 col-mb-6">
+                                            รุ่น</label>
+                                            <div class="col-sm-6 col-dt-8 col-mb-6">
+                                                <label class="select type2">
+                                                <asp:DropDownList ID="ddlCarModel" runat="server" AutoPostBack="True" class="select-default-dropdown" OnSelectedIndexChanged="ddlCarModel_SelectedIndexChanged">
+                                                    <asp:ListItem Text="รุ่น" Value="0"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <%-- <div class="col-dt-6 sm-no-padding">
                                         <label class="col-sm-6 col-dt-4 col-mb-6">รุ่นย่อย</label>
                                         <div class="col-sm-6 col-dt-8 col-mb-6">
                                             <label class="select type2">
@@ -626,54 +627,45 @@
                                             </label>
                                         </div>
                                     </div>--%>
-                                        </div>
-
-                                    </form>
-
-                                    <form>
-                                        <div class="text-center margin-top-20">
-                                            <h2 class="color-blue">ข้อมูลติดต่อ</h2>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-dt-6 col-sm-12">
-                                                <label class="col-sm-5 col-mb-3">ชื่อ</label>
-                                                <input type="text" value="" name="LEADNAME2" id="LEADNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
-                                                <input type="hidden" name="PRODUCTTYPE" id="PRODUCTTYPE" value="Ex" />
-                                            </div>
-                                            <div class="col-dt-6 col-sm-12">
-                                                <label class="col-sm-5 col-mb-3 padding-lr-0-dt">นามสกุล</label>
-                                                <input type="text" value="" name="LEADSURNAME2" id="LEADSURNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-mb-12">
-                                                <label class="col-sm-5 col-mb-3">เบอร์โทรศัพท์</label>
-                                                <input type="text" value="" name="PHONEMOBILE2" id="PHONEMOBILE2" class="underlineonly col-sm-7 col-mb-9" maxlength="10" onkeypress='if (event.keyCode<48||event.keyCode>59) event.returnValue=false' />
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-mb-12">
-                                                <label class="col-sm-5 col-mb-3">อีเมล</label>
-                                                <input type="text" value="" name="EMAIL2" id="EMAIL2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
-                                            </div>
-                                        </div>
-                                    </form>
-                               
-                            <form>
-                                <div class="row">
-                                </div>
-                                <div class="btn-select-plan content-center">
-                                    <div class="col-dt-6 btn-home-search ">
-                                        <%--<a style="cursor: pointer;" class="button-1 blue" onclick="validate_car();">ค้นหาเลย</a>--%>
-                                        <%--<asp:Button ID="btnSearch" OnClientClick="javascript:return ValidateDropDown();" class="button-1 blue" runat="server" Text="ค้นหาเลย" />--%>
-                                        <asp:Button ID="btnSearch" class="button-1 blue" runat="server"  OnClientClick="javascript:return ValidateDropDown();" AutoPostBack="True" Text="ค้นหาเลย" />
-
                                     </div>
-
-                                </div>
-                            </form>
+                                    <div class="text-center margin-top-20">
+                                        <h2 class="color-blue">ข้อมูลติดต่อ</h2>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-dt-6 col-sm-12">
+                                            <label class="col-sm-5 col-mb-3">
+                                            ชื่อ</label>
+                                            <input type="text" value="" name="LEADNAME2" id="LEADNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                            <input type="hidden" name="PRODUCTTYPE" id="PRODUCTTYPE" value="Ex" />
+                                        </div>
+                                        <div class="col-dt-6 col-sm-12">
+                                            <label class="col-sm-5 col-mb-3 padding-lr-0-dt">
+                                            นามสกุล</label>
+                                            <input type="text" value="" name="LEADSURNAME2" id="LEADSURNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-mb-12">
+                                            <label class="col-sm-5 col-mb-3">
+                                            เบอร์โทรศัพท์</label>
+                                            <input type="text" value="" name="PHONEMOBILE2" id="PHONEMOBILE2" class="underlineonly col-sm-7 col-mb-9" maxlength="10" onkeypress='if (event.keyCode<48||event.keyCode>59) event.returnValue=false' />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-mb-12">
+                                            <label class="col-sm-5 col-mb-3">
+                                            อีเมล</label>
+                                            <input type="text" value="" name="EMAIL2" id="EMAIL2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                    </div>
+                                    <div class="btn-select-plan content-center">
+                                        <div class="col-dt-6 btn-home-search ">
+                                            <%--<a style="cursor: pointer;" class="button-1 blue" onclick="validate_car();">ค้นหาเลย</a>--%><%--<asp:Button ID="btnSearch" OnClientClick="javascript:return ValidateDropDown();" class="button-1 blue" runat="server" Text="ค้นหาเลย" />--%>
+                                            <asp:Button ID="btnSearch" runat="server" AutoPostBack="True" class="button-1 blue" OnClientClick="javascript:return ValidateDropDown();" Text="ค้นหาเลย" />
+                                        </div>
+                                    </div>
                                      </ContentTemplate>
                             </asp:UpdatePanel>
                         </div>
@@ -794,6 +786,8 @@
                 alert("กรุณากรอกอีเมลให้ถูกต้อง");
                 return false;
             }
+
+            PageMethods.Process();
 
             return true;
         }
