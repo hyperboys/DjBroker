@@ -5,8 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="canonical" href="https://www.tqm.co.th/" />
-    <link rel="manifest" href="/static_file/index/manifest.json">
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DJ Broker | บริษัท ดวงเจริญ โบรคเกอร์</title>
@@ -55,6 +53,8 @@
 </head>
 <body>
     <form id="main" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+        </asp:ScriptManager>
         <div class="wraper">
             <div id="header">
                 <div class="top-logo">
@@ -492,6 +492,7 @@
                 }
             </script>
             <!-- banner -->
+
             <div id="content">
                 <!-- banner -->
                 <!--<div style="display: none;">
@@ -578,42 +579,44 @@
                             <p class="txt-plan padding-bottom-20">กรุณาเลือกประเภทประกันภัยรถยนต์</p>
                         </div>
                         <div id="main-search-form" class="margin-bottom-20">
-                            <form id="searchCar">
-                                <div class="row clear">
-                                    <div class="col-dt-6 sm-no-padding">
-                                        <label class="col-sm-6 col-mb-6 col-dt-4">ปีรถยนต์</label>
-                                        <div class="col-sm-6 col-mb-6 col-dt-8">
-                                            <label class="select type2">
-                                                <asp:DropDownList ID="categories_insurance_year" AutoPostBack="true" name="categories_insurance_year" runat="server" class="select-default-dropdown" OnSelectedIndexChanged="categories_insurance_year_SelectedIndexChanged">
-                                                    <asp:ListItem Value="0" Text="ปีรถยนต์"></asp:ListItem>
-                                                </asp:DropDownList>
-                                            </label>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
+                                <ContentTemplate>
+                                    <form id="searchCar">
+                                        <div class="row clear">
+                                            <div class="col-dt-6 sm-no-padding">
+                                                <label class="col-sm-6 col-mb-6 col-dt-4">ปีรถยนต์</label>
+                                                <div class="col-sm-6 col-mb-6 col-dt-8">
+                                                    <label class="select type2">
+                                                        <asp:DropDownList ID="ddlCarYear" AutoPostBack="True" name="ddlCarYear" runat="server" class="select-default-dropdown" OnSelectedIndexChanged="ddlCarYear_SelectedIndexChanged">
+                                                            <asp:ListItem Value="0" Text="ปีรถยนต์"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-dt-6 sm-no-padding">
+                                                <label class="col-sm-6 col-mb-6 col-dt-4">รถยนต์</label>
+                                                <div class="col-sm-6 col-mb-6 col-dt-8">
+                                                    <label class="select type2">
+                                                        <asp:DropDownList ID="ddlCarName" name="ddlCarName" runat="server" class="select-default-dropdown" OnSelectedIndexChanged="ddlCarName_SelectedIndexChanged" AutoPostBack="True">
+                                                            <asp:ListItem Value="0" Text="รถยนต์"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-dt-6 sm-no-padding">
-                                        <label class="col-sm-6 col-mb-6 col-dt-4">รถยนต์</label>
-                                        <div class="col-sm-6 col-mb-6 col-dt-8">
-                                            <label class="select type2">
-                                                <asp:DropDownList ID="categories_insurance_brand" name="categories_insurance_brand" runat="server" class="select-default-dropdown">
-                                                    <asp:ListItem Value="0" Text="รถยนต์"></asp:ListItem>
-                                                </asp:DropDownList>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-dt-6 sm-no-padding">
-                                        <label class="col-sm-6 col-dt-4 col-mb-6">รุ่น</label>
-                                        <div class="col-sm-6 col-dt-8 col-mb-6">
-                                            <label class="select type2">
-                                                <asp:DropDownList ID="categories_insurance_age" runat="server" class="select-default-dropdown">
-                                                    <asp:ListItem Value="0" Text="รุ่น"></asp:ListItem>
-                                                </asp:DropDownList>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-dt-6 sm-no-padding">
+                                        <div class="row">
+                                            <div class="col-dt-6 sm-no-padding">
+                                                <label class="col-sm-6 col-dt-4 col-mb-6">รุ่น</label>
+                                                <div class="col-sm-6 col-dt-8 col-mb-6">
+                                                    <label class="select type2">
+                                                        <asp:DropDownList ID="ddlCarModel" runat="server" class="select-default-dropdown">
+                                                            <asp:ListItem Value="0" Text="รุ่น"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <%-- <div class="col-dt-6 sm-no-padding">
                                         <label class="col-sm-6 col-dt-4 col-mb-6">รุ่นย่อย</label>
                                         <div class="col-sm-6 col-dt-8 col-mb-6">
                                             <label class="select type2">
@@ -622,50 +625,57 @@
                                                 </asp:DropDownList>
                                             </label>
                                         </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <form>
-                                <div class="text-center margin-top-20">
-                                    <h2 class="color-blue">ข้อมูลติดต่อ</h2>
-                                </div>
-                                <div class="text-center margin-top-20">
-                                    <div class="col-dt-6 sm-no-padding">
-                                        <label class="col-sm-6 col-dt-4 col-mb-6">ชื่อ-นามสกุล</label>
-                                        <div class="col-sm-6 col-dt-8 col-mb-6">
-                                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                    </div>--%>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="text-center margin-top-20">
-                                    <div class="col-dt-6 sm-no-padding">
-                                        <label class="col-sm-6 col-dt-4 col-mb-6">เบอร์โทรศัพท์</label>
-                                        <div class="col-sm-6 col-dt-8 col-mb-6">
-                                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center margin-top-20">
-                                    <div class="col-dt-6 sm-no-padding">
-                                        <label class="col-sm-6 col-dt-4 col-mb-6">อีเมล</label>
-                                        <div class="col-sm-6 col-dt-8 col-mb-6">
-                                            <asp:TextBox ID="TextBox3" runat="server" Width="487px"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </form>
+                                    </form>
+
+                                    <form>
+                                        <div class="text-center margin-top-20">
+                                            <h2 class="color-blue">ข้อมูลติดต่อ</h2>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-dt-6 col-sm-12">
+                                                <label class="col-sm-5 col-mb-3">ชื่อ</label>
+                                                <input type="text" value="" name="LEADNAME2" id="LEADNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                                <input type="hidden" name="PRODUCTTYPE" id="PRODUCTTYPE" value="Ex" />
+                                            </div>
+                                            <div class="col-dt-6 col-sm-12">
+                                                <label class="col-sm-5 col-mb-3 padding-lr-0-dt">นามสกุล</label>
+                                                <input type="text" value="" name="LEADSURNAME2" id="LEADSURNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-mb-12">
+                                                <label class="col-sm-5 col-mb-3">เบอร์โทรศัพท์</label>
+                                                <input type="text" value="" name="PHONEMOBILE2" id="PHONEMOBILE2" class="underlineonly col-sm-7 col-mb-9" maxlength="10" onkeypress='if (event.keyCode<48||event.keyCode>59) event.returnValue=false' />
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-mb-12">
+                                                <label class="col-sm-5 col-mb-3">อีเมล</label>
+                                                <input type="text" value="" name="EMAIL2" id="EMAIL2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                            </div>
+                                        </div>
+                                    </form>
+                               
                             <form>
                                 <div class="row">
                                 </div>
                                 <div class="btn-select-plan content-center">
                                     <div class="col-dt-6 btn-home-search ">
                                         <%--<a style="cursor: pointer;" class="button-1 blue" onclick="validate_car();">ค้นหาเลย</a>--%>
-                                        <asp:Button ID="btnSearch" OnClientClick="javascript:return ValidateDropDown();" class="button-1 blue" runat="server" Text="ค้นหาเลย" OnClick="btnSearch_Click" />
+                                        <%--<asp:Button ID="btnSearch" OnClientClick="javascript:return ValidateDropDown();" class="button-1 blue" runat="server" Text="ค้นหาเลย" />--%>
+                                        <asp:Button ID="btnSearch" class="button-1 blue" runat="server"  OnClientClick="javascript:return ValidateDropDown();" AutoPostBack="True" Text="ค้นหาเลย" />
+
                                     </div>
 
                                 </div>
                             </form>
+                                     </ContentTemplate>
+                            </asp:UpdatePanel>
                         </div>
                     </div>
                 </div>
@@ -747,22 +757,44 @@
             nav_move(1);
         });
 
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
         function ValidateDropDown() {
-            var year = "<%=categories_insurance_year.ClientID %>";
+            var year = "<%=ddlCarYear.ClientID %>";
             if (document.getElementById(year).selectedIndex == 0) {
                 alert("กรุณาเลือกปีรถยนต์");
                 return false;
             }
-            var band = "<%=categories_insurance_brand.ClientID %>";
+            var band = "<%=ddlCarName.ClientID %>";
             if (document.getElementById(band).selectedIndex == 0) {
                 alert("กรุณาเลือกรถยนต์");
                 return false;
             }
-            var age = "<%=categories_insurance_age.ClientID %>";
+            var age = "<%=ddlCarModel.ClientID %>";
             if (document.getElementById(age).selectedIndex == 0) {
-                alert("กรุฯาเลือกรุ่นรถยนต์");
+                alert("กรุณาเลือกรุ่นรถยนต์");
                 return false;
             }
+
+            var name = $("#LEADNAME2").val();
+            if (name == "") {
+                alert("กรุณากรอกชื่อ");
+                return false;
+            }
+
+            var email = $("#EMAIL2").val();
+            if (email == "") {
+                alert("กรุณากรอกอีเมล");
+                return false;
+            }
+            else if (!validateEmail(email)) {
+                alert("กรุณากรอกอีเมลให้ถูกต้อง");
+                return false;
+            }
+
             return true;
         }
     </script>

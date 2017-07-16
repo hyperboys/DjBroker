@@ -141,6 +141,7 @@
     <Content Include="assets\images\page_promotion\upload\index_slide_159_mobile.png" />
     <Content Include="assets\images\page_promotion\upload\index_slide_160.png" />
     <Content Include="assets\images\page_promotion\upload\index_slide_160_mobile.png" />
+    <Content Include="DJCarInsureDetail.aspx" />
     <Content Include="img\upload\banners\company_ins\AIC.png" />
     <Content Include="img\upload\banners\company_ins\AII.png" />
     <Content Include="img\upload\banners\company_ins\AXA.png" />
@@ -159,7 +160,7 @@
     <Content Include="img\upload\banners\company_ins\TVI.png" />
     <Content Include="img\upload\banners\company_ins\VIS.png" />
     <Content Include="index.html" />
-    <Content Include="index2.html" />
+    <Content Include="DJCarInsureDetail.html" />
     <Content Include="java\script_box_search2.js" />
     <Content Include="java\page.js" />
     <Content Include="java\script_box_search.js" />
@@ -190,6 +191,13 @@
     <Compile Include="DJCarInsure.aspx.designer.cs">
       <DependentUpon>DJCarInsure.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DJCarInsureDetail.aspx.cs">
+      <DependentUpon>DJCarInsureDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DJCarInsureDetail.aspx.designer.cs">
+      <DependentUpon>DJCarInsureDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +216,20 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DJBroker.Common\DJBroker.Common.csproj">
+      <Project>{bb167141-e9b8-4d63-9e18-c6ec4bd9e7ae}</Project>
+      <Name>DJBroker.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DJBroker.DAL\DJBroker.DAL.csproj">
+      <Project>{1aae857c-fe70-426d-968a-04411a7802e8}</Project>
+      <Name>DJBroker.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DJBroker.Model\DJBroker.Model.csproj">
+      <Project>{9365fd6f-b932-4e4f-8166-b2bda800e630}</Project>
+      <Name>DJBroker.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
