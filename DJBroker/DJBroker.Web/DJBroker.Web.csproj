@@ -210,6 +210,7 @@
     <Content Include="assets3\fonts\thaisanslite_r1-webfont.ttf" />
     <Content Include="assets3\fonts\thaisanslite_r1-webfont.woff" />
     <Content Include="assets3\fonts\thaisanslite_r1-webfont.woff2" />
+    <None Include="Properties\PublishProfiles\DjBroker.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

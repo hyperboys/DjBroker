@@ -173,7 +173,7 @@ namespace DJBroker.WindowApp.Panel
                         objDal.UpdateStatus(code);
                     }
                     CheckInsureCarData item = objDal.GetItem(code);
-                    if (item.TRANSACTION_TYPE == "ลูกค้าทั่วไป")
+                    if (item.TRANSACTION_TYPE == "customer")
                     {
                         DataCommon.Set("CHECK_INSURE_CAR_EDIT", item);
                         PopupCheckCustomer popup = new PopupCheckCustomer();

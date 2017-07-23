@@ -4,9 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <link rel="manifest" href="/static_file/index/manifest.json">
     <meta name="robots" content="index,follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DJ Broker | บริษัท ดวงเจริญ โบรคเกอร์</title>
     <meta name="keywords" content="DJBroker, ดวงเจริญ, ประกันภัย, ประกันภัยรถยนต์, ประกันรถยนต์, ประกันชั้น1, พรบออนไลน์, ประกันภัยการเดินทาง, ประกันเดินทาง, โปรโมชั่น">
     <meta name="description" content="ผู้นำด้านที่ปรึกษาประกันภัย ประกันภัยรถยนต์ ประกันภัยเดินทาง ประกันชีวิต ประกันอุบัติเหตุ ที่ปรึกษาด้านประกันภัย โปรโมชั่นผ่อน0% บริการ24ขั่วโมง โทร 1737">
@@ -14,12 +15,12 @@
     <link rel="stylesheet" href="/assets3/style/normalize.css">
     <link rel="stylesheet" href="/assets3/style/jquery-ui.min.css">
     <link rel="stylesheet" href="/assets3/style/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="/assets3/style/testimonial.min.css">
-    <link rel="stylesheet" href="/assets3/style/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets3/style/testimonial.min.css?v=1.0">
+    <link rel="stylesheet" href="/assets3/style/font-awesome.min.css?v=1.0">
     <link rel="stylesheet" href="/assets3/style/jquery.jscrollpane.css">
     <link rel="stylesheet" href="/assets3/style/magnific-popup.min.css">
-    <link rel="stylesheet" href="/assets3/style/main.min.css">
-    <link rel="stylesheet" href="/assets3/style/css/page/home.css">
+    <link rel="stylesheet" href="/assets3/style/main.min.css?v=1.7">
+    <link rel="stylesheet" href="/assets3/style/css/page/home.css?v=1.3">
 
     <style>
         #popup_txt {
@@ -50,56 +51,507 @@
             width: 320px;
         }
     </style>
+    <script type="text/javascript" async="" src="//cdn.mouseflow.com/projects/d60cd248-abd8-4c6d-a652-6232b1b6b0fa.js"></script>
+    <style media="print" class="jx_ui_StyleSheet" __jx__id="___$_2" type="text/css">
+        .zopim {
+            display: none !important;
+        }
+    </style>
+    <style type="text/css">
+        .fb_hidden {
+            position: absolute;
+            top: -10000px;
+            z-index: 10001;
+        }
+
+        .fb_reposition {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .fb_invisible {
+            display: none;
+        }
+
+        .fb_reset {
+            background: none;
+            border: 0;
+            border-spacing: 0;
+            color: #000;
+            cursor: auto;
+            direction: ltr;
+            font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+            font-size: 13px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            text-align: left;
+            text-decoration: none;
+            text-indent: 0;
+            text-shadow: none;
+            text-transform: none;
+            visibility: visible;
+            white-space: normal;
+            word-spacing: normal;
+        }
+
+            .fb_reset > div {
+                overflow: hidden;
+            }
+
+        .fb_link img {
+            border: none;
+        }
+
+        @keyframes fb_transform {
+            from {
+                opacity: 0;
+                transform: scale(.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fb_animate {
+            animation: fb_transform .3s forwards;
+        }
+
+        .fb_dialog {
+            background: rgba(82, 82, 82, .7);
+            position: absolute;
+            top: -10000px;
+            z-index: 10001;
+        }
+
+        .fb_reset .fb_dialog_legacy {
+            overflow: visible;
+        }
+
+        .fb_dialog_advanced {
+            padding: 10px;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+        }
+
+        .fb_dialog_content {
+            background: #fff;
+            color: #333;
+        }
+
+        .fb_dialog_close_icon {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+            cursor: pointer;
+            display: block;
+            height: 15px;
+            position: absolute;
+            right: 18px;
+            top: 17px;
+            width: 15px;
+        }
+
+        .fb_dialog_mobile .fb_dialog_close_icon {
+            top: 5px;
+            left: 5px;
+            right: auto;
+        }
+
+        .fb_dialog_padding {
+            background-color: transparent;
+            position: absolute;
+            width: 1px;
+            z-index: -1;
+        }
+
+        .fb_dialog_close_icon:hover {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;
+        }
+
+        .fb_dialog_close_icon:active {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;
+        }
+
+        .fb_dialog_loader {
+            background-color: #f6f7f9;
+            border: 1px solid #606060;
+            font-size: 26px;
+            padding: 20px;
+        }
+
+        .fb_dialog_top_left, .fb_dialog_top_right, .fb_dialog_bottom_left, .fb_dialog_bottom_right {
+            height: 10px;
+            width: 10px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .fb_dialog_top_left {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;
+            left: -10px;
+            top: -10px;
+        }
+
+        .fb_dialog_top_right {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;
+            right: -10px;
+            top: -10px;
+        }
+
+        .fb_dialog_bottom_left {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;
+            bottom: -10px;
+            left: -10px;
+        }
+
+        .fb_dialog_bottom_right {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;
+            right: -10px;
+            bottom: -10px;
+        }
+
+        .fb_dialog_vert_left, .fb_dialog_vert_right, .fb_dialog_horiz_top, .fb_dialog_horiz_bottom {
+            position: absolute;
+            background: #525252;
+            filter: alpha(opacity=70);
+            opacity: .7;
+        }
+
+        .fb_dialog_vert_left, .fb_dialog_vert_right {
+            width: 10px;
+            height: 100%;
+        }
+
+        .fb_dialog_vert_left {
+            margin-left: -10px;
+        }
+
+        .fb_dialog_vert_right {
+            right: 0;
+            margin-right: -10px;
+        }
+
+        .fb_dialog_horiz_top, .fb_dialog_horiz_bottom {
+            width: 100%;
+            height: 10px;
+        }
+
+        .fb_dialog_horiz_top {
+            margin-top: -10px;
+        }
+
+        .fb_dialog_horiz_bottom {
+            bottom: 0;
+            margin-bottom: -10px;
+        }
+
+        .fb_dialog_iframe {
+            line-height: 0;
+        }
+
+        .fb_dialog_content .dialog_title {
+            background: #6d84b4;
+            border: 1px solid #365899;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+            .fb_dialog_content .dialog_title > span {
+                background: url(http://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+                float: left;
+                padding: 5px 0 7px 26px;
+            }
+
+        body.fb_hidden {
+            -webkit-transform: none;
+            height: 100%;
+            margin: 0;
+            overflow: visible;
+            position: absolute;
+            top: -10000px;
+            left: 0;
+            width: 100%;
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+            min-height: 100%;
+            min-width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 10001;
+        }
+
+            .fb_dialog.fb_dialog_mobile.loading.centered {
+                width: auto;
+                height: auto;
+                min-height: initial;
+                min-width: initial;
+                background: none;
+            }
+
+                .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+                    width: 100%;
+                }
+
+                .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+                    background: none;
+                }
+
+        .loading.centered #fb_dialog_loader_close {
+            color: #fff;
+            display: block;
+            padding-top: 20px;
+            clear: both;
+            font-size: 20px;
+        }
+
+        #fb-root #fb_dialog_ipad_overlay {
+            background: rgba(0, 0, 0, .45);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: 100%;
+            min-height: 100%;
+            z-index: 10000;
+        }
+
+            #fb-root #fb_dialog_ipad_overlay.hidden {
+                display: none;
+            }
+
+        .fb_dialog.fb_dialog_mobile.loading iframe {
+            visibility: hidden;
+        }
+
+        .fb_dialog_content .dialog_header {
+            -webkit-box-shadow: white 0 1px 1px -1px inset;
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));
+            border-bottom: 1px solid;
+            border-color: #1d4088;
+            color: #fff;
+            font: 14px Helvetica, sans-serif;
+            font-weight: bold;
+            text-overflow: ellipsis;
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+            .fb_dialog_content .dialog_header table {
+                -webkit-font-smoothing: subpixel-antialiased;
+                height: 43px;
+                width: 100%;
+            }
+
+            .fb_dialog_content .dialog_header td.header_left {
+                font-size: 14px;
+                padding-left: 5px;
+                vertical-align: middle;
+                width: 60px;
+            }
+
+            .fb_dialog_content .dialog_header td.header_right {
+                font-size: 14px;
+                padding-right: 5px;
+                vertical-align: middle;
+                width: 60px;
+            }
+
+        .fb_dialog_content .touchable_button {
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));
+            border: 1px solid #29487d;
+            -webkit-background-clip: padding-box;
+            -webkit-border-radius: 3px;
+            -webkit-box-shadow: rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;
+            display: inline-block;
+            margin-top: 3px;
+            max-width: 85px;
+            line-height: 18px;
+            padding: 4px 12px;
+            position: relative;
+        }
+
+        .fb_dialog_content .dialog_header .touchable_button input {
+            border: none;
+            background: none;
+            color: #fff;
+            font: 12px Helvetica, sans-serif;
+            font-weight: bold;
+            margin: 2px -12px;
+            padding: 2px 6px 3px 6px;
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+        }
+
+        .fb_dialog_content .dialog_header .header_center {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .fb_dialog_content .dialog_content {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+            border: 1px solid #555;
+            border-bottom: 0;
+            border-top: 0;
+            height: 150px;
+        }
+
+        .fb_dialog_content .dialog_footer {
+            background: #f6f7f9;
+            border: 1px solid #555;
+            border-top-color: #ccc;
+            height: 40px;
+        }
+
+        #fb_dialog_loader_close {
+            float: left;
+        }
+
+        .fb_dialog.fb_dialog_mobile .fb_dialog_close_button {
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+        }
+
+        .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+            visibility: hidden;
+        }
+
+        #fb_dialog_loader_spinner {
+            animation: rotateSpinner 1.2s linear infinite;
+            background-color: transparent;
+            background-image: url(http://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            height: 24px;
+            width: 24px;
+        }
+
+        @keyframes rotateSpinner {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fb_iframe_widget {
+            display: inline-block;
+            position: relative;
+        }
+
+            .fb_iframe_widget span {
+                display: inline-block;
+                position: relative;
+                text-align: justify;
+            }
+
+            .fb_iframe_widget iframe {
+                position: absolute;
+            }
+
+        .fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe {
+            max-width: 100%;
+        }
+
+            .fb_iframe_widget_fluid_desktop iframe {
+                min-width: 220px;
+                position: relative;
+            }
+
+        .fb_iframe_widget_lift {
+            z-index: 1;
+        }
+
+        .fb_hide_iframes iframe {
+            position: relative;
+            left: -10000px;
+        }
+
+        .fb_iframe_widget_loader {
+            position: relative;
+            display: inline-block;
+        }
+
+        .fb_iframe_widget_fluid {
+            display: inline;
+        }
+
+            .fb_iframe_widget_fluid span {
+                width: 100%;
+            }
+
+        .fb_iframe_widget_loader iframe {
+            min-height: 32px;
+            z-index: 2;
+            zoom: 1;
+        }
+
+        .fb_iframe_widget_loader .FB_Loader {
+            background: url(http://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;
+            height: 32px;
+            width: 32px;
+            margin-left: -16px;
+            position: absolute;
+            left: 50%;
+            z-index: 4;
+        }
+    </style>
 </head>
 <body>
+    <div style="display: none">
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+        </script>
+        <iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/959518542/?random=1500433790429&amp;cv=8&amp;fst=1500433790429&amp;num=1&amp;fmt=1&amp;guid=ON&amp;eid=376635471&amp;u_h=900&amp;u_w=1440&amp;u_ah=900&amp;u_aw=1440&amp;u_cd=24&amp;u_his=3&amp;u_tz=420&amp;u_java=false&amp;u_nplug=4&amp;u_nmime=5&amp;frm=0&amp;url=https%3A%2F%2Fwww.tqm.co.th%2F%3Futm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3Dalwayson%26utm_content%3Dgenad%26gclid%3DEAIaIQobChMIj7OZs6-U1QIVkoePCh0xXAv4EAAYASAAEgL3BvD_BwE&amp;ref=https%3A%2F%2Fwww.google.co.th%2F&amp;tiba=TQM%20%E0%B9%82%E0%B8%9A%E0%B8%A3%E0%B8%84%E0%B9%80%E0%B8%81%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%A0%E0%B8%B1%E0%B8%A2%20%7C%20%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97%20%E0%B8%97%E0%B8%B5" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"></iframe>
+        <iframe name="google_cookie_match_frame" title="Google cookie match frame" width="1" height="1" src="https://bid.g.doubleclick.net/xbbe/pixel?d=KAE" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" style="display: none" scrolling="no"></iframe>
+    </div>
     <form id="main" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
+
         <div class="wraper">
             <div id="header">
-                <div class="top-logo">
-                    <div class="left">
-                        <div class="left divider-line">
-                            <a href="/" id="logo" title="logo tqm">
-                                <!--<img src="/assets3/images/share/logo.png" alt="TQM">-->
-                                <!--<img src="/assets3/images/page_home/logoDJ.png" alt="TQM">-->
-                                <img src="/assets3/images/page_home/iconDJ.png" alt="TQM">
-                            </a>
-                        </div>
-                        <!--<a href="tel:1737" class="call">1737</a>-->
-                    </div>
+                 <%-- <div class="top-logo">
                     <div class="menu-top-user right">
                         <ul class="list-item">
+                            <li><a href="#" class="i-hamburger"><i class="fa fa-bars"></i></a></li>
                         </ul>
                     </div>
-                </div>
+                </div>--%>
                 <div class="test">
+                    <div class="menu-top-user right">
+                        <ul class="list-item">
+                            <li><a href="#" class="i-hamburger"><i class="fa fa-bars"></i></a></li>
+                        </ul>
+                    </div>
                     <div class="float-left logo">
                         <a href="/" id="A1" title="logo tqm">
-                            <!--<img src="/assets3/images/page_home/logoDJ.png" alt="TQM">-->
-                            <img src="/assets3/images/page_home/iconDJ.png" alt="TQM">
+                            <img src="/assets3/images/page_home/iconDJ.png" alt="DJ" />
                         </a>
                     </div>
-                    <div class="float-right">
-                        <!--<div class="txt-award-box">
-                        <p class="txt-award">รางวัลการันตี</p>
-                        <p class="txt-award-sub">การันตีด้วยความเชื่อมั่น 7 รางวัล จาก คปภ</p>
-                    </div>
-                    <div class="float-left award">
-                        <img src="/assets3/images/page_home/award.png" alt="การันตีด้วยความเชื่อมั่น จาก คปภ">
-                    </div>
-                    <div class="call-box">
-                        <a href="tel:1737" title="call tqm">
-                            <div class="float-left icon-phone">
-                                <img src="/assets3/images/page_home/icon-phone.gif" alt="สายด่วน 1737">
-                            </div>
-                            <p class="call-text">
-                                <span style="color: #f80505;">บริการ 24 ชั่วโมง</span><br>
-                                โทร : 1737
-                            </p>
-                        </a>
-                    </div>-->
-                    </div>
+                  <%--  <div class="float-left">
+                        <div class="float-left award">
+                            <img src="/assets3/images/page_home/iconDJ.png" alt="DJ" />
+                        </div>
+                        <div class="call-box">
+                        </div>
+                    </div>--%>
                 </div>
 
                 <div class="menu-top">
@@ -162,6 +614,7 @@
                                             <li><a href="/promotion/travel" title="โปรโมชั่นประกันภัยเดินทาง">โปรโมชั่นประกันภัยเดินทาง</a></li>
                                             <li><a href="/promotion/ประกันเดินทาง MSIG" title="ประกันภัยเดินทาง MSIG">ประกันภัยเดินทาง MSIG</a></li>
                                             <li><a href="/promotion/TA_Dhipaya" title="ประกันภัยเดินทางทิพยประกันภัย">ประกันภัยเดินทางทิพยประกันภัย</a></li>
+                                            <li><a href="/promotion/probki" title="ประกันเดินทางกรุงเทพประกันภัย">ประกันเดินทางกรุงเทพประกันภัย</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="/promotion/ประกันผ่อนสบาย" title="โปรโมชั่นบัตรเครดิต">โปรโมชั่นบัตรเครดิต</a>
@@ -292,7 +745,13 @@
                             }, { scope: 'email,public_profile' });
                         }
                     </script>
+                    <div class="popup-wrap">
+                        <div id="popup-login" class="popup-login dialog-popup">
+                        </div>
 
+                        <!-- popup compare -->
+
+                    </div>
                 </div>
 
             </div>
@@ -326,7 +785,7 @@
 
                 .btn_popup {
                     cursor: pointer;
-                    background: #152e82;
+                    background: #00aeef;
                     padding: 5px 10px;
                     border-radius: 6px;
                     color: white;
@@ -341,161 +800,12 @@
                     top: -30px;
                 }
             </style>
-            <script type="text/javascript" src="/js/poplogin.js"></script>
-            <script>
-                function key_email(evt) {
-                    if (evt.keyCode) {
-                        var key = evt.keyCode;
-                    } else if (evt.which) {
-                        var key = evt.which;
-                    }
 
-                    //alert(key);
-                    // 8= backspace
-                    // 45= -
-                    // 95= _
-                    // 46= .
-                    // 64= @
-
-                    if ((key >= 48 && key <= 57) || (key >= 65 && key <= 90) || (key >= 97 && key <= 122) || key == 8 || key == 45 || key == 95 || key == 46 || key == 64) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-
-                function key_num(evt) { //number
-                    if (evt.keyCode) {
-                        var key = evt.keyCode;
-                    } else if (evt.which) {
-                        var key = evt.which;
-                    }
-                    //alert(key);
-                    if ((key >= 48 && key <= 57) || key == 8) {	//ตัวเลข 48-57 , 8=backspace , 116=f5 , 37="<-" , 39="->" 
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-
-                function key_eng(evt) { //eng
-                    if (evt.keyCode) {
-                        var key = evt.keyCode;
-                    } else if (evt.which) {
-                        var key = evt.which;
-                    }
-                    //alert(key);
-                    if ((key >= 65 && key <= 90) || (key >= 97 && key <= 122) || key == 8 || (key >= 48 && key <= 57)) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-                function alert_msg(txt_alert, close_focus, invoice, citizen) {
-                    $.magnificPopup.open({
-                        items: {
-                            src: "<div class='alert_popup' >" + txt_alert + "<br/><br/><a class='btn_popup' onclick=\"confirm_val('" + invoice + "','" + citizen + "')\" >ปิด</a></div>",
-                        },
-                        type: 'inline',
-                        showCloseBtn: false,
-                        focus: 'empty string',
-                        closeOnBgClick: false,
-                        callbacks: {
-                            close: function () {
-                                if (close_focus) {
-                                    setTimeout(function () {
-                                        if (elem_visible) {
-                                            $("#" + close_focus).show().focus().hide();
-                                        } else {
-                                            $("#" + close_focus).focus();
-                                        }
-                                    }, 100);
-                                }
-                            }
-                        }
-                    });
-                }
-
-                function confirm_val(invoice, citizen) {
-                    $.magnificPopup.close();
-                    $.magnificPopup.open({
-                        items: {
-                            src: '<div class="alert_popup" style="text-align:center;">หมายเลขคำสั่งซื้อ&nbsp;<input type="text" name="invoiceno" id="invoiceno"  value="' + invoice + '" style="border-radius:5px;width:150px;height:30px;" onKeyPress="return key_eng(event);" /><br/><br/>เลขบัตรประชาชน&nbsp;&nbsp;<input type="text" name="citizen" id="citizen" value="' + citizen + '" style="border-radius:5px;width:150px;height:30px;" maxlength="13" onKeyPress="return key_num(event);" /><br><br><a class="btn_popup" onclick="Order_TSR();" >ตกลง</a>&nbsp;&nbsp;<a class="btn_popup" onclick="$.magnificPopup.close();" >ปิด</a></div>'
-                        },
-                        type: 'inline',
-                        closeOnBgClick: false,
-                        showCloseBtn: false
-                    });
-
-                }
-
-                function Chk_Regis(member) {//เชิญชวนสมัครสมาชิก
-                    if (member) {
-                        Chk_Order_TSR();
-                    } else {
-                        $.magnificPopup.open({
-                            items: {
-                                src: '<div class="alert_popup" style="text-align:center;"><img class="close_button" src="/img/close_button.png" alt="ปิด" style="width:30px; cursor:pointer;" onclick="Chk_Order_TSR();">สมัครสมาชิกเพื่อรับสิทธิพิเศษอื่น ๆ<br/>อีกมากมาย<br/><br/><a class="btn_popup" onclick="Regis_member()" >สมัครสมาชิก</a></div>'
-                            },
-                            type: 'inline',
-                            closeOnBgClick: false,
-                            showCloseBtn: false
-                        });
-                    }
-
-                }
-
-                function Regis_member() {//สมัครสมาชิก
-                    $.magnificPopup.close();
-                    $(".show_popup").click();
-                }
-
-                function Chk_Order_TSR() {//กรอกข้อมูล
-                    $.magnificPopup.open({
-                        items: {
-                            src: '<div class="alert_popup" style="text-align:center;">หมายเลขคำสั่งซื้อ&nbsp;<input type="text" name="invoiceno" id="invoiceno"  value="" style="border-radius:5px;width:150px;height:30px;" onKeyPress="return key_eng(event);" /><br/><br/>เลขบัตรประชาชน&nbsp;&nbsp;<input type="text" name="citizen" id="citizen" value="" style="border-radius:5px;width:150px;height:30px;" maxlength="13" onKeyPress="return key_num(event);" /><br/><br/><a class="btn_popup" onclick="Order_TSR();" >ตกลง</a>&nbsp;&nbsp;<a class="btn_popup" onclick="$.magnificPopup.close();" >ปิด</a></div>'
-                        },
-                        type: 'inline',
-                        closeOnBgClick: false,
-                        showCloseBtn: false
-                    });
-                }
-
-                function Order_TSR() {//แสดงข้อมูล Order Tracking TSR
-                    var invoiceno = $("#invoiceno").val().replace(/[\W]/g, ""); //ตัดช่องว่าง.replace(/[\W]/g,"")
-
-                    var citizen = $("#citizen").val().replace(/(^\s*)|(\s*$)/g, ""); //ตัดช่องว่าง
-                    if (invoiceno == "") {
-                        alert_msg("กรุณากรอกหมายเลขคำสั่งซื้อ", 'invoiceno', invoiceno, citizen);
-                        return false;
-                    }
-                    if (citizen == "") {
-                        alert_msg("กรุณากรอกเลขบัตรประชาชน", 'citizen', invoiceno, citizen);
-                        return false;
-                    }
-                    if (citizen.length != 13) {
-                        alert_msg("บัตรประชาชนลูกค้าไม่ครบ 13 หลัก", 'citizen', invoiceno, citizen);
-                        return false;
-                    }
-                    if (citizen != "" && citizen.length == 13) {
-                        for (var i = 0, sum = 0; i < 12; i++) {
-                            sum += parseFloat(citizen.charAt(i)) * (13 - i);
-                        }
-                        if ((11 - sum % 11) % 10 != parseFloat(citizen.charAt(12))) {
-                            alert_msg("เลขบัตรประชาชนไม่ถูกต้อง", 'citizen', invoiceno, citizen);
-                            return false;
-                        } else {
-                            $.magnificPopup.close();
-                            window.location = "/order_status2.php?flg=INVOICENO&OrderId=" + invoiceno + "&id=" + citizen;
-                        }
-                    }
-                }
-            </script>
             <!-- banner -->
 
             <div id="content">
                 <!-- banner -->
-                <!--<div style="display: none;">
+                <%--<div style="display: none;">
 
                 <a href="" class="slide-img">
                     <img id="slide-img-160" class="img-slide" src="/assets/images/page_promotion/upload/index_slide_160.png" alt="ประกันรถยนต์ชั้น 1 วิริยะ" title="ประกันรถยนต์ชั้น 1 วิริยะ" onclick="window.location='https://www.tqm.co.th/promotion/viriyah_type1';"></a>
@@ -539,22 +849,23 @@
                         }
                     }
                 </style>
-            </div>
-            <div class="slide">
-                <div class="cycle-slideshow"
-                    data-cycle-fx="fade"
-                    data-cycle-swipe="true"
-                    data-cycle-swipe-fx="fade"
-                    data-cycle-center-horz="true"
-                    data-cycle-center-vert="true"
-                    data-cycle-timeout="9000"
-                    data-cycle-pager=".pager"
-                    data-cycle-pager-template="<a href=#><i class='fa fa-circle'></i></a>"
-                    data-cycle-auto-height="container"
-                    data-cycle-slides=">a">
+            </div>--%>
+
+                <div class="slide">
+                    <div class="cycle-slideshow"
+                        data-cycle-fx="fade"
+                        data-cycle-swipe="true"
+                        data-cycle-swipe-fx="fade"
+                        data-cycle-center-horz="true"
+                        data-cycle-center-vert="true"
+                        data-cycle-timeout="9000"
+                        data-cycle-pager=".pager"
+                        data-cycle-pager-template="<a href=#><i class='fa fa-circle'></i></a>"
+                        data-cycle-auto-height="container"
+                        data-cycle-slides=">a">
+                    </div>
+                    <div class="pager"></div>
                 </div>
-                <div class="pager"></div>
-            </div>-->
             </div>
 
             <!-- Home tab -->
@@ -569,7 +880,7 @@
             </div>
 
             <!--  form select insurance -->
-            <div id="insurance-content" class="insurance-content_r3 pc tab1 bg-white">
+            <div id="insurance-content" class="insurance-content_r3 pc tab1 bg-white" style="display: block;">
                 <!-- Car plan = tab-1 -->
 
                 <div class="tab-1 overflow-hidden container">
@@ -584,23 +895,23 @@
                                     <div class="row clear">
                                         <div class="col-dt-6 sm-no-padding">
                                             <label class="col-sm-6 col-mb-6 col-dt-4">
-                                            ปีรถยนต์</label>
+                                                ปีรถยนต์</label>
                                             <div class="col-sm-6 col-mb-6 col-dt-8">
                                                 <label class="select type2">
-                                                <asp:DropDownList ID="ddlCarYear" runat="server" AutoPostBack="True" class="select-default-dropdown" name="ddlCarYear" OnSelectedIndexChanged="ddlCarYear_SelectedIndexChanged">
-                                                    <asp:ListItem Text="ปีรถยนต์" Value="0"></asp:ListItem>
-                                                </asp:DropDownList>
+                                                    <asp:DropDownList ID="ddlCarYear" runat="server" AutoPostBack="True" class="select-default-dropdown" name="ddlCarYear" OnSelectedIndexChanged="ddlCarYear_SelectedIndexChanged">
+                                                        <asp:ListItem Text="ปีรถยนต์" Value="0"></asp:ListItem>
+                                                    </asp:DropDownList>
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col-dt-6 sm-no-padding">
                                             <label class="col-sm-6 col-mb-6 col-dt-4">
-                                            รถยนต์</label>
+                                                รถยนต์</label>
                                             <div class="col-sm-6 col-mb-6 col-dt-8">
                                                 <label class="select type2">
-                                                <asp:DropDownList ID="ddlCarName" runat="server" AutoPostBack="True" class="select-default-dropdown" name="ddlCarName" OnSelectedIndexChanged="ddlCarName_SelectedIndexChanged">
-                                                    <asp:ListItem Text="รถยนต์" Value="0"></asp:ListItem>
-                                                </asp:DropDownList>
+                                                    <asp:DropDownList ID="ddlCarName" runat="server" AutoPostBack="True" class="select-default-dropdown" name="ddlCarName" OnSelectedIndexChanged="ddlCarName_SelectedIndexChanged">
+                                                        <asp:ListItem Text="รถยนต์" Value="0"></asp:ListItem>
+                                                    </asp:DropDownList>
                                                 </label>
                                             </div>
                                         </div>
@@ -608,25 +919,15 @@
                                     <div class="row">
                                         <div class="col-dt-6 sm-no-padding">
                                             <label class="col-sm-6 col-dt-4 col-mb-6">
-                                            รุ่น</label>
+                                                รุ่น</label>
                                             <div class="col-sm-6 col-dt-8 col-mb-6">
                                                 <label class="select type2">
-                                                <asp:DropDownList ID="ddlCarModel" runat="server" AutoPostBack="True" class="select-default-dropdown" OnSelectedIndexChanged="ddlCarModel_SelectedIndexChanged">
-                                                    <asp:ListItem Text="รุ่น" Value="0"></asp:ListItem>
-                                                </asp:DropDownList>
+                                                    <asp:DropDownList ID="ddlCarModel" runat="server" AutoPostBack="True" class="select-default-dropdown" OnSelectedIndexChanged="ddlCarModel_SelectedIndexChanged">
+                                                        <asp:ListItem Text="รุ่น" Value="0"></asp:ListItem>
+                                                    </asp:DropDownList>
                                                 </label>
                                             </div>
                                         </div>
-                                        <%-- <div class="col-dt-6 sm-no-padding">
-                                        <label class="col-sm-6 col-dt-4 col-mb-6">รุ่นย่อย</label>
-                                        <div class="col-sm-6 col-dt-8 col-mb-6">
-                                            <label class="select type2">
-                                                <asp:DropDownList ID="Select1_CC" runat="server" class="select-default-dropdown">
-                                                    <asp:ListItem Value="0" Text="รุ่นย่อย"></asp:ListItem>
-                                                </asp:DropDownList>
-                                            </label>
-                                        </div>
-                                    </div>--%>
                                     </div>
                                     <div class="text-center margin-top-20">
                                         <h2 class="color-blue">ข้อมูลติดต่อ</h2>
@@ -634,27 +935,27 @@
                                     <div class="row">
                                         <div class="col-dt-6 col-sm-12">
                                             <label class="col-sm-5 col-mb-3">
-                                            ชื่อ</label>
+                                                ชื่อ</label>
                                             <input type="text" value="" name="LEADNAME2" id="LEADNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
                                             <input type="hidden" name="PRODUCTTYPE" id="PRODUCTTYPE" value="Ex" />
                                         </div>
                                         <div class="col-dt-6 col-sm-12">
                                             <label class="col-sm-5 col-mb-3 padding-lr-0-dt">
-                                            นามสกุล</label>
+                                                นามสกุล</label>
                                             <input type="text" value="" name="LEADSURNAME2" id="LEADSURNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-mb-12">
                                             <label class="col-sm-5 col-mb-3">
-                                            เบอร์โทรศัพท์</label>
+                                                เบอร์โทรศัพท์</label>
                                             <input type="text" value="" name="PHONEMOBILE2" id="PHONEMOBILE2" class="underlineonly col-sm-7 col-mb-9" maxlength="10" onkeypress='if (event.keyCode<48||event.keyCode>59) event.returnValue=false' />
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-mb-12">
                                             <label class="col-sm-5 col-mb-3">
-                                            อีเมล</label>
+                                                อีเมล</label>
                                             <input type="text" value="" name="EMAIL2" id="EMAIL2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
                                         </div>
                                     </div>
@@ -666,7 +967,7 @@
                                             <asp:Button ID="btnSearch" runat="server" AutoPostBack="True" class="button-1 blue" OnClientClick="javascript:return ValidateDropDown();" Text="ค้นหาเลย" />
                                         </div>
                                     </div>
-                                     </ContentTemplate>
+                                </ContentTemplate>
                             </asp:UpdatePanel>
                         </div>
                     </div>
@@ -676,6 +977,7 @@
             <a href="#" class="back-to-top"><span class="pc h4">กลับด้านบน</span></a>
         </div>
 
+        </div>
         <div id="my_popup" class="well" style="display: none;">
             <div id="popup_box">
                 <div id="popup_txt"></div>
@@ -686,7 +988,12 @@
     <!--[if lt IE 9]>
 		<script type="text/javascript" src="/assets3/script/jquery-1.9.1.min.js"></script>
 	<![endif]-->
+
     <script type="text/javascript" src="/assets3/script/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" id="Script2">var _mfq = _mfq || []; (function () { var a = document.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = "//cdn.mouseflow.com/projects/d60cd248-abd8-4c6d-a652-6232b1b6b0fa.js"; document.getElementsByTagName("head")[0].appendChild(a) })();</script>
+    <script type="text/javascript" id="Script3">(function (d, a) { window.UserHeatTag = a; window[a] = window[a] || function () { (window[a].q = window[a].q || []).push(arguments) }; window[a].l = 1 * new Date; var b = document.createElement("script"), c = document.getElementsByTagName("script")[0]; b.async = 1; b.src = d; c.parentNode.insertBefore(b, c) })("//uh.nakanohito.jp/uhj2/uh.js", "_uhtracker"); _uhtracker({ id: "uh3cWySn6j" });</script>
+
+
     <script type="text/javascript" src="/assets3/script/testimonial.min.js"></script>
     <script type="text/javascript" src="/assets3/script/modernizr.js"></script>
     <script type="text/javascript" src="/assets3/script/jquery-ui.min.js"></script>
@@ -695,25 +1002,11 @@
     <script type="text/javascript" src="/assets3/script/jquery.cycle2.swipe.min.js"></script>
     <script type="text/javascript" src="/assets3/script/jquery.jscrollpane.min.js"></script>
     <script type="text/javascript" src="/assets3/script/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" src="/assets3/script/main.min.js"></script>
+    <script type="text/javascript" src="/assets3/script/main.min.js?v=1.6"></script>
     <script type="text/javascript" src="/assets3/script/jquery.isloading.min.js"></script>
     <script type="text/javascript" src="/assets3/script/jquery.popupoverlay.min.js"></script>
-    <script type="text/javascript" src="/java/script_box_search2.js"></script>
-    <script src="//control.mockingfish.com/js/011723.js"></script>
-    <script type="text/javascript">
-        window._pt_lt = new Date().getTime();
-        window._pt_sp_2 = [];
-        _pt_sp_2.push('setAccount,7075bf4a');
-        var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        (function () {
-            var atag = document.createElement('script'); atag.type = 'text/javascript'; atag.async = true;
-            atag.src = _protocol + 'cjs.ptengine.com/pta_en.js';
-            var stag = document.createElement('script'); stag.type = 'text/javascript'; stag.async = true;
-            stag.src = _protocol + 'cjs.ptengine.com/pts.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(atag, s); s.parentNode.insertBefore(stag, s);
-        })();
-    </script>
+    <script type="text/javascript" src="/java/script_box_search.js?v=1.6"></script>
+
     <script type="text/javascript">
         var animate;
         var total = $(".testimonial-text").length;
@@ -792,5 +1085,6 @@
             return true;
         }
     </script>
+
 </body>
 </html>
