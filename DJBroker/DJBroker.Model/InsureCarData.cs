@@ -285,5 +285,21 @@ namespace DJBroker.Model
                 }
             }
         }
+
+        
+        private int indexExcel = 0;
+        public int INDEX_EXCEL
+        {
+            get { return indexExcel; }
+            set
+            {
+                if (indexExcel == 0)
+                {
+                    indexExcel = value;
+                }
+            }
+        }
+
+        
     }
 }
