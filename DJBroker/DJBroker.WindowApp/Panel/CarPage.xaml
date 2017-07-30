@@ -20,6 +20,7 @@
                 <DataGridTextColumn Binding="{Binding CAR_CODE}" MinWidth="100" Header="รหัสรถรถยนต์"/>
                 <DataGridTextColumn Binding="{Binding CAR_NAME}" MinWidth="200" Header="ยี่ห้อรถยนต์"/>
                 <DataGridTextColumn Binding="{Binding CAR_MODEL}" MinWidth="200" Header="รุ่นรถยนต์"/>
+                <DataGridTextColumn Binding="{Binding CAR_ENGINE}" MinWidth="75" Header="เครื่องยนต์"/>
                 <DataGridTextColumn Binding="{Binding CAR_STATUS}" MinWidth="50" Header="สถานะ"/>
             </DataGrid.Columns>
         </DataGrid>

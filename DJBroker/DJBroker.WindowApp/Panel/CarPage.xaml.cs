@@ -57,7 +57,8 @@ namespace DJBroker.WindowApp.Panel
                 string carCode = ((DataRowView)grdCar.SelectedItem).Row.ItemArray[0].ToString();
                 string carName = ((DataRowView)grdCar.SelectedItem).Row.ItemArray[1].ToString();
                 string carModel = ((DataRowView)grdCar.SelectedItem).Row.ItemArray[2].ToString();
-                CarData carItem = new CarDAL().GetItemCode(carCode, carName,carModel);
+                string carEngine = ((DataRowView)grdCar.SelectedItem).Row.ItemArray[3].ToString();
+                CarData carItem = new CarDAL().GetItemCode(carCode, carName, carModel, carEngine);
                 DataCommon.Set("CAR_EDIT", carItem);
                 PopupCar pop = new PopupCar();
                 pop.ShowDialog();

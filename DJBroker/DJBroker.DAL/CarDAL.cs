@@ -47,6 +47,41 @@ namespace DJBroker.DAL
             }
         }
 
+        public CarData GetItemCode(string carCode, string carName, string carModel, string carEngine)
+        {
+            try
+            {
+                DBbase.Connect();
+                string sql = @"SELECT CAR_ID,CAR_CODE,CAR_NAME,CAR_MODEL,CAR_ENGINE,CAR_REMARK,CAR_STATUS FROM MA_CAR WHERE
+                CAR_CODE = '" + carCode + "' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "' AND CAR_ENGINE = '" + carEngine + "' ";
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    CarData item = new CarData();
+                    item.CAR_ID = Convert.ToInt32(reader["CAR_ID"].ToString());
+                    item.CAR_CODE = reader["CAR_CODE"].ToString();
+                    item.CAR_NAME = reader["CAR_NAME"].ToString();
+                    item.CAR_MODEL = reader["CAR_MODEL"].ToString();
+                    item.CAR_ENGINE = reader["CAR_ENGINE"].ToString();
+                    item.CAR_REMARK = reader["CAR_REMARK"].ToString();
+                    item.CAR_STATUS = reader["CAR_STATUS"].ToString();
+                    reader.Close();
+                    DBbase.DisConnect();
+                    return item;
+                }
+                else
+                {
+                    DBbase.DisConnect();
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public CarData GetItem(string carName, string carModel, string carEngine)
         {
             try
@@ -63,6 +98,41 @@ namespace DJBroker.DAL
                     item.CAR_CODE = reader["CAR_CODE"].ToString();
                     item.CAR_NAME = reader["CAR_NAME"].ToString();
                     item.CAR_MODEL = reader["CAR_MODEL"].ToString();
+                    item.CAR_ENGINE = reader["CAR_ENGINE"].ToString();
+                    item.CAR_REMARK = reader["CAR_REMARK"].ToString();
+                    item.CAR_STATUS = reader["CAR_STATUS"].ToString();
+                    reader.Close();
+                    DBbase.DisConnect();
+                    return item;
+                }
+                else
+                {
+                    DBbase.DisConnect();
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public CarData GetItem(string carCode, string carName, string carModel, string carEngine)
+        {
+            try
+            {
+                DBbase.Connect();
+                string sql = @"SELECT CAR_ID,CAR_CODE,CAR_NAME,CAR_MODEL,CAR_ENGINE,CAR_REMARK,CAR_STATUS FROM MA_CAR WHERE
+                CAR_CODE = '" + carCode + "' AND CAR_NAME = '" + carName + "' AND CAR_MODEL = '" + carModel + "' AND CAR_ENGINE = '" + carEngine + "'";
+                SqlCommand cmd = new SqlCommand(sql, DBbase.con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    CarData item = new CarData();
+                    item.CAR_ID = Convert.ToInt32(reader["CAR_ID"].ToString());
+                    item.CAR_CODE = reader["CAR_CODE"].ToString();
+                    item.CAR_NAME = reader["CAR_NAME"].ToString(); ;
+                    item.CAR_MODEL = reader["CAR_MODEL"].ToString(); ;
                     item.CAR_ENGINE = reader["CAR_ENGINE"].ToString();
                     item.CAR_REMARK = reader["CAR_REMARK"].ToString();
                     item.CAR_STATUS = reader["CAR_STATUS"].ToString();
@@ -125,8 +195,9 @@ namespace DJBroker.DAL
 
                 DBbase.Connect();
                 StringBuilder sql = new StringBuilder();
-                sql.Append("INSERT INTO MA_CAR (CAR_CODE,CAR_MODEL,CAR_NAME,CAR_REMARK,CAR_STATUS,CREATE_DATE,CREATE_USER,UPDATE_DATE,UPDATE_USER) VALUES (");
-                sql.Append(" '" + item.CAR_CODE.ToUpper() + "',");   
+                sql.Append("INSERT INTO MA_CAR (CAR_CODE,CAR_ENGINE,CAR_MODEL,CAR_NAME,CAR_REMARK,CAR_STATUS,CREATE_DATE,CREATE_USER,UPDATE_DATE,UPDATE_USER) VALUES (");
+                sql.Append(" '" + item.CAR_CODE.ToUpper() + "',");
+                sql.Append(" '" + item.CAR_ENGINE.ToUpper() + "',");
                 sql.Append(" '" + item.CAR_MODEL.ToUpper() + "',");
                 sql.Append(" '" + item.CAR_NAME.ToUpper() + "',");
                 sql.Append(" '" + item.CAR_REMARK + "',");
@@ -135,7 +206,7 @@ namespace DJBroker.DAL
                 sql.Append(" '" + member.MEMBER_USER + "',");
                 sql.Append(" '" + DateTime.Now + "',");
                 sql.Append(" '" + member.MEMBER_USER + "')");
-               
+
                 SqlCommand cmd = new SqlCommand(sql.ToString(), DBbase.con);
                 cmd.ExecuteNonQuery();
                 DBbase.DisConnect();
@@ -164,6 +235,7 @@ namespace DJBroker.DAL
                 DBbase.Connect();
                 StringBuilder sql = new StringBuilder();
                 sql.Append("UPDATE MA_CAR SET CAR_CODE = '" + newItem.CAR_CODE + "',");
+                sql.Append(" CAR_ENGINE = '" + newItem.CAR_ENGINE + "',");
                 sql.Append(" CAR_MODEL = '" + newItem.CAR_MODEL + "',");
                 sql.Append(" CAR_NAME = '" + newItem.CAR_NAME + "',");
                 sql.Append(" CAR_REMARK = '" + newItem.CAR_REMARK + "',");
