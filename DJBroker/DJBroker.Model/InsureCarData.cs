@@ -286,20 +286,17 @@ namespace DJBroker.Model
             }
         }
 
-        
-        private int indexExcel = 0;
+        private int index_excel = 0;
         public int INDEX_EXCEL
         {
-            get { return indexExcel; }
+            get { return index_excel; }
             set
             {
-                if (indexExcel == 0)
+                if (index_excel == 0)
                 {
-                    indexExcel = value;
+                    index_excel = value;
                 }
             }
         }
-
-        
     }
 }

@@ -57,140 +57,94 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets3\fonts\fontawesome-webfont.svg" />
-    <Content Include="assets3\fonts\ThaiSansLite.svg" />
-    <Content Include="assets3\images\backtotop.png" />
-    <Content Include="assets3\images\footers_02.jpg" />
-    <Content Include="assets3\images\footer_01.png" />
-    <Content Include="assets3\images\footer_02.jpg" />
-    <Content Include="assets3\images\icon\icons-email.png" />
-    <Content Include="assets3\images\icon\icons-fb.png" />
-    <Content Include="assets3\images\icon\icons-line.png" />
-    <Content Include="assets3\images\icon\icons-youtube.png" />
-    <Content Include="assets3\images\icon\tqm24-logo.png" />
-    <Content Include="assets3\images\logo_footer.jpg" />
-    <Content Include="assets3\images\page_home\award.png" />
-    <Content Include="assets3\images\page_home\btn_client_old.png" />
-    <Content Include="assets3\images\page_home\content\call-tqm.png" />
-    <Content Include="assets3\images\page_home\content\tqm-group.png" />
-    <Content Include="assets3\images\page_home\content\tqm-heart.png" />
-    <Content Include="assets3\images\page_home\icon-phone.gif" />
-    <Content Include="assets3\images\page_home\icon-service-01.png" />
-    <Content Include="assets3\images\page_home\icon-service-02.png" />
-    <Content Include="assets3\images\page_home\icon-service-03.png" />
-    <Content Include="assets3\images\page_home\icon-service-04.png" />
-    <Content Include="assets3\images\page_home\iconDJ.png" />
-    <Content Include="assets3\images\page_home\logo.png" />
-    <Content Include="assets3\images\page_home\logoDJ.png" />
-    <Content Include="assets3\images\page_promotion\arrow.png" />
-    <Content Include="assets3\images\page_search\bg_button.png" />
-    <Content Include="assets3\images\page_search\boom.png" />
-    <Content Include="assets3\images\page_search\car.png" />
-    <Content Include="assets3\images\page_search\garage.png" />
-    <Content Include="assets3\images\page_search\hot_icon-6.png" />
-    <Content Include="assets3\images\page_search\water_car.png" />
-    <Content Include="assets3\images\share\acident-m.png" />
-    <Content Include="assets3\images\share\act-m.png" />
-    <Content Include="assets3\images\share\car-m.png" />
-    <Content Include="assets3\images\share\car.png" />
-    <Content Include="assets3\images\share\logo.png" />
-    <Content Include="assets3\images\share\special-m.png" />
-    <Content Include="assets3\images\share\travel-m.png" />
-    <Content Include="assets3\script\datepicker.js" />
-    <Content Include="assets3\script\jquery-2.2.0.min.js" />
-    <Content Include="assets3\script\jquery-ui-slider-pips.js" />
-    <Content Include="assets3\script\jquery-ui.min.js" />
-    <Content Include="assets3\script\jquery.cycle2.center.min.js" />
-    <Content Include="assets3\script\jquery.cycle2.min.js" />
-    <Content Include="assets3\script\jquery.cycle2.swipe.min.js" />
-    <Content Include="assets3\script\jquery.isloading.min.js" />
-    <Content Include="assets3\script\jquery.jscrollpane.min.js" />
-    <Content Include="assets3\script\jquery.magnific-popup.min.js" />
-    <Content Include="assets3\script\jquery.popupoverlay.min.js" />
-    <Content Include="assets3\script\main.min.js" />
-    <Content Include="assets3\script\modernizr.js" />
-    <Content Include="assets3\script\testimonial.min.js" />
-    <Content Include="assets3\style\css\page\home.css" />
-    <Content Include="assets3\style\css\page\ta_search.css" />
-    <Content Include="assets3\style\datepicker.css" />
-    <Content Include="assets3\style\font-awesome.min.css" />
-    <Content Include="assets3\style\jquery-ui-slider-pips.css" />
-    <Content Include="assets3\style\jquery-ui.min.css" />
-    <Content Include="assets3\style\jquery-ui.theme.min.css" />
-    <Content Include="assets3\style\jquery.jscrollpane.css" />
-    <Content Include="assets3\style\magnific-popup.min.css" />
-    <Content Include="assets3\style\main.min.css" />
-    <Content Include="assets3\style\normalize.css" />
-    <Content Include="assets3\style\testimonial.min.css" />
-    <Content Include="assets\images\page_promotion\upload\index_promotion_127.jpg" />
-    <Content Include="assets\images\page_promotion\upload\index_promotion_148.png" />
-    <Content Include="assets\images\page_promotion\upload\index_promotion_152.png" />
-    <Content Include="assets\images\page_promotion\upload\index_promotion_154.jpg" />
-    <Content Include="assets\images\page_promotion\upload\index_promotion_161.png" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_144.jpg" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_144_mobile.jpg" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_146.png" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_146_mobile.png" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_151.png" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_151_mobile.png" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_155.jpg" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_155_mobile.jpg" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_158.jpg" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_158_mobile.jpg" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_159.png" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_159_mobile.png" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_160.png" />
-    <Content Include="assets\images\page_promotion\upload\index_slide_160_mobile.png" />
+    <Content Include="css\datepicker.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\home.css" />
+    <Content Include="css\jquery-ui-slider-pips.css" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\jquery-ui.theme.min.css" />
+    <Content Include="css\jquery.jscrollpane.css" />
+    <Content Include="css\magnific-popup.min.css" />
+    <Content Include="css\main.min.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\ta_search.css" />
+    <Content Include="css\testimonial.min.css" />
     <Content Include="DJCarInsureDetail.aspx" />
-    <Content Include="img\upload\banners\company_ins\AIC.png" />
-    <Content Include="img\upload\banners\company_ins\AII.png" />
-    <Content Include="img\upload\banners\company_ins\AXA.png" />
-    <Content Include="img\upload\banners\company_ins\BKI.png" />
-    <Content Include="img\upload\banners\company_ins\CHP.png" />
-    <Content Include="img\upload\banners\company_ins\CPY.png" />
-    <Content Include="img\upload\banners\company_ins\DVS.png" />
-    <Content Include="img\upload\banners\company_ins\GIT.png" />
-    <Content Include="img\upload\banners\company_ins\LMG.png" />
-    <Content Include="img\upload\banners\company_ins\logo_salaryman.png" />
-    <Content Include="img\upload\banners\company_ins\MSI.png" />
-    <Content Include="img\upload\banners\company_ins\MTI.png" />
-    <Content Include="img\upload\banners\company_ins\SCSMG.png" />
-    <Content Include="img\upload\banners\company_ins\SEI.png" />
-    <Content Include="img\upload\banners\company_ins\SMK.png" />
-    <Content Include="img\upload\banners\company_ins\TVI.png" />
-    <Content Include="img\upload\banners\company_ins\VIS.png" />
-    <Content Include="index.html" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\ThaiSansLite.svg" />
+    <Content Include="images\backtotop.png" />
+    <Content Include="images\biology\service-01.png" />
+    <Content Include="images\biology\service-02.png" />
+    <Content Include="images\biology\service-03.png" />
+    <Content Include="images\biology\service-04.png" />
+    <Content Include="images\biology\service-05.png" />
+    <Content Include="images\biology\service-06.png" />
+    <Content Include="images\biology\service-07.png" />
+    <Content Include="images\biology\service-08.png" />
+    <Content Include="images\biology\service-09.png" />
+    <Content Include="images\company\1.Viriyah logo.jpg" />
+    <Content Include="images\company\10.ไทยไพบูลย์ logo.jpg" />
+    <Content Include="images\company\11.คุ้มภัย logo.jpg" />
+    <Content Include="images\company\12.LMG logo.png" />
+    <Content Include="images\company\13.เอเชียประกันภัย logo.jpg" />
+    <Content Include="images\company\14.Siamcity logo.jpg" />
+    <Content Include="images\company\15.อาคเนย์ logo.png" />
+    <Content Include="images\company\16.ksk logo.jpg" />
+    <Content Include="images\company\17.อินทรประกันภัย.png" />
+    <Content Include="images\company\18.ไทยศรีประกันภัย.jpg" />
+    <Content Include="images\company\19.สินทรัพย์ประกันภัย.jpg" />
+    <Content Include="images\company\2.DVS logo.jpg" />
+    <Content Include="images\company\20.ประกันเดินทางไทยวิวัฒน์.jpg" />
+    <Content Include="images\company\21.msig.jpg" />
+    <Content Include="images\company\3.SMK logo.jpg" />
+    <Content Include="images\company\4.กรุงเทพประกันภัย logo.jpg" />
+    <Content Include="images\company\5.allianz.jpg" />
+    <Content Include="images\company\6.ทิพยประกันภัย logo.jpg" />
+    <Content Include="images\company\7.Generali logo.jpg" />
+    <Content Include="images\company\8.นำสินประกันภัย logo.jpg" />
+    <Content Include="images\company\9.muangthai logo.jpg" />
+    <Content Include="images\guarantee\DBD.png" />
+    <Content Include="images\guarantee\OIC.png" />
+    <Content Include="images\iconDJ.png" />
+    <Content Include="images\slide_promotion\promotion1.png" />
+    <Content Include="images\slide_promotion\promotion2.png" />
+    <Content Include="images\slide_promotion\promotion3.png" />
+    <Content Include="images\slide_promotion\promotion4.png" />
+    <Content Include="images\slide_promotion\promotion5.png" />
+    <Content Include="images\slide_promotion\promotion_slid1.png" />
+    <Content Include="images\slide_promotion\promotion_slid2.png" />
+    <Content Include="images\slide_promotion\promotion_slid3.png" />
+    <Content Include="images\slide_promotion\promotion_slid4.png" />
+    <Content Include="images\slide_promotion\promotion_slid5.png" />
+    <Content Include="images\slid_product\product1.png" />
+    <Content Include="images\slid_product\product2.png" />
+    <Content Include="images\slid_product\product3.png" />
+    <Content Include="images\slid_product\product4.png" />
+    <Content Include="images\slid_product\product5.png" />
+    <Content Include="images\temp.png" />
     <Content Include="DJCarInsureDetail.html" />
-    <Content Include="java\script_box_search2.js" />
-    <Content Include="java\page.js" />
-    <Content Include="java\script_box_search.js" />
-    <Content Include="java\script_search.js" />
-    <Content Include="js\poplogin.js" />
-    <Content Include="js\underscore-min.js" />
-    <Content Include="media_file\images\index\customer_review\1_chainarin.jpg" />
-    <Content Include="media_file\images\index\customer_review\2_naruchon.jpg" />
-    <Content Include="media_file\images\index\customer_review\3_naruporn.jpg" />
-    <Content Include="media_file\images\index\customer_review\4_wassana.jpg" />
-    <Content Include="media_file\images\index\index_insure_banner_109.jpg" />
-    <Content Include="media_file\images\index\index_insure_banner_113.jpg" />
-    <Content Include="media_file\images\index\index_insure_banner_120.jpg" />
-    <Content Include="media_file\images\index\index_insure_banner_121.jpg" />
-    <Content Include="media_file\images\index\index_insure_banner_88.jpg" />
-    <Content Include="new_images\429_2.png" />
-    <Content Include="new_images\431_2.png" />
-    <Content Include="new_images\432_2.png" />
-    <Content Include="new_images\433_2.png" />
-    <Content Include="DJCarInsure.aspx" />
+    <Content Include="Page\Main.aspx" />
+    <Content Include="script\datepicker.js" />
+    <Content Include="script\jquery-2.2.0.min.js" />
+    <Content Include="script\jquery-ui-slider-pips.js" />
+    <Content Include="script\jquery-ui.min.js" />
+    <Content Include="script\jquery.cycle2.center.min.js" />
+    <Content Include="script\jquery.cycle2.min.js" />
+    <Content Include="script\jquery.cycle2.swipe.min.js" />
+    <Content Include="script\jquery.isloading.min.js" />
+    <Content Include="script\jquery.jscrollpane.min.js" />
+    <Content Include="script\jquery.magnific-popup.min.js" />
+    <Content Include="script\jquery.popupoverlay.min.js" />
+    <Content Include="script\main.min.js" />
+    <Content Include="script\modernizr.js" />
+    <Content Include="script\page.js" />
+    <Content Include="script\script_box_search.js" />
+    <Content Include="script\script_box_search2.js" />
+    <Content Include="script\script_search.js" />
+    <Content Include="script\testimonial.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DJCarInsure.aspx.cs">
-      <DependentUpon>DJCarInsure.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DJCarInsure.aspx.designer.cs">
-      <DependentUpon>DJCarInsure.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DJCarInsureDetail.aspx.cs">
       <DependentUpon>DJCarInsureDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,18 +152,33 @@
     <Compile Include="DJCarInsureDetail.aspx.designer.cs">
       <DependentUpon>DJCarInsureDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterPage\MainMasterPage.Master.cs">
+      <DependentUpon>MainMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\MainMasterPage.Master.designer.cs">
+      <DependentUpon>MainMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets3\fonts\fontawesome-webfont.eot" />
-    <Content Include="assets3\fonts\fontawesome-webfont.ttf" />
-    <Content Include="assets3\fonts\fontawesome-webfont.woff" />
-    <Content Include="assets3\fonts\fontawesome-webfont.woff2" />
-    <Content Include="assets3\fonts\FontAwesome.otf" />
-    <Content Include="assets3\fonts\thaisanslite_r1-webfont.eot" />
-    <Content Include="assets3\fonts\thaisanslite_r1-webfont.ttf" />
-    <Content Include="assets3\fonts\thaisanslite_r1-webfont.woff" />
-    <Content Include="assets3\fonts\thaisanslite_r1-webfont.woff2" />
+    <Content Include="MasterPage\MainMasterPage.Master" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\thaisanslite_r1-webfont.eot" />
+    <Content Include="fonts\thaisanslite_r1-webfont.ttf" />
+    <Content Include="fonts\thaisanslite_r1-webfont.woff" />
+    <Content Include="fonts\thaisanslite_r1-webfont.woff2" />
     <None Include="Properties\PublishProfiles\DjBroker.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -232,6 +201,7 @@
       <Name>DJBroker.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
