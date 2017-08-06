@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\isaraboo\Desktop\DJBroker</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="assets/images/page_promotion/upload/index_promotion_127.jpg">
+      <publishTime>05/13/2017 23:47:16</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_promotion_148.png">
+      <publishTime>05/13/2017 23:47:15</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_promotion_152.png">
+      <publishTime>05/13/2017 23:47:15</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_promotion_154.jpg">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_promotion_161.png">
+      <publishTime>05/13/2017 23:47:14</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_144.jpg">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_144_mobile.jpg">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_146.png">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_146_mobile.png">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_151.png">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_151_mobile.png">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_155.jpg">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_155_mobile.jpg">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_158.jpg">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_158_mobile.jpg">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_159.png">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_159_mobile.png">
+      <publishTime>05/13/2017 21:31:27</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_160.png">
+      <publishTime>05/13/2017 23:49:47</publishTime>
+    </File>
+    <File Include="assets/images/page_promotion/upload/index_slide_160_mobile.png">
+      <publishTime>05/13/2017 23:49:47</publishTime>
+    </File>
+    <File Include="assets3/fonts/fontawesome-webfont.eot">
+      <publishTime>05/13/2017 21:53:04</publishTime>
+    </File>
+    <File Include="assets3/fonts/fontawesome-webfont.svg">
+      <publishTime>05/13/2017 21:53:04</publishTime>
+    </File>
+    <File Include="assets3/fonts/fontawesome-webfont.ttf">
+      <publishTime>05/13/2017 21:53:04</publishTime>
+    </File>
+    <File Include="assets3/fonts/fontawesome-webfont.woff">
+      <publishTime>05/13/2017 21:53:04</publishTime>
+    </File>
+    <File Include="assets3/fonts/fontawesome-webfont.woff2">
+      <publishTime>05/13/2017 21:53:04</publishTime>
+    </File>
+    <File Include="assets3/fonts/FontAwesome.otf">
+      <publishTime>05/13/2017 21:53:04</publishTime>
+    </File>
+    <File Include="assets3/fonts/ThaiSansLite.svg">
+      <publishTime>05/13/2017 23:44:20</publishTime>
+    </File>
+    <File Include="assets3/fonts/thaisanslite_r1-webfont.eot">
+      <publishTime>05/13/2017 23:43:56</publishTime>
+    </File>
+    <File Include="assets3/fonts/thaisanslite_r1-webfont.ttf">
+      <publishTime>05/13/2017 23:43:52</publishTime>
+    </File>
+    <File Include="assets3/fonts/thaisanslite_r1-webfont.woff">
+      <publishTime>05/13/2017 23:43:53</publishTime>
+    </File>
+    <File Include="assets3/fonts/thaisanslite_r1-webfont.woff2">
+      <publishTime>07/16/2017 01:23:52</publishTime>
+    </File>
+    <File Include="assets3/images/backtotop.png">
+      <publishTime>05/13/2017 21:31:20</publishTime>
+    </File>
+    <File Include="assets3/images/footers_02.jpg">
+      <publishTime>05/13/2017 21:31:20</publishTime>
+    </File>
+    <File Include="assets3/images/footer_01.png">
+      <publishTime>05/13/2017 21:31:20</publishTime>
+    </File>
+    <File Include="assets3/images/footer_02.jpg">
+      <publishTime>05/13/2017 21:31:20</publishTime>
+    </File>
+    <File Include="assets3/images/icon/icons-email.png">
+      <publishTime>05/13/2017 21:31:20</publishTime>
+    </File>
+    <File Include="assets3/images/icon/icons-fb.png">
+      <publishTime>05/13/2017 21:31:20</publishTime>
+    </File>
+    <File Include="assets3/images/icon/icons-line.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/icon/icons-youtube.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/icon/tqm24-logo.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/logo_footer.jpg">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/award.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/btn_client_old.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/content/call-tqm.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/content/tqm-group.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/content/tqm-heart.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/icon-phone.gif">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/icon-service-01.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/icon-service-02.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/icon-service-03.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/icon-service-04.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/iconDJ.png">
+      <publishTime>07/15/2017 16:49:31</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/logo.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_home/logoDJ.png">
+      <publishTime>06/10/2017 15:02:19</publishTime>
+    </File>
+    <File Include="assets3/images/page_promotion/arrow.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/page_search/bg_button.png">
+      <publishTime>07/15/2017 21:22:51</publishTime>
+    </File>
+    <File Include="assets3/images/page_search/boom.png">
+      <publishTime>07/15/2017 21:22:53</publishTime>
+    </File>
+    <File Include="assets3/images/page_search/car.png">
+      <publishTime>07/15/2017 21:22:55</publishTime>
+    </File>
+    <File Include="assets3/images/page_search/garage.png">
+      <publishTime>07/15/2017 21:23:01</publishTime>
+    </File>
+    <File Include="assets3/images/page_search/hot_icon-6.png">
+      <publishTime>07/15/2017 21:23:19</publishTime>
+    </File>
+    <File Include="assets3/images/page_search/water_car.png">
+      <publishTime>07/15/2017 21:23:21</publishTime>
+    </File>
+    <File Include="assets3/images/share/acident-m.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/share/act-m.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/share/car-m.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/share/car.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/share/logo.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/share/special-m.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/images/share/travel-m.png">
+      <publishTime>05/13/2017 21:31:21</publishTime>
+    </File>
+    <File Include="assets3/script/datepicker.js">
+      <publishTime>07/15/2017 21:25:27</publishTime>
+    </File>
+    <File Include="assets3/script/jquery-2.2.0.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/jquery-ui-slider-pips.js">
+      <publishTime>07/15/2017 21:25:51</publishTime>
+    </File>
+    <File Include="assets3/script/jquery-ui.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/jquery.cycle2.center.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/jquery.cycle2.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/jquery.cycle2.swipe.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/jquery.isloading.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/jquery.jscrollpane.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/jquery.magnific-popup.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/jquery.popupoverlay.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/main.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/modernizr.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/script/testimonial.min.js">
+      <publishTime>05/13/2017 21:31:24</publishTime>
+    </File>
+    <File Include="assets3/style/css/page/home.css">
+      <publishTime>06/10/2017 15:21:53</publishTime>
+    </File>
+    <File Include="assets3/style/css/page/ta_search.css">
+      <publishTime>07/15/2017 21:28:23</publishTime>
+    </File>
+    <File Include="assets3/style/datepicker.css">
+      <publishTime>07/15/2017 21:28:36</publishTime>
+    </File>
+    <File Include="assets3/style/font-awesome.min.css">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="assets3/style/jquery-ui-slider-pips.css">
+      <publishTime>07/15/2017 21:28:44</publishTime>
+    </File>
+    <File Include="assets3/style/jquery-ui.min.css">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="assets3/style/jquery-ui.theme.min.css">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="assets3/style/jquery.jscrollpane.css">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="assets3/style/magnific-popup.min.css">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="assets3/style/main.min.css">
+      <publishTime>07/23/2017 15:28:46</publishTime>
+    </File>
+    <File Include="assets3/style/normalize.css">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="assets3/style/testimonial.min.css">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="bin/DJBroker.Common.dll">
+      <publishTime>08/06/2017 22:16:49</publishTime>
+    </File>
+    <File Include="bin/DJBroker.DAL.dll">
+      <publishTime>08/06/2017 22:16:51</publishTime>
+    </File>
+    <File Include="bin/DJBroker.Model.dll">
+      <publishTime>08/06/2017 22:16:49</publishTime>
+    </File>
+    <File Include="bin/DJBroker.Web.dll">
+      <publishTime>08/06/2017 23:15:43</publishTime>
+    </File>
+    <File Include="css/datepicker.css">
+      <publishTime>08/05/2017 10:36:07</publishTime>
+    </File>
+    <File Include="css/font-awesome.min.css">
+      <publishTime>08/05/2017 10:36:07</publishTime>
+    </File>
+    <File Include="css/home.css">
+      <publishTime>08/05/2017 10:37:06</publishTime>
+    </File>
+    <File Include="css/jquery-ui-slider-pips.css">
+      <publishTime>08/05/2017 10:36:07</publishTime>
+    </File>
+    <File Include="css/jquery-ui.min.css">
+      <publishTime>08/05/2017 10:36:07</publishTime>
+    </File>
+    <File Include="css/jquery-ui.theme.min.css">
+      <publishTime>08/05/2017 10:36:07</publishTime>
+    </File>
+    <File Include="css/jquery.jscrollpane.css">
+      <publishTime>08/05/2017 10:36:07</publishTime>
+    </File>
+    <File Include="css/magnific-popup.min.css">
+      <publishTime>08/05/2017 10:36:08</publishTime>
+    </File>
+    <File Include="css/main.min.css">
+      <publishTime>08/06/2017 22:31:24</publishTime>
+    </File>
+    <File Include="css/normalize.css">
+      <publishTime>08/05/2017 10:36:08</publishTime>
+    </File>
+    <File Include="css/ta_search.css">
+      <publishTime>08/05/2017 10:37:06</publishTime>
+    </File>
+    <File Include="css/testimonial.min.css">
+      <publishTime>08/05/2017 10:36:08</publishTime>
+    </File>
+    <File Include="DJCarInsure.aspx">
+      <publishTime>07/23/2017 15:08:40</publishTime>
+    </File>
+    <File Include="DJCarInsureDetail.aspx">
+      <publishTime>08/06/2017 16:20:42</publishTime>
+    </File>
+    <File Include="DJCarInsureDetail.html">
+      <publishTime>08/05/2017 18:51:57</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/ThaiSansLite.svg">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/thaisanslite_r1-webfont.eot">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/thaisanslite_r1-webfont.ttf">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/thaisanslite_r1-webfont.woff">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="fonts/thaisanslite_r1-webfont.woff2">
+      <publishTime>08/05/2017 12:06:15</publishTime>
+    </File>
+    <File Include="images/backtotop.png">
+      <publishTime>08/06/2017 21:37:09</publishTime>
+    </File>
+    <File Include="images/biology/service-01.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/biology/service-02.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/biology/service-03.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/biology/service-04.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/biology/service-05.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/biology/service-06.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/biology/service-07.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/biology/service-08.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/biology/service-09.png">
+      <publishTime>08/06/2017 15:59:47</publishTime>
+    </File>
+    <File Include="images/company/1.Viriyah logo.jpg">
+      <publishTime>04/08/2015 15:33:12</publishTime>
+    </File>
+    <File Include="images/company/10.ไทยไพบูลย์ logo.jpg">
+      <publishTime>04/08/2015 15:59:42</publishTime>
+    </File>
+    <File Include="images/company/11.คุ้มภัย logo.jpg">
+      <publishTime>04/08/2015 15:41:30</publishTime>
+    </File>
+    <File Include="images/company/12.LMG logo.png">
+      <publishTime>04/08/2015 16:06:53</publishTime>
+    </File>
+    <File Include="images/company/13.เอเชียประกันภัย logo.jpg">
+      <publishTime>04/08/2015 16:08:17</publishTime>
+    </File>
+    <File Include="images/company/14.Siamcity logo.jpg">
+      <publishTime>04/08/2015 15:38:15</publishTime>
+    </File>
+    <File Include="images/company/15.อาคเนย์ logo.png">
+      <publishTime>04/08/2015 15:56:32</publishTime>
+    </File>
+    <File Include="images/company/16.ksk logo.jpg">
+      <publishTime>04/08/2015 15:43:54</publishTime>
+    </File>
+    <File Include="images/company/17.อินทรประกันภัย.png">
+      <publishTime>11/10/2016 09:41:57</publishTime>
+    </File>
+    <File Include="images/company/18.ไทยศรีประกันภัย.jpg">
+      <publishTime>07/26/2017 19:15:54</publishTime>
+    </File>
+    <File Include="images/company/19.สินทรัพย์ประกันภัย.jpg">
+      <publishTime>11/10/2016 09:45:06</publishTime>
+    </File>
+    <File Include="images/company/2.DVS logo.jpg">
+      <publishTime>04/08/2015 15:34:20</publishTime>
+    </File>
+    <File Include="images/company/20.ประกันเดินทางไทยวิวัฒน์.jpg">
+      <publishTime>07/26/2017 19:16:20</publishTime>
+    </File>
+    <File Include="images/company/21.msig.jpg">
+      <publishTime>07/26/2017 19:22:18</publishTime>
+    </File>
+    <File Include="images/company/3.SMK logo.jpg">
+      <publishTime>04/08/2015 15:36:15</publishTime>
+    </File>
+    <File Include="images/company/4.กรุงเทพประกันภัย logo.jpg">
+      <publishTime>04/08/2015 15:44:39</publishTime>
+    </File>
+    <File Include="images/company/5.allianz.jpg">
+      <publishTime>07/26/2017 19:19:59</publishTime>
+    </File>
+    <File Include="images/company/6.ทิพยประกันภัย logo.jpg">
+      <publishTime>11/10/2016 09:44:18</publishTime>
+    </File>
+    <File Include="images/company/7.Generali logo.jpg">
+      <publishTime>03/12/2015 15:23:24</publishTime>
+    </File>
+    <File Include="images/company/8.นำสินประกันภัย logo.jpg">
+      <publishTime>04/08/2015 15:58:24</publishTime>
+    </File>
+    <File Include="images/company/9.muangthai logo.jpg">
+      <publishTime>04/08/2015 15:40:35</publishTime>
+    </File>
+    <File Include="images/guarantee/DBD.png">
+      <publishTime>08/06/2017 22:24:17</publishTime>
+    </File>
+    <File Include="images/guarantee/OIC.png">
+      <publishTime>08/06/2017 22:24:17</publishTime>
+    </File>
+    <File Include="images/iconDJ.png">
+      <publishTime>08/05/2017 12:05:23</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion1.png">
+      <publishTime>08/06/2017 02:03:05</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion2.png">
+      <publishTime>08/06/2017 02:02:43</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion3.png">
+      <publishTime>08/06/2017 02:00:12</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion4.png">
+      <publishTime>08/06/2017 01:59:48</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion5.png">
+      <publishTime>08/06/2017 01:57:40</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion_slid1.png">
+      <publishTime>08/06/2017 01:24:18</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion_slid2.png">
+      <publishTime>08/06/2017 01:24:47</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion_slid3.png">
+      <publishTime>08/06/2017 01:26:29</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion_slid4.png">
+      <publishTime>08/06/2017 01:36:27</publishTime>
+    </File>
+    <File Include="images/slide_promotion/promotion_slid5.png">
+      <publishTime>08/06/2017 01:36:42</publishTime>
+    </File>
+    <File Include="images/slid_product/product1.png">
+      <publishTime>08/06/2017 12:23:02</publishTime>
+    </File>
+    <File Include="images/slid_product/product2.png">
+      <publishTime>08/06/2017 12:23:27</publishTime>
+    </File>
+    <File Include="images/slid_product/product3.png">
+      <publishTime>08/06/2017 12:23:46</publishTime>
+    </File>
+    <File Include="images/slid_product/product4.png">
+      <publishTime>08/06/2017 12:24:05</publishTime>
+    </File>
+    <File Include="images/slid_product/product5.png">
+      <publishTime>08/06/2017 12:24:21</publishTime>
+    </File>
+    <File Include="images/temp.png">
+      <publishTime>08/05/2017 19:52:23</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/AIC.png">
+      <publishTime>07/15/2017 21:34:28</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/AII.png">
+      <publishTime>07/15/2017 21:34:30</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/AXA.png">
+      <publishTime>07/15/2017 21:34:32</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/BKI.png">
+      <publishTime>07/15/2017 21:34:34</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/CHP.png">
+      <publishTime>07/15/2017 21:34:39</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/CPY.png">
+      <publishTime>07/15/2017 21:34:42</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/DVS.png">
+      <publishTime>07/15/2017 21:34:45</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/GIT.png">
+      <publishTime>07/15/2017 21:34:47</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/LMG.png">
+      <publishTime>07/15/2017 21:34:53</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/logo_salaryman.png">
+      <publishTime>07/15/2017 21:35:13</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/MSI.png">
+      <publishTime>07/15/2017 21:34:57</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/MTI.png">
+      <publishTime>07/15/2017 21:34:58</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/SCSMG.png">
+      <publishTime>07/15/2017 21:35:01</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/SEI.png">
+      <publishTime>07/15/2017 21:35:04</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/SMK.png">
+      <publishTime>07/15/2017 21:35:06</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/TVI.png">
+      <publishTime>07/15/2017 21:35:08</publishTime>
+    </File>
+    <File Include="img/upload/banners/company_ins/VIS.png">
+      <publishTime>07/15/2017 21:35:09</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>07/23/2017 15:05:40</publishTime>
+    </File>
+    <File Include="java/page.js">
+      <publishTime>07/15/2017 21:35:47</publishTime>
+    </File>
+    <File Include="java/script_box_search.js">
+      <publishTime>07/16/2017 16:10:45</publishTime>
+    </File>
+    <File Include="java/script_box_search2.js">
+      <publishTime>07/16/2017 16:14:33</publishTime>
+    </File>
+    <File Include="java/script_search.js">
+      <publishTime>07/15/2017 21:35:51</publishTime>
+    </File>
+    <File Include="js/poplogin.js">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="js/underscore-min.js">
+      <publishTime>07/15/2017 21:36:09</publishTime>
+    </File>
+    <File Include="MasterPage/MainMasterPage.Master">
+      <publishTime>08/06/2017 22:16:44</publishTime>
+    </File>
+    <File Include="media_file/images/index/customer_review/1_chainarin.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="media_file/images/index/customer_review/2_naruchon.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="media_file/images/index/customer_review/3_naruporn.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="media_file/images/index/customer_review/4_wassana.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="media_file/images/index/index_insure_banner_109.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="media_file/images/index/index_insure_banner_113.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="media_file/images/index/index_insure_banner_120.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="media_file/images/index/index_insure_banner_121.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="media_file/images/index/index_insure_banner_88.jpg">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="new_images/429_2.png">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="new_images/431_2.png">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="new_images/432_2.png">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="new_images/433_2.png">
+      <publishTime>05/13/2017 21:31:26</publishTime>
+    </File>
+    <File Include="Page/Main.aspx">
+      <publishTime>08/06/2017 23:15:22</publishTime>
+    </File>
+    <File Include="script/datepicker.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery-2.2.0.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery-ui-slider-pips.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery-ui.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery.cycle2.center.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery.cycle2.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery.cycle2.swipe.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery.isloading.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery.jscrollpane.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery.magnific-popup.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/jquery.popupoverlay.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/main.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/modernizr.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="script/page.js">
+      <publishTime>08/05/2017 14:41:49</publishTime>
+    </File>
+    <File Include="script/script_box_search.js">
+      <publishTime>08/05/2017 14:41:49</publishTime>
+    </File>
+    <File Include="script/script_box_search2.js">
+      <publishTime>08/05/2017 14:41:49</publishTime>
+    </File>
+    <File Include="script/script_search.js">
+      <publishTime>08/05/2017 14:41:49</publishTime>
+    </File>
+    <File Include="script/testimonial.min.js">
+      <publishTime>08/05/2017 14:40:42</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/06/2017 23:15:44</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
