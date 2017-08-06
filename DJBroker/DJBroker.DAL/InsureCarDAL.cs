@@ -202,14 +202,14 @@ namespace DJBroker.DAL
                 INSURE_CAR_CODE += "-" + item.CAR_ID + "-" + item.INSURE_CATEGORY;
                 INSURE_CAR_CODE += item.INSURE_TYPE_REPAIR == "ศูนย์" ? "C" : "G";
 
-                sql.Append(" '" + INSURE_CAR_CODE + "',");
-                sql.Append(" '" + item.COMPANY_CODE.ToUpper() + "',");
-                sql.Append(" '" + item.PACKAGE_NAME + "',");
+                sql.Append(" N'" + INSURE_CAR_CODE + "',");
+                sql.Append(" N'" + item.COMPANY_CODE.ToUpper() + "',");
+                sql.Append(" N'" + item.PACKAGE_NAME + "',");
                 sql.Append(" '" + item.CAR_ID + "',");
-                sql.Append(" '" + item.INSURE_CATEGORY + "',");
-                sql.Append(" '" + item.INSURE_TYPE_REPAIR + "',");
+                sql.Append(" N'" + item.INSURE_CATEGORY + "',");
+                sql.Append(" N'" + item.INSURE_TYPE_REPAIR + "',");
 
-                sql.Append(" '" + item.CAR_YEAR + "',");
+                sql.Append(" N'" + item.CAR_YEAR + "',");
                 sql.Append(" '" + item.LIVE_COVERAGE_PEOPLE + "',");
                 sql.Append(" '" + item.LIVE_COVERAGE_TIME + "',");
                 sql.Append(" '" + item.ASSET_TIME + "',");
@@ -281,14 +281,14 @@ namespace DJBroker.DAL
                     INSURE_CAR_CODE += "-" + item.CAR_ID + "-" + item.INSURE_CATEGORY;
                     INSURE_CAR_CODE += (item.INSURE_TYPE_REPAIR == "ศูนย์") ? "C" : "G" + "-" + item.CAR_YEAR;
 
-                    sql.Append("( '" + INSURE_CAR_CODE + "',");
-                    sql.Append(" '" + item.COMPANY_CODE.ToUpper() + "',");
-                    sql.Append(" '" + item.PACKAGE_NAME + "',");
+                    sql.Append("( N'" + INSURE_CAR_CODE + "',");
+                    sql.Append(" N'" + item.COMPANY_CODE.ToUpper() + "',");
+                    sql.Append(" N'" + item.PACKAGE_NAME + "',");
                     sql.Append(" '" + item.CAR_ID + "',");
-                    sql.Append(" '" + item.INSURE_CATEGORY + "',");
-                    sql.Append(" '" + item.INSURE_TYPE_REPAIR + "',");
+                    sql.Append(" N'" + item.INSURE_CATEGORY + "',");
+                    sql.Append(" N'" + item.INSURE_TYPE_REPAIR + "',");
 
-                    sql.Append(" '" + item.CAR_YEAR + "',");
+                    sql.Append(" N'" + item.CAR_YEAR + "',");
                     sql.Append(" '" + item.LIVE_COVERAGE_PEOPLE + "',");
                     sql.Append(" '" + item.LIVE_COVERAGE_TIME + "',");
                     sql.Append(" '" + item.ASSET_TIME + "',");
@@ -357,13 +357,13 @@ namespace DJBroker.DAL
                 INSURE_CAR_CODE += "_" + newItem.CAR_CODE + "_" + newItem.CAR_NAME + "_" + newItem.CAR_MODEL + "_" + newItem.CAR_ENGINE + "_" + newItem.INSURE_CATEGORY;
                 INSURE_CAR_CODE += "_" + newItem.INSURE_TYPE_REPAIR;
 
-                sql.Append("UPDATE MA_INSURE_CAR SET INSURE_CAR_CODE = '" + INSURE_CAR_CODE + "',");
-                sql.Append(" COMPANY_CODE = '" + newItem.COMPANY_CODE + "',");
-                sql.Append(" PACKAGE_NAME = '" + newItem.PACKAGE_NAME + "',");
+                sql.Append("UPDATE MA_INSURE_CAR SET INSURE_CAR_CODE = N'" + INSURE_CAR_CODE + "',");
+                sql.Append(" COMPANY_CODE = N'" + newItem.COMPANY_CODE + "',");
+                sql.Append(" PACKAGE_NAME = N'" + newItem.PACKAGE_NAME + "',");
                 sql.Append(" CAR_ID = '" + newItem.CAR_ID + "',");
-                sql.Append(" INSURE_CATEGORY = '" + newItem.INSURE_CATEGORY + "',");
-                sql.Append(" INSURE_TYPE_REPAIR = '" + newItem.INSURE_TYPE_REPAIR + "',");
-                sql.Append(" CAR_YEAR = '" + newItem.CAR_YEAR + "',");
+                sql.Append(" INSURE_CATEGORY = N'" + newItem.INSURE_CATEGORY + "',");
+                sql.Append(" INSURE_TYPE_REPAIR = N'" + newItem.INSURE_TYPE_REPAIR + "',");
+                sql.Append(" CAR_YEAR = N'" + newItem.CAR_YEAR + "',");
                 sql.Append(" LIVE_COVERAGE_PEOPLE = '" + newItem.LIVE_COVERAGE_PEOPLE + "',");
                 sql.Append(" LIVE_COVERAGE_TIME = '" + newItem.LIVE_COVERAGE_TIME + "',");
                 sql.Append(" ASSET_TIME = '" + newItem.ASSET_TIME + "',");
@@ -406,12 +406,12 @@ namespace DJBroker.DAL
                 StringBuilder sql = new StringBuilder();
 
                 sql.Append("UPDATE MA_INSURE_CAR SET ");
-                sql.Append(" COMPANY_CODE = '" + newItem.COMPANY_CODE + "',");
-                sql.Append(" PACKAGE_NAME = '" + newItem.PACKAGE_NAME + "',");
+                sql.Append(" COMPANY_CODE = N'" + newItem.COMPANY_CODE + "',");
+                sql.Append(" PACKAGE_NAME = N'" + newItem.PACKAGE_NAME + "',");
                 sql.Append(" CAR_ID = '" + newItem.CAR_ID + "',");
-                sql.Append(" INSURE_CATEGORY = '" + newItem.INSURE_CATEGORY + "',");
+                sql.Append(" INSURE_CATEGORY = N'" + newItem.INSURE_CATEGORY + "',");
                 //sql.Append(" INSURE_TYPE_REPAIR = '" + newItem.INSURE_TYPE_REPAIR + "',");
-                sql.Append(" CAR_YEAR = '" + newItem.CAR_YEAR + "',");
+                sql.Append(" CAR_YEAR = N'" + newItem.CAR_YEAR + "',");
                 sql.Append(" LIVE_COVERAGE_PEOPLE = '" + newItem.LIVE_COVERAGE_PEOPLE + "',");
                 sql.Append(" LIVE_COVERAGE_TIME = '" + newItem.LIVE_COVERAGE_TIME + "',");
                 sql.Append(" ASSET_TIME = '" + newItem.ASSET_TIME + "',");

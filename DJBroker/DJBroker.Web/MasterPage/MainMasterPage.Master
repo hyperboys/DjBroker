@@ -52,7 +52,7 @@
                             <a href="tel:025753981">
                                 <p class="call-text">
                                     <span style="color: #3D65E9; font-size: 24px;">สำนักงานนายหน้าประกันวินาศภัย "ดวงเจริญ"</span><br>
-				                    <span style="font-size: 20px;">โทร : 02-5753981</span>
+                                    <span style="font-size: 20px;">โทร : 02-5753981</span>
                                 </p>
                             </a>
                         </div>
@@ -87,7 +87,6 @@
                 </div>
             </div>
             <a href="#" class="back-to-top"><span class="pc h4">Top</span></a>
-            <a class="chat-box"><span class="pc h4">แชท</span></a>
         </div>
     </form>
 

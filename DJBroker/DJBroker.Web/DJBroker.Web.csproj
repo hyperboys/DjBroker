@@ -123,6 +123,7 @@
     <Content Include="images\slid_product\product5.png" />
     <Content Include="images\temp.png" />
     <Content Include="DJCarInsureDetail.html" />
+    <Content Include="Page\DJCarInsureDetail.aspx" />
     <Content Include="Page\Main.aspx" />
     <Content Include="script\datepicker.js" />
     <Content Include="script\jquery-2.2.0.min.js" />
@@ -158,6 +159,13 @@
     </Compile>
     <Compile Include="MasterPage\MainMasterPage.Master.designer.cs">
       <DependentUpon>MainMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Page\DJCarInsureDetail.aspx.cs">
+      <DependentUpon>DJCarInsureDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\DJCarInsureDetail.aspx.designer.cs">
+      <DependentUpon>DJCarInsureDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>

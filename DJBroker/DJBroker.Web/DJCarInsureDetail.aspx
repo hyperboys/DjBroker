@@ -11,15 +11,15 @@
     <meta name="keywords" content="DJBroker, ดวงเจริญ, ประกันภัย, ประกันภัยรถยนต์, ประกันรถยนต์, ประกันชั้น1, พรบออนไลน์, ประกันภัยการเดินทาง, ประกันเดินทาง, โปรโมชั่น">
     <meta name="description" content="ผู้นำด้านที่ปรึกษาประกันภัย ประกันภัยรถยนต์ ประกันภัยเดินทาง ประกันชีวิต ประกันอุบัติเหตุ ที่ปรึกษาด้านประกันภัย โปรโมชั่นผ่อน0% บริการ24ขั่วโมง โทร 1737">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="/assets3/style/normalize.css">
-    <link rel="stylesheet" href="/assets3/style/jquery-ui.min.css">
-    <link rel="stylesheet" href="/assets3/style/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="/assets3/style/testimonial.min.css">
-    <link rel="stylesheet" href="/assets3/style/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets3/style/jquery.jscrollpane.css">
-    <link rel="stylesheet" href="/assets3/style/magnific-popup.min.css">
-    <link rel="stylesheet" href="/assets3/style/main.min.css">
-    <link rel="stylesheet" href="/assets3/style/css/page/home.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="../css/testimonial.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/jquery.jscrollpane.css">
+    <link rel="stylesheet" href="../css/magnific-popup.min.css">
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/home.css">
     <style>
         #popup_txt {
             font-size: 26px;
@@ -499,7 +499,6 @@
             </div>
 
             <!--  form select insurance -->
-
             <div class="ta-small-menu" id="small-menu">
 
                 <form action="/sql/read_cookie_search.php" method="post" id="parse_cooke">
@@ -11026,27 +11025,28 @@
                     var jArraySortbyPromotion = [{ "id": "4603", "name": 1 }, { "id": "4485", "name": 16393 }, { "id": "3353", "name": 14067 }, { "id": "5031", "name": 17888 }, { "id": "16014", "name": 15737 }, { "id": "16020", "name": 17452 }, { "id": "3388", "name": "19153.00" }, { "id": "4429", "name": "15500.00" }, { "id": "4897", "name": 15990 }, { "id": "1958", "name": "13350.00" }, { "id": "2377", "name": 15281 }, { "id": "3306", "name": "13000.00" }, { "id": "12451", "name": "5492.00" }, { "id": "12453", "name": "6423.00" }, { "id": "13471", "name": "6423.00" }, { "id": "5207", "name": "6982.00" }, { "id": "5211", "name": "7354.00" }, { "id": "13475", "name": "7354.00" }, { "id": "13478", "name": "7912.00" }, { "id": "12144", "name": "7353.18" }, { "id": "12102", "name": "7353.18" }, { "id": "12104", "name": "8191.30" }, { "id": "12146", "name": "8367.87" }, { "id": "12116", "name": "8376.28" }, { "id": "12118", "name": "8842.50" }, { "id": "11731", "name": 1 }, { "id": "13806", "name": "1767.00" }, { "id": "8646", "name": "1999.00" }, { "id": "8649", "name": "2140.00" }, { "id": "13779", "name": "6236.00" }, { "id": "13780", "name": "6422.00" }, { "id": "13781", "name": "6608.00" }, { "id": "8652", "name": "6702.00" }, { "id": "13782", "name": "6794.00" }, { "id": "13752", "name": "6887.00" }, { "id": "8653", "name": "7073.00" }, { "id": "13753", "name": "7073.00" }, { "id": "8619", "name": "7353.00" }, { "id": "13754", "name": "7446.00" }, { "id": "8620", "name": "7539.00" }, { "id": "8654", "name": "7632.00" }, { "id": "8621", "name": "7726.00" }, { "id": "13755", "name": "7818.00" }, { "id": "8622", "name": "7911.00" }, { "id": "8614", "name": "8238.00" }, { "id": "8615", "name": "8750.00" }, { "id": "12178", "name": "2326.00" }, { "id": "12167", "name": "6049.00" }, { "id": "12168", "name": "6981.00" }, { "id": "12156", "name": "7447.00" }, { "id": "12157", "name": "8377.00" }, { "id": "14989", "name": "4801.00" }, { "id": "14991", "name": "5780.00" }, { "id": "7275", "name": "2930.00" }, { "id": "7272", "name": "3954.00" }, { "id": "7158", "name": "7354.00" }, { "id": "7173", "name": "7818.00" }, { "id": "7080", "name": "8285.00" }, { "id": "7161", "name": "8285.00" }, { "id": "7095", "name": "8750.00" }, { "id": "7176", "name": "8843.00" }, { "id": "7083", "name": "9215.00" }, { "id": "7098", "name": "9773.00" }, { "id": "6267", "name": "4654.00" }, { "id": "14635", "name": "2234.00" }, { "id": "14639", "name": "2512.00" }, { "id": "8566", "name": "2792.52" }, { "id": "8564", "name": "3257.94" }, { "id": "14622", "name": "3723.00" }, { "id": "14629", "name": "4468.00" }, { "id": "10163", "name": "5119.00" }, { "id": "14715", "name": "5584.00" }, { "id": "14667", "name": "6050.00" }, { "id": "14727", "name": "6050.00" }, { "id": "14719", "name": "6329.00" }, { "id": "14691", "name": "6423.00" }, { "id": "14643", "name": "6515.00" }, { "id": "14703", "name": "6702.00" }, { "id": "14695", "name": "6794.00" }, { "id": "14731", "name": "6794.00" }, { "id": "14671", "name": "6981.00" }, { "id": "14679", "name": "6981.00" }, { "id": "14655", "name": "7353.00" }, { "id": "14647", "name": "7447.00" }, { "id": "14707", "name": "7633.00" }, { "id": "14683", "name": "7912.00" }, { "id": "14659", "name": "8284.00" }, { "id": "11076", "name": "1861.00" }, { "id": "11078", "name": "2466.00" }, { "id": "11038", "name": "3165.00" }, { "id": "11039", "name": "3351.00" }, { "id": "11040", "name": "3537.00" }, { "id": "11007", "name": "5770.00" }, { "id": "11023", "name": "6050.00" }, { "id": "11011", "name": "6236.00" }, { "id": "10983", "name": "6422.00" }, { "id": "11014", "name": "6422.00" }, { "id": "10995", "name": "6702.00" }, { "id": "11027", "name": "6794.00" }, { "id": "11020", "name": "6887.00" }, { "id": "11031", "name": "7073.00" }, { "id": "10986", "name": "7259.00" }, { "id": "10989", "name": "7446.00" }, { "id": "11037", "name": "7539.00" }, { "id": "10998", "name": "7632.00" }, { "id": "10992", "name": "7911.00" }, { "id": "11001", "name": "8004.00" }, { "id": "11004", "name": "8376.00" }, { "id": "11106", "name": "15358.00" }, { "id": "12479", "name": "5864.00" }, { "id": "12480", "name": "6982.00" }, { "id": "14859", "name": "2402.00" }, { "id": "14857", "name": "2681.00" }, { "id": "14865", "name": "5864.00" }, { "id": "14861", "name": "6795.00" }, { "id": "14919", "name": "6795.00" }, { "id": "15005", "name": "6982.00" }, { "id": "14862", "name": "7726.00" }, { "id": "14915", "name": "7726.00" }, { "id": "14916", "name": "9122.00" }, { "id": "14884", "name": "12565.82" }, { "id": "14900", "name": "15358.56" }, { "id": "14868", "name": "18897.00" }, { "id": "12530", "name": "5398.00" }, { "id": "12531", "name": "6329.00" }, { "id": "12532", "name": "6794.00" }];
                 </script>
             </div>
+            
             <a href="#" class="back-to-top"><span class="pc h4">กลับด้านบน</span></a>
         </div>
     </form>
-    <script type="text/javascript" src="/assets3/script/jquery-2.2.0.min.js"></script>
-    <script type="text/javascript" src="/assets3/script/modernizr.js"></script>
-    <script type="text/javascript" src="/assets3/script/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/assets3/script/jquery-ui-slider-pips.js"></script>
-    <script type="text/javascript" src="/assets3/script/jquery.jscrollpane.min.js"></script>
-    <script type="text/javascript" src="/assets3/script/datepicker.js"></script>
-    <script type="text/javascript" src="/assets3/script/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" src="/assets3/script/main.min.js?v=1.6"></script>
-    <script type="text/javascript" src="/assets3/script/jquery.dd.js"></script>
-    <script type="text/javascript" src="/assets3/script/jquery.isloading.min.js"></script>
-    <script type="text/javascript" src="/assets3/script/jquery.popupoverlay.min.js"></script>
+    <script type="text/javascript" src="../script/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="../script/modernizr.js"></script>
+    <script type="text/javascript" src="../script/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../script/jquery-ui-slider-pips.js"></script>
+    <script type="text/javascript" src="../script/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="../script/datepicker.js"></script>
+    <script type="text/javascript" src="../script/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="../script/main.min.js?v=1.6"></script>
+    <script type="text/javascript" src="../script/jquery.dd.js"></script>
+    <script type="text/javascript" src="../script/jquery.isloading.min.js"></script>
+    <script type="text/javascript" src="../script/jquery.popupoverlay.min.js"></script>
 
     <!--Turbo Add-->
-    <script type="text/javascript" src="/js/underscore-min.js"></script>
+    <script type="text/javascript" src="../script/underscore-min.js"></script>
 
 
     <%--<script type="text/javascript" src="/java/script_search.js?v=1.2"></script>--%>
-    <script async="" src="/java/page.js"></script>
+    <script async="" src="../script/page.js"></script>
 
     <script>
         var Promotion = "";

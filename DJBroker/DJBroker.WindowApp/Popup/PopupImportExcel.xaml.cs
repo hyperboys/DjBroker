@@ -76,6 +76,7 @@ namespace DJBroker.WindowApp.Popup
                 btnClose.IsEnabled = true;
                 btnSelect.IsEnabled = true;
                 //wp.Close();
+                MessageBox.Show("นำเข้าข้อมูลเรียนร้อย");
             }
             catch (Exception ex)
             {
