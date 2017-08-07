@@ -106,6 +106,7 @@
     <Content Include="images\guarantee\DBD.png" />
     <Content Include="images\guarantee\OIC.png" />
     <Content Include="images\iconDJ.png" />
+    <Content Include="images\logo\dj-logo.png" />
     <Content Include="images\slide_promotion\promotion1.png" />
     <Content Include="images\slide_promotion\promotion2.png" />
     <Content Include="images\slide_promotion\promotion3.png" />

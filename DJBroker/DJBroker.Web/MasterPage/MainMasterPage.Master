@@ -38,7 +38,8 @@
                 <div class="test">
                     <div class="float-left logo">
                         <a href="#" id="A1">
-                            <img src="../images/iconDJ.png" alt="DJ" />
+                            <%--<img src="../images/iconDJ.png" alt="DJ" />--%>
+                             <img src="../images/logo/dj-logo.png" alt="DJ" height="63" width="73"/>
                         </a>
                     </div>
                     <div class="float-right">
@@ -52,7 +53,7 @@
                             <a href="tel:025753981">
                                 <p class="call-text">
                                     <span style="color: #3D65E9; font-size: 24px;">สำนักงานนายหน้าประกันวินาศภัย "ดวงเจริญ"</span><br>
-                                    <span style="font-size: 20px;">โทร : 02-5753981</span>
+                                    <span style="font-size: 20px;">โทร : 02-5753981-7</span>
                                 </p>
                             </a>
                         </div>
