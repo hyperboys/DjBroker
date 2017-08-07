@@ -39,7 +39,7 @@
                     <div class="float-left logo">
                         <a href="#" id="A1">
                             <%--<img src="../images/iconDJ.png" alt="DJ" />--%>
-                             <img src="../images/logo/dj-logo.png" alt="DJ" height="63" width="73"/>
+                            <img src="../images/logo/logoDJ.png" alt="DJ" height="75" width="400" />
                         </a>
                     </div>
                     <div class="float-right">
@@ -81,6 +81,36 @@
             </asp:ContentPlaceHolder>
 
             <!-- Footer -->
+
+            <div class="container padding-tb-20 color-white">
+                <%--<img src="../images/logo/dj9.jpg" />--%>
+                <div class="row">
+                    <div class="col-mb-9 col-dt-6 txt-left">
+                        <p>
+                            ติดต่อเรา<br>
+                            บริษัท ดวงเจริญ อินเตอร์ โบรกเกอร์ จำกัด<br>
+                            2/4 ซอยแจ้งวัฒนะ 10 แยก 9 ถนนแจ้งวัฒนะ<br>
+                            แขวงทุ่งสองห้อง เขตหลักสี่ กรุงเทพมหานคร 10210<br>
+                        </p>
+                    </div>
+                    <div class="col-mb-9 col-dt-6 txt-left">
+                        <p>
+                            เวลาทำการ<br>
+                            จันทร์ ถึง ศุกร์  8:30 – 17:30<br>
+                            เสาร์ 8:30 – 15:30
+                        </p>
+                    </div>
+                </div>
+                <div class="number">
+                    <p>
+                        <span>โทร : </span><b>02-5753981-7 </b>
+                        <span>Fax : </span><b>02-5753988-89</b>
+                        <span>Email : </span><b>duan@dandjbroker.com</b>
+                    </p>
+                </div>
+                <div class="clear"></div>
+            </div>
+
             <div id="footer">
                 <div class="container">
                     <ul class="social">

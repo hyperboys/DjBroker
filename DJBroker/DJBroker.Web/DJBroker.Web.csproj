@@ -82,6 +82,11 @@
     <Content Include="images\biology\service-07.png" />
     <Content Include="images\biology\service-08.png" />
     <Content Include="images\biology\service-09.png" />
+    <Content Include="images\biology\ความคุ้มครอง 1.jpg" />
+    <Content Include="images\biology\ความคุ้มครอง 2.jpg" />
+    <Content Include="images\biology\ความคุ้มครอง 3.jpg" />
+    <Content Include="images\biology\ความคุ้มครอง 4.jpg" />
+    <Content Include="images\biology\ความคุ้มครอง 5.jpg" />
     <Content Include="images\company\1.Viriyah logo.jpg" />
     <Content Include="images\company\10.ไทยไพบูลย์ logo.jpg" />
     <Content Include="images\company\11.คุ้มภัย logo.jpg" />
@@ -107,6 +112,9 @@
     <Content Include="images\guarantee\OIC.png" />
     <Content Include="images\iconDJ.png" />
     <Content Include="images\logo\dj-logo.png" />
+    <Content Include="images\logo\dj9.jpg" />
+    <Content Include="images\logo\logo top-left.jpg" />
+    <Content Include="images\logo\logoDJ.png" />
     <Content Include="images\slide_promotion\promotion1.png" />
     <Content Include="images\slide_promotion\promotion2.png" />
     <Content Include="images\slide_promotion\promotion3.png" />
