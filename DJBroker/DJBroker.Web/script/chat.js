@@ -14,12 +14,12 @@
     txtEmail = $('#txtEmail'),
     btnSendMessage = $('#btnSendMessage'),
     chkPublicMode = $('#chkPublicMode'),
-    lblRequired = $('#lblRequired');
+    lblRequired = $('#lblRequired'),
+    btnHideChat = $('#btnHideChat');
 
 
 $(function () {
     $.connection.hub.url = "http://203.146.129.248/chat/~/signalr";
-    //$.connection.hub.url = "http://localhost:53819/~/signalr";
     
     var isChatShow = false;
     var chat = $.connection.chatHub;
@@ -51,13 +51,19 @@ $(function () {
     $.connection.hub.start().done(function () {
         console.log("Hub Start");
 
+        chatToggle.removeClass('hidden');
         pnlLoading.addClass('hidden');
         pnlRegister.removeClass('hidden');
 
 
-        chatToggle.click(function () {
+        toggleHideChat = function () {
             pnlChatBox.toggleClass('hidden');
-        });
+            chatToggle.toggleClass('hidden');
+        };
+
+        chatToggle.click(function () { toggleHideChat(); });
+
+        btnHideChat.click(function () { toggleHideChat(); });
 
         btnStart.click(function () {
             lblRequired.html('');
