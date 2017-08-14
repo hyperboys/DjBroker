@@ -402,73 +402,11 @@
                     <img src="../images/company/21.msig.jpg" height="100" width="100" alt="msig">
                 </div>
             </div>
-            <%--<div class="row">
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/5.allianz.jpg" height ="100" width = "100" alt="allianz">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/6.ทิพยประกันภัย logo.jpg" height ="100" width = "100" alt="ทิพยประกันภัย">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/7.Generali logo.jpg" height ="100" width = "100" alt="Generali">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/8.นำสินประกันภัย logo.jpg" height ="100" width = "100" alt="นำสินประกันภัย">
-                </div>
-            </div>--%>
-            <%--<div class="row">
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/9.muangthai logo.jpg" height ="100" width = "100" alt="muangthai">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/10.ไทยไพบูลย์ logo.jpg" height ="100" width = "100" alt="ไทยไพบูลย์">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/11.คุ้มภัย logo.jpg" height ="100" width = "100" alt="คุ้มภัย">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/12.LMG logo.png" height ="100" width = "100" alt="LMG">
-                </div>
-            </div>--%>
-            <%-- <div class="row">
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/13.เอเชียประกันภัย logo.jpg" height ="100" width = "100" alt="เอเชียประกันภัย">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/14.Siamcity logo.jpg" height ="100" width = "100" alt="Siamcity">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/15.อาคเนย์ logo.png" height ="100" width = "100" alt="อาคเนย์">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/16.ksk logo.jpg" height ="100" width = "100" alt="ksk">
-                </div>
-            </div>--%>
-            <%--<div class="row">
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/17.อินทรประกันภัย.png" height ="100" width = "100" alt="อินทรประกันภัย">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/18.ไทยศรีประกันภัย.jpg" height ="100" width = "100" alt="ไทยศรีประกันภัย">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/19.สินทรัพย์ประกันภัย.jpg" height ="100" width = "100" alt="สินทรัพย์ประกันภัย">
-                </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/20.ประกันเดินทางไทยวิวัฒน์.jpg" height ="100" width = "100" alt="ประกันเดินทางไทยวิวัฒน์">
-                </div>
-            </div>--%>
-            <%--<div class="row">
-                <div class="col-mb-6 col-dt-3 txt-center">
-                    <img src="../images/company/21.msig.jpg" height ="100" width = "100" alt="msig">
-                </div>
-            </div>--%>
         </div>
         <!-- End บริษัทประกันภัย -->
 
         <!-- คปภ -->
-        <!-- ดวงเจริญชื่อนี้มีแต่ให้ -->
-        <div id="Div2" class="service-box divider-content" style="border-bottom: 1px solid #ccc;">
+        <%--<div id="Div2" class="service-box divider-content" style="border-bottom: 1px solid #ccc;">
             <div class="margin-tb-20">
                 <h2 class="h1 color-darkblue content-center">
                     <span class="color-blue">ภายใต้การควบคุมโดย</span>
@@ -491,7 +429,6 @@
                     </p>
                 </div>
                 <div class="col-mb-9 col-dt-6 txt-center">
-                    <%--<img src="../images/biology/service-02.png" height="100" width="100" />--%>
                     <img src="../images/guarantee/OIC.png" height="100" width="200" />
                     <h3>ใบอนุญาตเลขที่ ว00026/2556</h3>
                     <p>
@@ -507,7 +444,8 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div>--%>
+        <!-- End คปภ -->
     </div>
 
     <script type="text/javascript">

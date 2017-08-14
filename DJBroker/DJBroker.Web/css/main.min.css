@@ -7171,7 +7171,7 @@ form.filter-search-price .type4:after {
     display: none;
     position: absolute;
     left: 0;
-    top: 29px;
+    top: 25px;
     z-index: 100;
 }
 
@@ -7559,7 +7559,7 @@ form.filter-search-price .type4:after {
         height: 45px;
         position: absolute;
         left: 0;
-        top: 86px;
+        top: 110px;
         z-index: 100;
         width: 100%;
     }

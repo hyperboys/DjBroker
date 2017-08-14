@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/magnific-popup.min.css">
     <link rel="stylesheet" href="../css/main.min.css?v=1.7">
     <link rel="stylesheet" href="../css/home.css?v=1.3">
+    <link rel="stylesheet" href="../css/chat.css">
 
     <script type="text/javascript" src="../script/jquery-2.2.0.min.js"></script>
     <script type="text/javascript" src="../script/jquery.cycle2.min.js"></script>
@@ -25,6 +26,11 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
     <form id="main" runat="server">
@@ -38,22 +44,26 @@
                 <div class="test">
                     <div class="float-left logo">
                         <a href="#" id="A1">
-                            <%--<img src="../images/iconDJ.png" alt="DJ" />--%>
-                            <img src="../images/logo/logoDJ.png" alt="DJ" height="75" width="400" />
+                            <img src="../images/logo/Untitled-1.png" alt="DJ" />
                         </a>
                     </div>
                     <div class="float-right">
-                        <div class="float-left award">
-                            <img src="../images/temp.png">
+                        <div class="float-left">
+                            <img src="../images/guarantee/OIC_temp.png">
+                            <p class="txt-award-sub">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ใบอนุญาตเลขที่ ว00026/2556</p>
                         </div>
-                        <div class="float-left award">
-                            <img src="../images/temp.png">
+                         <div class="float-left">
+                            <img src="../images/guarantee/DBD_temp.png">
+                            <p class="txt-award-sub">ใบอนุญาตเลขที่ 0105556118140</p>
                         </div>
                         <div class="call-box">
                             <a href="tel:025753981">
+                                <div class="float-left icon-phone">
+                                    <img src="../images/logo/Untitled-3.png" height="50" width="50">
+                                </div>
                                 <p class="call-text">
-                                    <span style="color: #3D65E9; font-size: 24px;">สำนักงานนายหน้าประกันวินาศภัย "ดวงเจริญ"</span><br>
-                                    <span style="font-size: 20px;">โทร : 02-5753981-7</span>
+                                    <span class="auto-style1">&nbsp;Duangjaroen Inter Broker</span><br>
+                                    <span class="auto-style1">&nbsp;โทร : 02-5753981-7</span>
                                 </p>
                             </a>
                         </div>
@@ -119,13 +129,53 @@
             </div>
             <a href="#" class="back-to-top"><span class="pc h4">Top</span></a>
         </div>
+
     </form>
+
+    <!--chat-start-->
+    <a href="#" id="chatToggle" class="chat-button hidden">
+        <img src="../images/chat_button.png" /></a>
+
+    <div id="pnlChatBox" class="chat-box hidden">
+        <input type="button" id="btnHideChat" value="ปิด" class="top-right" />
+        <div id="pnlLoading" class="right chat-container">Connecting...</div>
+        <div id="pnlRegister" class="right chat-container chat-register hidden">
+            <table>
+                <tr>
+                    <td>ชื่อ </td>
+                    <td>
+                        <input id="txtUsername" type="text" class="underlineonly" /><span class="required">*</span></td>
+                </tr>
+                <tr>
+                    <td>โทรศัพท์ </td>
+                    <td>
+                        <input id="txtTelephone" type="text" class="underlineonly" /></td>
+                </tr>
+                <tr>
+                    <td>E-mail </td>
+                    <td>
+                        <input id="txtEmail" type="text" class="underlineonly" /></td>
+                </tr>
+            </table>
+            <div class="center" style="margin-top: 5px;">
+                <input type="button" id="btnStart" value="เริ่มสนทนา" /><span id="lblRequired" class="required"></span></div>
+        </div>
+        <div id="pnlMessages" class="right chat-container discussion hidden">
+            <ul id="lstDiscussion"></ul>
+            <div>
+                <span id="lblMyName"></span>&nbsp;
+                <input type="text" id="txtMessage" class="underlineonly" />
+                <input type="button" id="btnSendMessage" value="ส่ง" />
+                <input type="hidden" id="displayName" />
+                <!-- <br /> <input type="checkbox" id="chkPublicMode" /> Public Chat -->
+            </div>
+        </div>
+    </div>
+    <!--chat-end-->
 
     <!--[if lt IE 9]>
 		<script type="text/javascript" src="/assets3/script/jquery-1.9.1.min.js"></script>
 	<![endif]-->
-
-
 
 
     <script type="text/javascript" src="../script/testimonial.min.js"></script>
@@ -136,6 +186,10 @@
     <script type="text/javascript" src="../script/main.min.js?v=1.6"></script>
     <script type="text/javascript" src="../script/jquery.isloading.min.js"></script>
     <script type="text/javascript" src="../script/jquery.popupoverlay.min.js"></script>
+    <script type="text/javascript" src="../script/jquery.signalR-2.2.2.min.js"></script>
+    <script src="http://203.146.129.248/chat/~/signalr/hubs"></script>
+    <%--<script src="http://localhost:53819/~/signalr/hubs"></script>--%>
+    <script type="text/javascript" src="../script/chat.js"></script>
 
 </body>
 </html>
