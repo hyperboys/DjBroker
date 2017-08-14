@@ -48,22 +48,22 @@
                         </a>
                     </div>
                     <div class="float-right">
-                        <div class="float-left">
-                            <img src="../images/guarantee/OIC_temp.png">
-                            <p class="txt-award-sub">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ใบอนุญาตเลขที่ ว00026/2556</p>
+                        <div class="float-left award">
+                            <img src="../images/guarantee/OIC_temp.png" />
+                            <p class="txt-award-sub">&nbsp;&nbsp;ใบอนุญาตเลขที่ ว00026/2556</p>
                         </div>
-                         <div class="float-left">
-                            <img src="../images/guarantee/DBD_temp.png">
+                        <div class="float-left award">
+                            <img src="../images/guarantee/DBD_temp.png" />
                             <p class="txt-award-sub">ใบอนุญาตเลขที่ 0105556118140</p>
                         </div>
                         <div class="call-box">
                             <a href="tel:025753981">
                                 <div class="float-left icon-phone">
-                                    <img src="../images/logo/Untitled-3.png" height="50" width="50">
+                                    <img src="../images/logo/call.png" />
                                 </div>
                                 <p class="call-text">
-                                    <span class="auto-style1">&nbsp;Duangjaroen Inter Broker</span><br>
-                                    <span class="auto-style1">&nbsp;โทร : 02-5753981-7</span>
+                                    &nbsp;DJ Broker<br />
+                                    &nbsp;โทร : 02-5753981-7
                                 </p>
                             </a>
                         </div>
@@ -158,7 +158,8 @@
                 </tr>
             </table>
             <div class="center" style="margin-top: 5px;">
-                <input type="button" id="btnStart" value="เริ่มสนทนา" /><span id="lblRequired" class="required"></span></div>
+                <input type="button" id="btnStart" value="เริ่มสนทนา" /><span id="lblRequired" class="required"></span>
+            </div>
         </div>
         <div id="pnlMessages" class="right chat-container discussion hidden">
             <ul id="lstDiscussion"></ul>
