@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace DJBroker.Web.Page
 {
-    public partial class DJCarInsureDetail : System.Web.UI.Page
+    public partial class Detail : System.Web.UI.Page
     {
         private static InsureCarDAL insureCarDAL;
         private static string CAR_YEAR;
@@ -26,9 +26,9 @@ namespace DJBroker.Web.Page
                     DataTable dt = insureCarDAL.GetComboBoxCarYear();
                     foreach (DataRow row in dt.Rows)
                     {
-                        ddlCarYear.Items.Add(new ListItem(row[0].ToString(), row[0].ToString()));
+                        //ddlCarYear.Items.Add(new ListItem(row[0].ToString(), row[0].ToString()));
                     }
-                    ddlCarYear.DataBind();
+                    //ddlCarYear.DataBind();
                     ReloadData();
 
                 }
@@ -59,23 +59,23 @@ namespace DJBroker.Web.Page
         {
             try
             {
-                DataTable dt = insureCarDAL.GetComboBoxCarName(ddlCarYear.Text);
-                CAR_YEAR = ddlCarYear.Text;
+                //DataTable dt = insureCarDAL.GetComboBoxCarName(ddlCarYear.Text);
+                //CAR_YEAR = ddlCarYear.Text;
 
-                ddlCarName.Items.Clear();
-                ddlCarModel.Items.Clear();
+                //ddlCarName.Items.Clear();
+                //ddlCarModel.Items.Clear();
 
-                ddlCarName.Items.Add(new ListItem("กรุณาเลือก", "กรุณาเลือก"));
-                ddlCarModel.Items.Add(new ListItem("กรุณาเลือก", "กรุณาเลือก"));
+                //ddlCarName.Items.Add(new ListItem("กรุณาเลือก", "กรุณาเลือก"));
+                //ddlCarModel.Items.Add(new ListItem("กรุณาเลือก", "กรุณาเลือก"));
 
-                if (dt != null)
-                {
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        ddlCarName.Items.Add(new ListItem(row[0].ToString(), row[0].ToString()));
-                    }
-                    ddlCarName.DataBind();
-                }
+                //if (dt != null)
+                //{
+                //    foreach (DataRow row in dt.Rows)
+                //    {
+                        //ddlCarName.Items.Add(new ListItem(row[0].ToString(), row[0].ToString()));
+                //    }
+                    //ddlCarName.DataBind();
+                //}
             }
             catch (Exception ex)
             {
@@ -87,18 +87,18 @@ namespace DJBroker.Web.Page
         {
             try
             {
-                DataTable dt = insureCarDAL.GetComboBoxCarModel(ddlCarYear.Text, ddlCarName.Text);
-                CAR_NAME = ddlCarName.Text;
-                ddlCarModel.Items.Clear();
-                ddlCarModel.Items.Add(new ListItem("กรุณาเลือก", "กรุณาเลือก"));
-                if (dt != null)
-                {
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        ddlCarModel.Items.Add(new ListItem(row[0].ToString(), row[0].ToString()));
-                    }
-                    ddlCarModel.DataBind();
-                }
+                //DataTable dt = insureCarDAL.GetComboBoxCarModel(ddlCarYear.Text, ddlCarName.Text);
+                //CAR_NAME = ddlCarName.Text;
+                //ddlCarModel.Items.Clear();
+                //ddlCarModel.Items.Add(new ListItem("กรุณาเลือก", "กรุณาเลือก"));
+                //if (dt != null)
+                //{
+                //    foreach (DataRow row in dt.Rows)
+                //    {
+                        //ddlCarModel.Items.Add(new ListItem(row[0].ToString(), row[0].ToString()));
+                 //   }
+                    //ddlCarModel.DataBind();
+                //}
             }
             catch (Exception ex)
             {
@@ -108,7 +108,7 @@ namespace DJBroker.Web.Page
 
         protected void ddlCarModel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CAR_MODEL = ddlCarModel.Text;
+            //CAR_MODEL = ddlCarModel.Text;
         }
 
     }

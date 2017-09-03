@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<head runat="server">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DJ Broker | บริษัท ดวงเจริญ โบรคเกอร์</title>
@@ -93,40 +93,17 @@
             <!-- Footer -->
 
             <div class="container padding-tb-20 color-white">
-                <%--<img src="../images/logo/dj9.jpg" />--%>
-                <div class="row">
-                    <div class="col-mb-9 col-dt-6 txt-left">
-                        <p>
-                            ติดต่อเรา<br>
-                            บริษัท ดวงเจริญ อินเตอร์ โบรกเกอร์ จำกัด<br>
-                            2/4 ซอยแจ้งวัฒนะ 10 แยก 9 ถนนแจ้งวัฒนะ<br>
-                            แขวงทุ่งสองห้อง เขตหลักสี่ กรุงเทพมหานคร 10210<br>
-                        </p>
-                    </div>
-                    <div class="col-mb-9 col-dt-6 txt-left">
-                        <p>
-                            เวลาทำการ<br>
-                            จันทร์ ถึง ศุกร์  8:30 – 17:30<br>
-                            เสาร์ 8:30 – 15:30
-                        </p>
-                    </div>
+                <div class="col-mb-12 col-dt-12 col-sm-12 txt-center">
+                    <img src="../images/address.png" />
                 </div>
-                <div class="number">
-                    <p>
-                        <span>โทร : </span><b>02-5753981-7 </b>
-                        <span>Fax : </span><b>02-5753988-89</b>
-                        <span>Email : </span><b>duan@dandjbroker.com</b>
-                    </p>
-                </div>
-                <div class="clear"></div>
             </div>
 
-            <div id="footer">
+            <%--<div id="footer">
                 <div class="container">
                     <ul class="social">
                     </ul>
                 </div>
-            </div>
+            </div>--%>
             <a href="#" class="back-to-top"><span class="pc h4">Top</span></a>
         </div>
 

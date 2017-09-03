@@ -129,43 +129,78 @@
                                 <h2 class="color-blue">ข้อมูลติดต่อ</h2>
                             </div>
                             <div class="row">
-                                <div class="col-dt-6 col-sm-12">
-                                    <label class="col-sm-5 col-mb-3">
-                                        ชื่อ</label>
-                                    <input type="text" value="" name="LEADNAME2" id="LEADNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
-                                    <input type="hidden" name="PRODUCTTYPE" id="PRODUCTTYPE" value="Ex" />
-                                </div>
-                                <div class="col-dt-6 col-sm-12">
-                                    <label class="col-sm-5 col-mb-3 padding-lr-0-dt">
-                                        นามสกุล</label>
-                                    <input type="text" value="" name="LEADSURNAME2" id="LEADSURNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-mb-12">
-                                    <label class="col-sm-5 col-mb-3">
-                                        เบอร์โทรศัพท์</label>
-                                    <input type="text" value="" name="PHONEMOBILE2" id="PHONEMOBILE2" class="underlineonly col-sm-7 col-mb-9" maxlength="10" onkeypress='if (event.keyCode<48||event.keyCode>59) event.returnValue=false' />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-mb-12">
-                                    <label class="col-sm-5 col-mb-3">
-                                        อีเมล</label>
-                                    <input type="text" value="" name="EMAIL2" id="EMAIL2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
-                                </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-mb-12">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-mb-12">
-                                    <asp:Button ID="btnSearch" runat="server" AutoPostBack="True" class="button-1 blue" OnClientClick="javascript:return ValidateDropDown();" Text="ค้นหาเลย" />
-                                </div>
+                                <asp:HiddenField ID="HiddenField1" runat="server" Value="cus" />
+                                <button id="Button3" class="col-mb-6 col-dt-6 col-sm-12 txt-center button-1 blue" runat="server"
+                                    onserverclick="Tab1_Click">
+                                    <i class="fa fa-child"></i>&nbsp;ลูกค้าทั่วไป
+                                </button>
+                                <button id="Button2" class="col-mb-6 col-dt-6 col-sm-12 txt-center button-1 blue" runat="server"
+                                    onserverclick="Tab2_Click">
+                                    <i class="fa fa-users"></i>&nbsp;ตัวแทน
+                                </button>
                             </div>
+                            <asp:MultiView ID="MainView" runat="server">
+                                <asp:View ID="View1" runat="server">
+                                    <div class="row">
+                                        <div class="col-dt-6 col-sm-12">
+                                            <label class="col-sm-5 col-mb-3">
+                                                ชื่อ</label>
+                                            <input type="text" value="" name="LEADNAME2" id="LEADNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                        </div>
+                                        <div class="col-dt-6 col-sm-12">
+                                            <label class="col-sm-5 col-mb-3 padding-lr-0-dt">
+                                                นามสกุล</label>
+                                            <input type="text" value="" name="LEADSURNAME2" id="LEADSURNAME2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-mb-12">
+                                            <label class="col-sm-5 col-mb-3">
+                                                เบอร์โทรศัพท์</label>
+                                            <input type="text" value="" name="PHONEMOBILE2" id="PHONEMOBILE2" class="underlineonly col-sm-7 col-mb-9" maxlength="10" onkeypress='if (event.keyCode<48||event.keyCode>59) event.returnValue=false' />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-mb-12">
+                                            <label class="col-sm-5 col-mb-3">
+                                                อีเมล</label>
+                                            <input type="text" value="" name="EMAIL2" id="EMAIL2" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                        </div>
+                                    </div>
+                                </asp:View>
+                                <asp:View ID="View2" runat="server">
+                                    <div class="row">
+                                        <div class="col-dt-6 col-sm-12">
+                                            <label class="col-sm-5 col-mb-3">
+                                                username</label>
+                                            <input type="text" value="" name="USER" id="USER" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                        </div>
+                                        <div class="col-dt-6 col-sm-12">
+                                            <label class="col-sm-5 col-mb-3 padding-lr-0-dt">
+                                                password</label>
+                                            <input type="text" value="" name="PASSWORD" id="PASSWORD" class="underlineonly col-sm-7 col-mb-9" onkeypress="if (event.keyCode>=6000) event.returnValue=false" />
+                                        </div>
+                                    </div>
+                                </asp:View>
+                            </asp:MultiView>
                         </ContentTemplate>
                     </asp:UpdatePanel>
+                    <div class="row">
+                        <div class="col-mb-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-mb-12">
+                            <button id="Button1" class="col-mb-12 col-dt-12 col-sm-12 button-1 blue" runat="server"
+                                onclick="javascript:return ValidateDropDown();">
+
+                                <i class="fa fa-search"></i>&nbsp;ค้นหาเลย</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -274,7 +309,7 @@
                 </h2>
             </div>
             <div class="row">
-                <div class="col-mb-9 col-dt-4 txt-center">
+                <div class="col-mb-12 col-dt-4 col-sm-12 txt-center">
                     <img src="../images/biology/ความคุ้มครอง1_temp.png" width="163" height="128" />
                     <h3 class="text-underline">รถหาย/ไฟไหม้ไร้กังวล</h3>
                     <p>
@@ -283,7 +318,7 @@
                         ด้วยประกันชั้น 1 และประกันชั้น 2+
                     </p>
                 </div>
-                <div class="col-mb-9 col-dt-4 txt-center">
+                <div class="col-mb-12 col-dt-4 col-sm-12 txt-center">
                     <img src="../images/biology/ความคุ้มครอง2_temp.png" width="163" height="128" />
                     <h3 class="text-underline">ศูนย์ซ่อมมาตราฐาน</h3>
                     <p>
@@ -292,7 +327,7 @@
                         และไม่ต้องสำรองเงินจ่าย
                     </p>
                 </div>
-                <div class="col-mb-9 col-dt-4 txt-center">
+                <div class="col-mb-12 col-dt-4 col-sm-12 txt-center">
                     <img src="../images/biology/ความคุ้มครอง3_temp.png" width="163" height="128" />
                     <h3 class="text-underline">รถชนไม่ใช่ปัญหาใหญ่อีกต่อไป</h3>
                     <p>
@@ -303,30 +338,34 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-mb-9 col-dt-4 txt-center">
+                <div class="col-mb-12 col-dt-4 col-sm-12 txt-center">
                     <img src="../images/biology/ความคุ้มครอง4_temp.png" width="163" height="128" />
                     <h3 class="text-underline">"ดวงเจริญ" ที่ปรึกษาทางด้านประกันภัย</h3>
                     <p>
-                        เพราะเรายินดีให้คำปรึกษา ตลอดจนการบริการหลักการขาย<br />
+                        เพราะเรายินดีให้คำปรึกษา
+                        <br />
+                        ตลอดจนการบริการหลักการขาย<br />
                         ไม่ว่าจะเป็นประกันชั้น 1,2 และ 3 ให้คุณได้รู้สึกอุ่นใจ<br />
                         เสมือนมีเราอยู่เคียงข้างคุณตลอดเวลา
                     </p>
                 </div>
-                <div class="col-mb-9 col-dt-4 txt-center">
+                <div class="col-mb-12 col-dt-4 col-sm-12 txt-center">
                     <img src="../images/biology/ความคุ้มครอง5_temp.png" width="163" height="128" />
                     <h3 class="text-underline">ยิ่งประหยัดเงินได้มาก...ยิ่งอุ่นใจมากกว่า</h3>
                     <p>
-                        สิ่งที่ถูกและดีไม่ใช่ไม่มีบนโลกนี้..สำหรับที่ดวงเจริญแล้วนั้น<br />
+                        สิ่งที่ถูกและดีไม่ใช่ไม่มีบนโลก..สำหรับที่ดวงเจริญแล้วนั้น<br />
                         การยิ่งทำให้คุณประหยัดได้มากกว่าเท่าไหร่ ยิ่งทำให้เรา<br />
                         สุขใจขึ้นเท่านั้นและยังไม่พอลูกค้าจะต้องได้สิ่งดีที่สุดกลับไปเสมอ
                     </p>
                 </div>
-                <div class="col-mb-9 col-dt-4 txt-center">
+                <div class="col-mb-12 col-dt-4 col-sm-12 txt-center">
                     <img src="../images/biology/ความคุ้มครอง6_temp.png" width="163" height="128" />
                     <h3 class="text-underline">อุ่นใจด้วยบริการช่วยเหลือ 24 ชั่วโมง</h3>
-                    <p>เรามีบริการช่วยเหลือคุณตลอด 24 ชั่วโมง<br />
+                    <p>
+                        เรามีบริการช่วยเหลือคุณตลอด 24 ชั่วโมง<br />
                         ไม่ว่าจะเป็น รถลาก, จั๊มสตาร์ท, บริการกุญแจสำรอง<br />
-                        พร้อมทั้งเติมน้ำมันให้ฟรี 10 ลิตร ให้กับคุณในยามฉุกเฉิน</p>
+                        พร้อมทั้งเติมน้ำมันให้ฟรี 10 ลิตร ให้กับคุณในยามฉุกเฉิน
+                    </p>
                 </div>
             </div>
         </div>
@@ -339,114 +378,72 @@
                 </h2>
             </div>
             <div class="row">
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/1.Viriyah logo.jpg" height="100" width="100" alt="วิริยะประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/2.DVS logo.jpg" height="100" width="100" alt="เทเวศประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/3.SMK logo.jpg" height="100" width="100" alt="สินมั่นคงประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/4.กรุงเทพประกันภัย logo.jpg" height="100" width="100" alt="กรุงเทพประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/5.allianz.jpg" height="100" width="100" alt="allianz">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/6.ทิพยประกันภัย logo.jpg" height="100" width="100" alt="ทิพยประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/7.Generali logo.jpg" height="100" width="100" alt="Generali">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/8.นำสินประกันภัย logo.jpg" height="100" width="100" alt="นำสินประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/9.muangthai logo.jpg" height="100" width="100" alt="muangthai">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/10.ไทยไพบูลย์ logo.jpg" height="100" width="100" alt="ไทยไพบูลย์">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/11.คุ้มภัย logo.jpg" height="100" width="100" alt="คุ้มภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/12.LMG logo.png" height="100" width="100" alt="LMG">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/13.เอเชียประกันภัย logo.jpg" height="100" width="100" alt="เอเชียประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/14.Siamcity logo.jpg" height="100" width="100" alt="Siamcity">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/15.อาคเนย์ logo.png" height="100" width="100" alt="อาคเนย์">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/16.ksk logo.jpg" height="100" width="100" alt="ksk">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/17.อินทรประกันภัย.png" height="100" width="100" alt="อินทรประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/18.ไทยศรีประกันภัย.jpg" height="100" width="100" alt="ไทยศรีประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/19.สินทรัพย์ประกันภัย.jpg" height="100" width="100" alt="สินทรัพย์ประกันภัย">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/20.ประกันเดินทางไทยวิวัฒน์.jpg" height="100" width="100" alt="ประกันเดินทางไทยวิวัฒน์">
                 </div>
-                <div class="col-mb-6 col-dt-3 txt-center">
+                <div class="col-mb-3 col-dt-2 col-sm-6 txt-center">
                     <img src="../images/company/21.msig.jpg" height="100" width="100" alt="msig">
                 </div>
             </div>
         </div>
         <!-- End บริษัทประกันภัย -->
-
-        <!-- คปภ -->
-        <%--<div id="Div2" class="service-box divider-content" style="border-bottom: 1px solid #ccc;">
-            <div class="margin-tb-20">
-                <h2 class="h1 color-darkblue content-center">
-                    <span class="color-blue">ภายใต้การควบคุมโดย</span>
-                </h2>
-            </div>
-            <div class="row">
-                <div class="col-mb-9 col-dt-6 txt-center">
-                    <img src="../images/guarantee/DBD.png" height="100" width="200" />
-                    <h3>ใบอนุญาตเลขที่ 0105556118140</h3>
-                    <p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </p>
-                </div>
-                <div class="col-mb-9 col-dt-6 txt-center">
-                    <img src="../images/guarantee/OIC.png" height="100" width="200" />
-                    <h3>ใบอนุญาตเลขที่ ว00026/2556</h3>
-                    <p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </p>
-                </div>
-            </div>
-        </div>--%>
-        <!-- End คปภ -->
     </div>
 
     <script type="text/javascript">
@@ -493,33 +490,65 @@
             var year = "<%=ddlCarYear.ClientID %>";
             if (document.getElementById(year).selectedIndex == 0) {
                 alert("กรุณาเลือกปีรถยนต์");
+                document.getElementById(year).focus();
                 return false;
             }
             var band = "<%=ddlCarName.ClientID %>";
             if (document.getElementById(band).selectedIndex == 0) {
                 alert("กรุณาเลือกรถยนต์");
+                document.getElementById(band).focus();
                 return false;
             }
             var age = "<%=ddlCarModel.ClientID %>";
             if (document.getElementById(age).selectedIndex == 0) {
                 alert("กรุณาเลือกรุ่นรถยนต์");
+                document.getElementById(age).focus();
                 return false;
             }
 
             var name = $("#LEADNAME2").val();
-            if (name == "") {
-                alert("กรุณากรอกชื่อ");
-                return false;
-            }
-
             var email = $("#EMAIL2").val();
-            if (email == "") {
-                alert("กรุณากรอกอีเมล");
-                return false;
-            }
-            else if (!validateEmail(email)) {
-                alert("กรุณากรอกอีเมลให้ถูกต้อง");
-                return false;
+            var tel = $("#PHONEMOBILE2").val();
+
+            var user = $("#USER").val();
+            var password = $("#PASSWORD").val();
+
+            var check = "<%=HiddenField1.ClientID %>";
+
+
+            if (document.getElementById(check).value == "cus") {
+                if (name == "") {
+                    alert("กรุณากรอกชื่อ");
+                    $("#LEADNAME2").focus();
+                    return false;
+                }
+                if (tel == "") {
+                    alert("กรุณากรอกเบอร์โทรศัพท์");
+                    $("#PHONEMOBILE2").focus();
+                    return false;
+                }
+                if (email == "") {
+                    alert("กรุณากรอกอีเมล");
+                    $("#EMAIL2").focus();
+                    return false;
+                }
+                else if (!validateEmail(email)) {
+                    alert("กรุณากรอกอีเมลให้ถูกต้อง");
+                    $("#EMAIL2").focus();
+                    return false;
+                }
+            } else {
+                if (user == "") {
+                    alert("กรุณากรอก user");
+                    $("#USER").focus();
+                    return false;
+                }
+                if (password == "") {
+                    alert("กรุณากรอก password");
+                    $("#PASSWORD").focus();
+                    return false;
+                }
+
             }
 
             PageMethods.Process();

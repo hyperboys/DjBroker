@@ -22,14 +22,10 @@ namespace DJBroker.Web.Page
 
             try
             {
-                if (Request.Url.ToString().Contains("btnSearch") || EVENT == "Click")
-                {
-                    Session["DATA"] = insureCarDAL.GetAllCondition(CAR_YEAR, CAR_NAME, CAR_MODEL);
-                    HttpContext.Current.Response.Redirect("DJCarInsureDetail.aspx");
-                }
 
                 if (!Page.IsPostBack)
                 {
+                    MainView.ActiveViewIndex = 0;
                     insureCarDAL = new InsureCarDAL();
                     DataTable dt = insureCarDAL.GetComboBoxCarYear();
                     foreach (DataRow row in dt.Rows)
@@ -37,7 +33,15 @@ namespace DJBroker.Web.Page
                         ddlCarYear.Items.Add(new ListItem(row[0].ToString(), row[0].ToString()));
                     }
                     ddlCarYear.DataBind();
+                    EVENT = "";
                 }
+
+                if (Request.Url.ToString().Contains("btnSearch") || EVENT == "Click")
+                {
+                    Session["DATA"] = insureCarDAL.GetAllCondition(CAR_YEAR, CAR_NAME, CAR_MODEL);
+                    HttpContext.Current.Response.Redirect("Detail.aspx");
+                }
+
             }
             catch (Exception ex)
             {
@@ -106,6 +110,25 @@ namespace DJBroker.Web.Page
         {
             EVENT = "Click";
             return "";
+        }
+
+        protected void Tab1_Click(object sender, EventArgs e)
+        {
+            this.HiddenField1.Value = "cus";
+            MainView.ActiveViewIndex = 0;
+        }
+
+        protected void Tab2_Click(object sender, EventArgs e)
+        {
+            this.HiddenField1.Value = "staff";
+            MainView.ActiveViewIndex = 1;
+        }
+
+        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
+        {
+
+            int index = Int32.Parse(e.Item.Value);
+            MainView.ActiveViewIndex = index;
         }
     }
 }
